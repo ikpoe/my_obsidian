@@ -92,10 +92,22 @@ Hasil yang diterima: getent menampilkan IP endpoint (biasanya IP private lewat V
 
 Postgres yang kita gunakan adalah postgres dari repo PGDG, bukan dari AppStream AlmaLinux. Berikut step untuk install postgres18 di Alma Linux.
 
+### 2.5.1 PGDG repository
+
 ```bash
 dnf -qy module disable postgresql
 dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
+```
+
+### 2.5.2 Server packages
+
+```bash
 dnf install -y postgresql18-server postgresql18-contrib pglogical_18-2.4.6 pgaudit_18 policycoreutils-python-utils
+```
+
+### 2.5.3 pglogical, pinned version
+
+```bash
 rpm -q postgresql18-server pglogical_18 pgaudit_18
 ```
 

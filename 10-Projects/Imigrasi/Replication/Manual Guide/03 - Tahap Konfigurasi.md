@@ -51,7 +51,9 @@ Catatan: jika initdb gagal dengan pesan could not access directory ".../pg_wal":
 
 Catatan: di PostgreSQL 18 data checksums aktif secara default, sebaiknya dibiarkan aktif \<ISI: konfirmasi>.
 
-## 3.3 Setting postgresql.conf
+## 3.3 postgresql.conf, pg_hba.conf
+
+### 3.3.1 Setting postgresql.conf
 
 Setting tambahan untuk replikasi ditaruh di file terpisah conf.d/replikasi.conf supaya mudah dicek. Nilai memory diisi per VM sesuai tabel nilai di Tahap Database Berikutnya dan Tabel Nilai. Berikut adalah command untuk membuat file tersebut.
 
@@ -79,7 +81,7 @@ Catatan: pgaudit harus sudah di-preload sebelum restore schema, karena dump mast
 
 Catatan: max_worker_processes = 16 tetap. Jika akses ingin dibatasi, maka listen_addresses bisa diganti dengan IP VM replica \<ISI: IP VM replica, kalau mau dibatasi>.
 
-## 3.4 Akses ke replica (pg_hba dan firewall)
+### 3.3.2 Akses ke replica (pg_hba dan firewall)
 
 Replica hanya butuh koneksi keluar ke master, sedangkan akses masuk ke replica dibatasi untuk client yang perlu saja. Berikut adalah command untuk menambahkan rule di pg_hba.conf dan firewall.
 
@@ -92,16 +94,23 @@ firewall-cmd --list-rich-rules
 
 Catatan: ganti \<ISI: ...> dengan subnet yang sesuai sebelum command dijalankan, jika tidak maka PostgreSQL akan gagal membaca pg_hba.conf.
 
-## 3.5 Start PostgreSQL
+## 3.4 Start PostgreSQL
 
 Berikut adalah command untuk menjalankan service PostgreSQL dan mengecek setting yang sudah aktif.
+
+### 3.4.1 Enable and start
 
 ```bash
 systemctl enable --now postgresql-18
 systemctl status postgresql-18 --no-pager
+```
+
+Catatan: jika service gagal start, maka cek journalctl -u postgresql-18 dan log di \$PGDATA/log.
+
+### 3.4.2 Verify
+
+```bash
 sudo -u postgres $PGBIN/psql -c "show shared_preload_libraries;" -c "show max_worker_processes;" -c "show data_checksums;"
 ```
 
 Hasil yang diterima: shared_preload_libraries pglogical,pg_stat_statements,pgaudit, max_worker_processes 16 dan data_checksums on.
-
-Catatan: jika service gagal start, maka cek journalctl -u postgresql-18 dan log di \$PGDATA/log.
