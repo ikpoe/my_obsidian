@@ -56,13 +56,13 @@ Catatan: jika findmnt tidak keluar apa-apa atau SOURCE kedua mount sama, maka pe
 
 Variable yang dibutuhkan untuk proses ini disimpan di file /root/replikasi/\<SOURCE_ID>.env supaya nilai variable tidak hilang ketika SSH terputus. Berikut ada command untuk mengenerate file environment ganti semua \<ISI: ...> dengan value yang sesuai.
 
-Supaya nilai tidak hilang kalau SSH putus, variabel disimpan di file. Ganti semua \<ISI: ...> sebelum lanjut.
-
 ```bash
 mkdir -p /root/replikasi
 cat > /root/replikasi/<SOURCE_ID>.env <<'EOF'
 # PostgreSQL 18 di AlmaLinux 9
 export PGBIN=/usr/pgsql-18/bin
+# PGDATA_LINK = path bawaan PGDG, berupa symlink ke PGDATA (partisi data)
+# PGWAL = partisi WAL, dipasang lewat initdb --waldir
 export PGDATA_LINK=/var/lib/pgsql/18/data
 export PGDATA=/data/postgresql/18/main
 export PGWAL=/data/pg_wal/18/main
