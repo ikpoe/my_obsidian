@@ -32,7 +32,3 @@ VM dibuat di cluster Replica Database dengan Range 10.0.70.0/25
 - Total hardisk sama dengan total disk yang digunakan di master
 - Pg_wal 10% s.d. 25% dari total data
 - OS User dengan akses sudoers
-
-## 1.4 Read grants, every schema
-
-Catatan: <ISI: langkah ini ada di diagram, isi belum ditulis>
