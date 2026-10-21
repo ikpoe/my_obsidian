@@ -13,6 +13,7 @@ tags: [deliverable, blueprint]
 ### 1.1 Latar Belakang
 ### 1.2 Maksud dan Tujuan
 ### 1.3 Ruang Lingkup
+Outscope: Database Source
 ### 1.4 Dasar Hukum dan Acuan Kebijakan
 ### 1.5 Sistematika Dokumen
 
@@ -26,7 +27,7 @@ tags: [deliverable, blueprint]
 ### 3.1 Lanskap Aplikasi dan Sistem Sumber (SoR)
 ### 3.2 Platform Data Eksisting
 ### 3.3 Integrasi Internal dan Eksternal
-### 3.4 Penilaian per Area Pengelolaan Data
+### ~~3.4 Penilaian per Area Pengelolaan Data~~
 ### 3.5 Temuan Utama
 ### 3.6 Analisis Kesenjangan terhadap Kebijakan Internal
 

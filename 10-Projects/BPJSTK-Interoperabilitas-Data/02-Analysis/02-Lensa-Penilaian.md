@@ -11,32 +11,32 @@ tags: [metodologi, maturitas]
 
 ## A. Area Pengelolaan Data
 
-| #   | Area (istilah laporan)              | Acuan internal                      | Lingkup | Alasan                                                                                                                                                                | Prioritas sesi |
-| --- | ----------------------------------- | ----------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| 1   | Tata Kelola Data                    | Data Governance                     | Ya      | Use case 3 TOR; Perdir 4/2025                                                                                                                                         | 7              |
-| 2   | Arsitektur Data                     | Data Architecture                   | Ya      | Inti Blueprint dan arsitektur target                                                                                                                                  | 3              |
-| 3   | Pemodelan & Desain Data             | Data Modeling & Design              | Ya      | Medallion (bronze/silver/gold) sebagai desain lapisan ESDP; pemodelan DWH (dimensional/Kimball, Data Vault, Inmon); kamus data 11 atribut Perdir; dasar data contract | 4              |
-| 4   | Penyimpanan & Operasional Data      | Data Storage & Operations           | Ya      | Use case 1 (infra ESDP); backup/DR                                                                                                                                    | 8              |
-| 5   | Keamanan & Pelindungan Data Pribadi | Data Security                       | Ya      | UU PDP, PP 33/2026, klasifikasi                                                                                                                                       | 6              |
-| 6   | Integrasi & Interoperabilitas Data  | Data Integration & Interoperability | Ya      | Inti TOR; SMILE sebagai SPOF                                                                                                                                          | 2              |
-| 7 | Dokumen & Konten | Document & Content Mgmt | Ringan | Hanya yang relevan: definisi data lifecycle (buat, simpan, pakai, arsip, musnah), retensi & arsip (UU Kearsipan), dokumen pertukaran dengan mitra (lampiran klaim, biometrik), dokumen berisi data pribadi (scan KTP/KK) | 8 |
-| 8   | Master & Reference Data             | Reference & Master Data             | Ya      | Gap terbesar (manual); batas SoR/MDM                                                                                                                                  | 1              |
-| 9   | Data Warehouse & BI                 | DW & BI                             | Ya      | Data lake/DWH di satu environment Cloudera                                                                                                                            | 9              |
-| 10  | Metadata                            | Metadata Mgmt                       | Ya      | Dataedo vs Atlas terpisah                                                                                                                                             | 5              |
-| 11  | Kualitas Data                       | Data Quality                        | Ya      | Dimensi kualitas di Perdir; rekonsiliasi                                                                                                                              | 5              |
+| #   | Area (istilah laporan)              | Acuan internal                      | Lingkup | Alasan                                                                                                                                                                                                                   | Prioritas sesi |
+| --- | ----------------------------------- | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| 1   | Tata Kelola Data                    | Data Governance                     | Ya      | Use case 3 TOR; Perdir 4/2025                                                                                                                                                                                            | 7              |
+| 2   | Arsitektur Data                     | Data Architecture                   | Ya      | Inti Blueprint dan arsitektur target                                                                                                                                                                                     | 3              |
+| 3   | Pemodelan & Desain Data             | Data Modeling & Design              | Ya      | Medallion (bronze/silver/gold) sebagai desain lapisan ESDP; pemodelan DWH (dimensional/Kimball, Data Vault, Inmon); kamus data 11 atribut Perdir; dasar data contract                                                    | 4              |
+| 4   | Penyimpanan & Operasional Data      | Data Storage & Operations           | Ya      | Use case 1 (infra ESDP); backup/DR                                                                                                                                                                                       | 8              |
+| 5   | Keamanan & Pelindungan Data Pribadi | Data Security                       | Ya      | UU PDP, PP 33/2026, klasifikasi                                                                                                                                                                                          | 6              |
+| 6   | Integrasi & Interoperabilitas Data  | Data Integration & Interoperability | Ya      | Inti TOR; SMILE sebagai SPOF                                                                                                                                                                                             | 2              |
+| 7   | Dokumen & Konten                    | Document & Content Mgmt             | Ringan  | Hanya yang relevan: definisi data lifecycle (buat, simpan, pakai, arsip, musnah), retensi & arsip (UU Kearsipan), dokumen pertukaran dengan mitra (lampiran klaim, biometrik), dokumen berisi data pribadi (scan KTP/KK) | 8              |
+| 8   | Master & Reference Data             | Reference & Master Data             | Ya      | Gap terbesar (manual); batas SoR/MDM                                                                                                                                                                                     | 1              |
+| 9   | Data Warehouse & BI                 | DW & BI                             | Ya      | Data lake/DWH di satu environment Cloudera                                                                                                                                                                               | 9              |
+| 10  | Metadata                            | Metadata Mgmt                       | Ya      | Dataedo vs Atlas terpisah                                                                                                                                                                                                | 5              |
+| 11  | Kualitas Data                       | Data Quality                        | Ya      | Dimensi kualitas di Perdir; rekonsiliasi                                                                                                                                                                                 | 5              |
 
 > Usulan: Metadata & Kualitas Data dibahas dalam satu sesi. Dokumen & Konten dibahas bersama Penyimpanan & Operasional (sesi 8) karena sama-sama menyangkut lifecycle, retensi, dan arsip.
 > Pembagian: Pemodelan & Desain Data membahas *bagaimana data dimodelkan dan dilapis* (medallion, pola DWH). DW & BI membahas *pemanfaatan dan penyajian* (data mart, BI, self-service, environment).
 
 ## B. Skala Maturitas (1–5)
 
-| Level | Nama | Ciri |
-|---|---|---|
-| 1 | Awal (Initial) | Ad hoc, bergantung individu, tidak terdokumentasi |
-| 2 | Berulang (Repeatable) | Praktik ada di sebagian unit, belum standar |
-| 3 | Terdefinisi (Defined) | Kebijakan, standar, dan peran formal; dijalankan konsisten |
-| 4 | Terkelola (Managed) | Diukur dengan KPI, dipantau, ada tool pendukung |
-| 5 | Optimal (Optimized) | Perbaikan berkelanjutan, otomatis, terintegrasi lintas organisasi |
+| Level | Nama                  | Ciri                                                              |
+| ----- | --------------------- | ----------------------------------------------------------------- |
+| 1     | Awal (Initial)        | Ad hoc, bergantung individu, tidak terdokumentasi                 |
+| 2     | Berulang (Repeatable) | Praktik ada di sebagian unit, belum standar                       |
+| 3     | Terdefinisi (Defined) | Kebijakan, standar, dan peran formal; dijalankan konsisten        |
+| 4     | Terkelola (Managed)   | Diukur dengan KPI, dipantau, ada tool pendukung                   |
+| 5     | Optimal (Optimized)   | Perbaikan berkelanjutan, otomatis, terintegrasi lintas organisasi |
 
 Aturan penilaian (usulan):
 - Setiap skor wajib punya bukti (D1/D2 + halaman, atau hasil wawancara).

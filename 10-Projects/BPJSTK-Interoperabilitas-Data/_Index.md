@@ -21,6 +21,7 @@ tags: [project, bpjstk, data-platform]
 - Kerangka kajian: area pengelolaan data (acuan internal DMBOK, tidak disebut di laporan).
 
 ## Isi
+- [[00-Admin/01-TOR|Ringkasan TOR]]
 - [[03-Deliverables/01-Blueprint-ESDP|Blueprint ESDP (kerangka)]]
 - [[02-Analysis/00-Analisis-Dokumen-BPJS|Analisis dokumen BPJS]]
 - [[05-Research/01-Inventori-Tender-BPJSTK.csv|Inventori tender]]
