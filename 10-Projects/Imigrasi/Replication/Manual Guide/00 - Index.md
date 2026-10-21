@@ -12,7 +12,7 @@ Dokumen ini menjelaskan bagaimana setup Replikasi on-premise di Pusdakim dengan 
 ## Daftar bagian
 
 - [[01 - Tahap Persiapan]]
-- [[02 - Tahap Instalasi]]
+- [[02 - Tahap Instalasi Postgres]]
 - [[03 - Tahap Konfigurasi]]
 - [[04 - Tahap Replikasi Database]]
 - [[05 - Tahap Verifikasi]]

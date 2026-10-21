@@ -4,7 +4,7 @@ project: Imigrasi/Piranti
 tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
-
+ 
 # 4 Tahap Replikasi Database
 
 Tahap ini diulang untuk setiap database yang direplikasi. Setiap database punya env file sendiri /root/replikasi/\<SOURCE_ID>.env dengan value dari tabel nilai. \$MASTER_DSN hanya dipakai untuk sesi psql admin ke master.

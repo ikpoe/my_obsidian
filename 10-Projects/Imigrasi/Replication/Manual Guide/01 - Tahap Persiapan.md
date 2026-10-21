@@ -22,12 +22,10 @@ Beberapa konfigurasi yang butuh dilakukan di master database diantaranya:
 - ~~Setting max_replication_slots, max_wal_senders dan max_worker_processes cukup untuk semua subscription~~
 - ~~Setting max_slot_wal_keep_size supaya storage master tidak penuh kalau replica mati~~
 - ~~Jalankan CREATE EXTENSION pglogical di setiap database yang direplikasi~~
-
-
-
-- 
+ 
 ## 1.2 Persiapan VM
-VM dibuat di cluster Replica Database dengan Range 10.0.70.0/25 
+Persiapan di VM tempat Replica jalan diantaranya:
+- VM dibuat di cluster Replica Database dengan Range 10.0.70.0/25 
 - Buat partisi terpisah untuk `/data/postgresql` dan `/data/pg_wal`
 - Total hardisk sama dengan total disk yang digunakan di master
 - Pg_wal 10% s.d. 25% dari total data

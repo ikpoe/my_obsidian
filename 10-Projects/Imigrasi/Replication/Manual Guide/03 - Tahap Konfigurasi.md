@@ -5,7 +5,7 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# 3 Tahap Konfigurasi
+# 3 Tahap Konfigurasi Postgres
 
 Semua perintah di tahap ini dijalankan di VM replica sebagai root, cukup sekali per VM. Jika SSH sempat terputus, maka load lagi env file dengan source /root/replikasi/\<SOURCE_ID>.env.
 
