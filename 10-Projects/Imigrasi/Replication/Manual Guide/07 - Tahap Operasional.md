@@ -54,3 +54,56 @@ sudo -u postgres $PGBIN/dropdb $TARGET_DB
 ```
 
 Setelah itu ulangi Tahap Replikasi Database mulai dari Buat database tujuan (ICU und), dengan pemisahan pre-data dan post-data. Provider node yang sudah ada di master tidak dibuat ulang.
+
+## 7.5 Menambahkan tabel baru ke replikasi
+
+Tabel baru di master tidak otomatis ikut direplikasi, walaupun strukturnya sudah tercipta di replica lewat Replikasi DDL. Tabel harus didaftarkan ke replication set satu per satu. Langkah yang dilakukan diantaranya:
+
+- Cek kelayakan tabel di master (punya primary key atau replica identity)
+- Pastikan struktur tabel sudah ada di replica dan tabelnya masih kosong
+- Daftarkan tabel ke replication set dengan synchronize_data := true, supaya data yang sudah ada ikut disalin
+- Cek status tabel di replica sampai replicating
+
+Berikut adalah command untuk cek kelayakan tabel di master.
+
+```bash
+source /root/replikasi/<SOURCE_ID>.env
+export NEW_TABLE='<ISI: schema.tabel_baru>'
+sudo -u postgres $PGBIN/psql "$MASTER_DSN" -c "
+SELECT c.oid::regclass AS tabel, c.relreplident,
+       EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') AS punya_pk
+FROM pg_class c WHERE c.oid = '$NEW_TABLE'::regclass;"
+```
+
+Hasil yang diterima: punya_pk = t, atau relreplident = f / i. Jika tidak punya identity, maka ikuti aturan di 7.1.
+
+Berikut adalah command untuk cek struktur tabel di replica.
+
+```bash
+sudo -u postgres $PGBIN/psql -d $TARGET_DB -c "SELECT count(*) FROM $NEW_TABLE;"
+```
+
+Hasil yang diterima: count = 0. Jika tabel belum ada di replica (Replikasi DDL belum terpasang), maka salin strukturnya dulu dari master dengan command berikut.
+
+```bash
+sudo -u postgres $PGBIN/pg_dump "$MASTER_DSN" --schema-only --no-owner --no-privileges -t "$NEW_TABLE" \
+  | sudo -u postgres $PGBIN/psql -d $TARGET_DB -v ON_ERROR_STOP=1
+```
+
+Berikut adalah command untuk mendaftarkan tabel ke replication set.
+
+```bash
+sudo -u postgres $PGBIN/psql "$MASTER_DSN" -c "SET lock_timeout = '3s'" -c "SELECT pglogical.replication_set_add_table('default', '$NEW_TABLE'::regclass, synchronize_data := true);"
+```
+
+Hasil yang diterima: t. Untuk tabel insert-only tanpa identity, ganti 'default' dengan 'default_insert_only'.
+
+Berikut adalah command untuk cek status tabel di replica.
+
+```bash
+sudo -u postgres $PGBIN/psql -d $TARGET_DB -c "SELECT * FROM pglogical.show_subscription_table('$SUBSCRIPTION', '$NEW_TABLE'::regclass);"
+```
+
+Hasil yang diterima: status berubah dari synchronizing menjadi replicating. Tabel besar butuh waktu lebih lama, pantau dengan query yang sama.
+
+Catatan: jika gagal karena lock timeout, maka jalankan lagi di jam sepi. Jika status tetap down atau sync gagal, maka cek log di \$PGDATA/log, kosongkan tabel di replica, lalu ulangi dengan pglogical.alter_subscription_resynchronize_table('$SUBSCRIPTION', '$NEW_TABLE'::regclass).
