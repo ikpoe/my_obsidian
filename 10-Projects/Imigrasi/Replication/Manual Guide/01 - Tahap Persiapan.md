@@ -5,9 +5,9 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Persiapan
+# 1 Tahap Persiapan
 
-## Persiapan di AWS RDS / Aurora
+## 1.1 Persiapan di AWS RDS / Aurora
 
 Beberapa konfigurasi yang butuh dilakukan di master database diantaranya:
 

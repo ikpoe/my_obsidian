@@ -5,7 +5,7 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Database Berikutnya dan Tabel Nilai
+# 8 Tahap Database Berikutnya dan Tabel Nilai
 
 Database berikutnya diulang dengan langkah yang sama. Beberapa hal yang perlu diperhatikan diantaranya:
 

@@ -5,11 +5,11 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Konfigurasi
+# 3 Tahap Konfigurasi
 
 Semua perintah di tahap ini dijalankan di VM replica sebagai root, cukup sekali per VM. Jika SSH sempat terputus, maka load lagi env file dengan source /root/replikasi/\<SOURCE_ID>.env.
 
-## Siapkan direktori data dan WAL
+## 3.1 Siapkan direktori data dan WAL
 
 Data dan WAL berada di partisi yang terpisah. PGDATA_LINK /var/lib/pgsql/18/data (path bawaan PGDG) adalah symlink ke \$PGDATA /data/postgresql/18/main, dan WAL ada di \$PGWAL /data/pg_wal/18/main. Service postgresql-18 dipakai apa adanya, tidak ada Environment=PGDATA dan tidak ada data_directory. Mount root /data/postgresql dan /data/pg_wal tetap milik root dengan permission 0755, chmod 700 hanya pada \$PGDATA dan \$PGWAL. Berikut adalah command untuk menyiapkan direktori sebelum initdb.
 
@@ -34,7 +34,7 @@ Hasil yang diterima: /data/postgresql dan /data/pg_wal drwxr-xr-x milik root, \$
 
 Catatan: jika rmdir gagal karena /var/lib/pgsql/18/data tidak kosong, maka cek dulu isinya, jangan dihapus paksa.
 
-## Inisialisasi cluster dengan --waldir
+## 3.2 Inisialisasi cluster dengan --waldir
 
 initdb dijalankan terhadap \$PGDATA_LINK (path bawaan service postgresql-18) dengan --waldir=\$PGWAL. Opsi locale dan encoding dari master tidak dipakai, karena collation master tidak disalin. Locale diatur per database saat CREATE DATABASE (ICU und). Berikut adalah command untuk inisialisasi cluster.
 
@@ -51,7 +51,7 @@ Catatan: jika initdb gagal dengan pesan could not access directory ".../pg_wal":
 
 Catatan: di PostgreSQL 18 data checksums aktif secara default, sebaiknya dibiarkan aktif \<ISI: konfirmasi>.
 
-## Setting postgresql.conf
+## 3.3 Setting postgresql.conf
 
 Setting tambahan untuk replikasi ditaruh di file terpisah conf.d/replikasi.conf supaya mudah dicek. Nilai memory diisi per VM sesuai tabel nilai di Tahap Database Berikutnya dan Tabel Nilai. Berikut adalah command untuk membuat file tersebut.
 
@@ -79,7 +79,7 @@ Catatan: pgaudit harus sudah di-preload sebelum restore schema, karena dump mast
 
 Catatan: max_worker_processes = 16 tetap. Jika akses ingin dibatasi, maka listen_addresses bisa diganti dengan IP VM replica \<ISI: IP VM replica, kalau mau dibatasi>.
 
-## Akses ke replica (pg_hba dan firewall)
+## 3.4 Akses ke replica (pg_hba dan firewall)
 
 Replica hanya butuh koneksi keluar ke master, sedangkan akses masuk ke replica dibatasi untuk client yang perlu saja. Berikut adalah command untuk menambahkan rule di pg_hba.conf dan firewall.
 
@@ -92,7 +92,7 @@ firewall-cmd --list-rich-rules
 
 Catatan: ganti \<ISI: ...> dengan subnet yang sesuai sebelum command dijalankan, jika tidak maka PostgreSQL akan gagal membaca pg_hba.conf.
 
-## Start PostgreSQL
+## 3.5 Start PostgreSQL
 
 Berikut adalah command untuk menjalankan service PostgreSQL dan mengecek setting yang sudah aktif.
 

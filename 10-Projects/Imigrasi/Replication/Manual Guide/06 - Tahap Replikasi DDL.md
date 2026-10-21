@@ -5,7 +5,7 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Replikasi DDL
+# 6 Tahap Replikasi DDL
 
 DDL biasa di master dijalankan seperti biasa, tidak dibungkus fungsi apa pun. Event trigger di master menulis tiap DDL ke repl.ddl_queue di transaksi yang sama, lalu replica menjalankan baris kelas auto lewat trigger ENABLE ALWAYS. Skrip dipasang setelah subscription replicating, dengan urutan diantaranya:
 

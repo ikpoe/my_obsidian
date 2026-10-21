@@ -5,13 +5,13 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Monitoring dan Backup (rencana)
+# 9 Tahap Monitoring dan Backup (rencana)
 
-## Monitoring replikasi di Grafana (rencana)
+## 9.1 Monitoring replikasi di Grafana (rencana)
 
 Belum ditulis. Rencana isi: lag slot di master, status subscription di replica, dan alarm CloudWatch. \<ISI: data source dan dashboard Grafana>
 
-## Membuat user monitoring
+## 9.2 Membuat user monitoring
 
 User monitoring dipakai Grafana untuk membaca statistik replikasi, jadi user ini cukup diberi akses baca saja (least privilege). Beberapa hal yang perlu diperhatikan diantaranya:
 
@@ -51,6 +51,6 @@ Catatan: jika pg_stat_replication kosong di replica, maka itu normal karena repl
 
 Catatan: jika database master ada di RDS/Aurora, maka GRANT pg_monitor ke user monitoring dijalankan oleh master user, dan metric storage (FreeStorageSpace, TransactionLogsDiskUsage) diambil dari CloudWatch, bukan dari user monitoring.
 
-## Backup replica ke S3 (rencana)
+## 9.3 Backup replica ke S3 (rencana)
 
 Belum ditulis. \<ISI: tool backup, bucket S3, jadwal dan retensi>

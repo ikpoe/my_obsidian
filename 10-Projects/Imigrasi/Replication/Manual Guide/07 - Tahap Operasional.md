@@ -5,9 +5,9 @@ tags: [replication, postgres, pglogical]
 source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zkwu_8Q67c/edit"
 ---
 
-# Tahap Operasional
+# 7 Tahap Operasional
 
-## Tabel tanpa identity
+## 7.1 Tabel tanpa identity
 
 Beberapa hal yang perlu diperhatikan untuk tabel tanpa identity diantaranya:
 
@@ -15,7 +15,7 @@ Beberapa hal yang perlu diperhatikan untuk tabel tanpa identity diantaranya:
 - Tabel tanpa identity hanya boleh masuk set default_insert_only, dan hanya jika aplikasinya tidak pernah UPDATE atau DELETE
 - Selain itu tabel tidak didaftarkan
 
-## Slot replikasi, max_slot_wal_keep_size dan alarm
+## 7.2 Slot replikasi, max_slot_wal_keep_size dan alarm
 
 Slot pglogical di master menahan WAL selama replica belum menerima data. Jika replica mati lama, maka storage RDS bisa penuh dan master ikut berhenti. Pengamannya diantaranya:
 
@@ -25,7 +25,7 @@ Slot pglogical di master menahan WAL selama replica belum menerima data. Jika re
 - CloudWatch alarm TransactionLogsDiskUsage dan FreeStorageSpace: \<ISI: threshold>
 - Alarm dikirim ke \<ISI: SNS topic / email / channel>
 
-## Failover dan upgrade master
+## 7.3 Failover dan upgrade master
 
 Beberapa hal yang perlu dicek saat failover atau upgrade master diantaranya:
 
@@ -34,7 +34,7 @@ Beberapa hal yang perlu dicek saat failover atau upgrade master diantaranya:
 - Jika slot hilang, maka replica di-sync ulang (lihat bagian berikut)
 - Selalu pakai writer endpoint, bukan reader endpoint
 
-## Replica mati lama
+## 7.4 Replica mati lama
 
 Langkah yang dilakukan tergantung kondisi slot di master, diantaranya:
 
