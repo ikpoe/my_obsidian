@@ -31,7 +31,7 @@ tags: [bpjstk, tor]
 ## 4. Deliverable
 | No  | Deliverable                                       | Isi utama                               | Bab Blueprint                                 |
 | --- | ------------------------------------------------- | --------------------------------------- | --------------------------------------------- |
-| 1   | Blueprint ESDP (Enterprise Service Data Platform) | Dokumen utama                           | Seluruh [[03-Deliverables/01-Blueprint-ESDP]] |
+| 1   | Blueprint ESDP (Enterprise Service Data Platform) | Dokumen utama                           | Seluruh [[01-Blueprint-ESDP]] |
 | 2   | Arsitektur target                                 | Batas peran SoR / MDM / ESDP / Cloudera | [lengkapi]                                    |
 | 3   | Kerangka interoperabilitas                        | Standar dan pola pertukaran data        | [lengkapi]                                    |
 | 4   | Use case 1: Kesiapan infrastruktur ESDP           |                                         | [lengkapi]                                    |

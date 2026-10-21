@@ -21,14 +21,14 @@ tags: [project, bpjstk, data-platform]
 - Kerangka kajian: area pengelolaan data (acuan internal DMBOK, tidak disebut di laporan).
 
 ## Isi
-- [[00-Admin/01-TOR|Ringkasan TOR]]
-- [[03-Deliverables/01-Blueprint-ESDP|Blueprint ESDP (kerangka)]]
-- [[02-Analysis/00-Analisis-Dokumen-BPJS|Analisis dokumen BPJS]]
-- [[05-Research/01-Inventori-Tender-BPJSTK.csv|Inventori tender]]
-- [[02-Analysis/01-Daftar-Framework|Daftar framework]]
-- [[02-Analysis/02-Lensa-Penilaian|Langkah 1 — Lensa penilaian]]
-- [[02-Analysis/11-Master-Data|Sesi 1 — Master & Reference Data]]
-- [[02-Analysis/11-Master-Data-Klarifikasi|Klarifikasi sesi 1]]
+- [[01-TOR|Ringkasan TOR]]
+- [[01-Blueprint-ESDP|Blueprint ESDP (kerangka)]]
+- [[00-Analisis-Dokumen-BPJS|Analisis dokumen BPJS]]
+- [[01-Inventori-Tender-BPJSTK.csv|Inventori tender]]
+- [[01-Daftar-Framework|Daftar framework]]
+- [[02-Lensa-Penilaian|Langkah 1 — Lensa penilaian]]
+- [[11-Master-Data|Sesi 1 — Master & Reference Data]]
+- [[11-Master-Data-Klarifikasi|Klarifikasi sesi 1]]
 
 ## Konvensi Penamaan File
 - Semua file diawali 2 digit: `NN-Nama-File.md` (kecuali `_Index.md`).
