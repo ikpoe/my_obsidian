@@ -11,9 +11,20 @@ Semua perintah di tahap ini dijalankan di VM replica sebagai root.
 
 ## 2.1 Masuk ke VM replica
 
+Gunakan tmux supaya proses yang lama (dump, restore, sinkronisasi awal) tidak putus jika koneksi SSH terputus.
+
 ```bash
+tmux new -s replikasi
 sudo -i
 ```
+
+Jika koneksi terputus, masuk lagi ke VM lalu sambungkan kembali ke sesi yang sama:
+
+```bash
+tmux attach -t replikasi
+```
+
+Catatan: jika tmux belum terpasang, pasang dengan `sudo dnf install -y tmux`. Keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
 
 Catatan: jika sudo ditolak, minta akses sudoers untuk user sendiri ke admin VM. user postgres tidak memerlukan sudoers
 
