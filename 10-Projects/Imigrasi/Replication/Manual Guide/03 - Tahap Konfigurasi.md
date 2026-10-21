@@ -77,7 +77,7 @@ echo "include_dir = 'conf.d'" >> $PGDATA/postgresql.conf
 chown -R postgres:postgres $PGDATA/conf.d
 ```
 
-Catatan: pgaudit harus sudah di-preload sebelum restore schema, karena dump master berisi CREATE EXTENSION pgaudit. Perubahan shared_preload_libraries butuh restart, jadi hanya aman dilakukan sebelum ada subscription.
+Catatan: pgaudit selalu di-preload di replica, walaupun tidak semua database di master memakai pgaudit. Jika master memakai pgaudit, maka dump berisi CREATE EXTENSION pgaudit dan preload ini wajib ada sebelum restore schema. Jika hasil cek extension di 2.7 menunjukkan extension lain yang butuh preload, maka tambahkan juga di shared_preload_libraries. Perubahan shared_preload_libraries butuh restart, jadi hanya aman dilakukan sebelum ada subscription.
 
 Catatan: max_worker_processes = 16 tetap. Jika akses ingin dibatasi, maka listen_addresses bisa diganti dengan IP VM replica \<ISI: IP VM replica, kalau mau dibatasi>.
 
