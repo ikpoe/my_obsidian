@@ -105,6 +105,25 @@ Postgres yang kita gunakan adalah postgres dari repo PGDG, bukan dari AppStream 
 
 ### 2.5.1 PGDG repository
 
+Sebelum memasang paket PG18, pastikan repo AlmaLinux baseos dan appstream sudah aktif. Berikut adalah command untuk mengecek repo yang aktif.
+
+```bash
+dnf repolist
+```
+
+Hasil yang diterima: daftar repo menampilkan baseos dan appstream.
+
+Catatan: jika baseos atau appstream tidak muncul, maka aktifkan dengan command berikut.
+
+```bash
+dnf config-manager --set-enabled baseos appstream
+dnf makecache
+```
+
+Catatan: PG18 membutuhkan paket liburing dari AppStream. Jika dnf makecache gagal, maka kemungkinan VM tidak punya akses ke mirror AlmaLinux, perlu proxy atau mirror internal.
+
+Berikut adalah command untuk memasang repo PGDG.
+
 ```bash
 dnf -qy module disable postgresql
 dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_64/pgdg-redhat-repo-latest.noarch.rpm
