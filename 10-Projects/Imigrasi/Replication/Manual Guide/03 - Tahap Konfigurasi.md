@@ -55,7 +55,27 @@ Catatan: di PostgreSQL 18 data checksums aktif secara default, sebaiknya dibiark
 
 ### 3.3.1 Setting postgresql.conf
 
-Setting tambahan untuk replikasi ditaruh di file terpisah conf.d/replikasi.conf supaya mudah dicek. Nilai memory diisi per VM sesuai tabel nilai di Tahap Database Berikutnya dan Tabel Nilai. Berikut adalah command untuk membuat file tersebut.
+Setting tambahan untuk replikasi ditaruh di file terpisah conf.d/replikasi.conf supaya mudah dicek. Nilai memory dihitung per VM dari total RAM dengan aturan berikut:
+
+- max_connections = 200
+- shared_buffers = 25% RAM
+- effective_cache_size = 75% RAM (hanya petunjuk untuk planner, tidak mengalokasikan memory)
+- maintenance_work_mem = RAM/16, maksimal 2048MB
+
+Berikut adalah command untuk menghitung nilai tersebut dari RAM VM.
+
+```bash
+RAM_MB=$(free -m | awk '/^Mem:/{print $2}')
+echo "RAM: ${RAM_MB} MB"
+echo "max_connections = 200"
+echo "shared_buffers = $((RAM_MB/4))MB"
+echo "effective_cache_size = $((RAM_MB*3/4))MB"
+M=$((RAM_MB/16)); [ $M -gt 2048 ] && M=2048; echo "maintenance_work_mem = ${M}MB"
+```
+
+Hasil yang diterima: nilai untuk keempat parameter. Contoh untuk VM 32 GB: shared_buffers = 8192MB, effective_cache_size = 24576MB, maintenance_work_mem = 2048MB.
+
+Berikut adalah command untuk membuat file tersebut, ganti \<SHARED_BUFFERS>, \<EFFECTIVE_CACHE_SIZE> dan \<MAINTENANCE_WORK_MEM> dengan hasil command di atas.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
@@ -68,10 +88,10 @@ max_worker_processes = 16
 max_replication_slots = 10
 max_wal_senders = 10
 track_commit_timestamp = on
-max_connections = <ISI: per VM>
-shared_buffers = <ISI: per VM>
-effective_cache_size = <ISI: per VM>
-maintenance_work_mem = <ISI: per VM>
+max_connections = 200
+shared_buffers = <SHARED_BUFFERS>
+effective_cache_size = <EFFECTIVE_CACHE_SIZE>
+maintenance_work_mem = <MAINTENANCE_WORK_MEM>
 EOF
 echo "include_dir = 'conf.d'" >> $PGDATA/postgresql.conf
 chown -R postgres:postgres $PGDATA/conf.d
