@@ -24,7 +24,7 @@ Jika koneksi terputus, masuk lagi ke VM lalu sambungkan kembali ke sesi yang sam
 tmux attach -t replikasi
 ```
 
-Catatan: jika tmux belum terpasang, pasang dengan `sudo dnf install -y tmux`. Keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
+Catatan: jika tmux belum terpasang, pasang dengan `sudo dnf install -y tmux`. tmux berasal dari repo baseos/appstream yang sama, jadi jika install tmux gagal, maka jalankan dulu cek aktivasi repo di 2.5.1. Keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
 
 Catatan: jika sudo ditolak, minta akses sudoers untuk user sendiri ke admin VM. user postgres tidak memerlukan sudoers
 
