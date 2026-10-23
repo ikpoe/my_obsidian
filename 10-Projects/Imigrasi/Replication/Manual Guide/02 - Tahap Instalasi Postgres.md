@@ -137,6 +137,8 @@ dnf install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-9-x86_6
 dnf install -y postgresql18-server postgresql18-contrib pglogical_18-2.4.6 pgaudit_18 policycoreutils-python-utils
 ```
 
+Catatan: paket policycoreutils-python-utils menyediakan command semanage, yang dipakai di 3.1 untuk memberi label SELinux postgresql_db_t.
+
 ### 2.5.3 pglogical, pinned version
 
 ```bash
