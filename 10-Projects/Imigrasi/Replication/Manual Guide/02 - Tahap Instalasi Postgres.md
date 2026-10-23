@@ -122,6 +122,8 @@ dnf makecache
 
 Catatan: PG18 membutuhkan paket liburing dari AppStream. Jika dnf makecache gagal, maka kemungkinan VM tidak punya akses ke mirror AlmaLinux, perlu proxy atau mirror internal.
 
+Catatan: jika muncul pesan subscription-manager "This system is not registered with an entitlement server", maka pesan tersebut bisa diabaikan karena di AlmaLinux tidak dipakai.
+
 Berikut adalah command untuk memasang repo PGDG.
 
 ```bash
