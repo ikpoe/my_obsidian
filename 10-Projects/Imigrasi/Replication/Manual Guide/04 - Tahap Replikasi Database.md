@@ -28,19 +28,36 @@ sudo -u postgres $PGBIN/psql "$MASTER_DSN"
 Berikut adalah command untuk mengecek identity semua tabel di semua schema di master.
 
 ```sql
-SELECT n.nspname, c.relname,
+SELECT n.nspname AS schema,
+  c.relname AS table_name,
+  EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') AS ada_pk,
+  EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisunique AND i.indisvalid AND NOT i.indisprimary) AS ada_unique_index,
+  CASE c.relreplident
+    WHEN 'd' THEN 'default'
+    WHEN 'i' THEN 'index'
+    WHEN 'f' THEN 'full'
+    WHEN 'n' THEN 'nothing'
+  END AS replica_identity,
   CASE
-    WHEN c.relreplident = 'f' THEN 'full_tidak_didaftarkan'
-    WHEN c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid) THEN 'unique_index'
-    WHEN c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') THEN 'pk'
-    ELSE 'tanpa_identity'
-  END AS identity
+    WHEN c.relreplident = 'f' THEN 'tidak (REPLICA IDENTITY FULL)'
+    WHEN c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') THEN 'ya (default)'
+    WHEN c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid) THEN 'ya (default)'
+    ELSE 'cek (tanpa identity: default_insert_only atau tidak)'
+  END AS didaftarkan
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
 WHERE c.relkind IN ('r','p')
   AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical')
   AND n.nspname NOT LIKE 'pg_toast%'
-ORDER BY 3, 1, 2;
+ORDER BY didaftarkan, 1, 2;
 ```
+
+Hasil yang diterima diantaranya:
+
+- ada_pk dan ada_unique_index bernilai t atau f
+- replica_identity berisi default, index, full, atau nothing
+- didaftarkan berisi ya (default) untuk tabel yang masuk set default di 4.3, tidak untuk REPLICA IDENTITY FULL, dan cek untuk tabel tanpa identity
+
+Catatan: jika ada_pk = f tapi ada_unique_index = t, maka tabel bisa dibuat layak dengan ALTER TABLE \<TABLE> REPLICA IDENTITY USING INDEX \<UNIQUE_INDEX>, asalkan semua kolom index tersebut NOT NULL.
 
 Keputusan untuk tabel tanpa identity: \<ISI: daftar tabel tanpa identity dan keputusannya>.
 
