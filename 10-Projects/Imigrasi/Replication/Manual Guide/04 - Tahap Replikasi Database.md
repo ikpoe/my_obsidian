@@ -290,7 +290,7 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
-Berikut adalah command untuk mengecek progres copy di replica.
+Berikut adalah command untuk mengecek progres copy di **replica**.
 
 ```sql
 SELECT subscription_name, status FROM pglogical.show_subscription_status();
@@ -300,7 +300,7 @@ SELECT relid::regclass AS table_name, pg_size_pretty(bytes_processed) AS copied,
 
 Hasil yang diterima: copied dan rows_copied terus naik.
 
-Berikut adalah command untuk masuk ke psql di master.
+Berikut adalah command untuk masuk ke psql di **master**.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
@@ -368,4 +368,9 @@ Catatan: jika CREATE INDEX CONCURRENTLY gagal, maka index tertinggal INVALID. Ja
 
 ## 4.14 Clean up, rotate credentials
 
-Catatan: <ISI: langkah ini ada di diagram, isi belum ditulis>
+Setelah replikasi berjalan (status replicating dan semua index terpasang), rekomendasi clean up diantaranya:
+
+- Hapus file kerja di /var/lib/pgsql (pre_\<SOURCE_ID>.sql, post_\<SOURCE_ID>.sql, pk_\<SOURCE_ID>.sql, idx_\<SOURCE_ID>.sql) atau pindahkan ke lokasi arsip.
+- Ganti (rotate) password user replication_backup di master, lalu update /var/lib/pgsql/.pgpass di replica. Subscription tetap berjalan karena koneksi baru membaca .pgpass.
+- Pastikan password tidak tersimpan di file env, history shell, atau DSN subscription.
+- Keluar dari sesi tmux replikasi jika sudah tidak dipakai.
