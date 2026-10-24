@@ -11,6 +11,31 @@ Semua perintah di tahap ini dijalankan di VM replica sebagai root.
 
 ## 2.1 Masuk ke VM replica
 
+Sebelum memasang tmux, pastikan repo AlmaLinux baseos dan appstream sudah aktif. Berikut adalah command untuk mengecek status repo.
+
+```bash
+sudo dnf repolist all
+```
+
+Hasil yang diterima: baseos dan appstream berstatus enabled.
+
+Catatan: jika baseos dan appstream masih disabled, maka aktifkan dengan command berikut:
+
+```bash
+sudo dnf config-manager --set-enabled baseos appstream
+sudo dnf makecache
+```
+
+Catatan: PG18 membutuhkan paket liburing dari AppStream. Jika dnf makecache gagal, maka kemungkinan VM tidak punya akses ke mirror AlmaLinux, perlu proxy atau mirror internal.
+
+Catatan: jika muncul pesan subscription-manager "This system is not registered with an entitlement server", maka pesan tersebut bisa diabaikan karena di AlmaLinux tidak dipakai.
+
+Berikut adalah command untuk memasang tmux.
+
+```bash
+sudo dnf install -y tmux
+```
+
 Gunakan tmux supaya proses yang lama (dump, restore, sinkronisasi awal) tidak putus jika koneksi SSH terputus.
 
 ```bash
@@ -24,7 +49,7 @@ Jika koneksi terputus, masuk lagi ke VM lalu sambungkan kembali ke sesi yang sam
 tmux attach -t replikasi
 ```
 
-Catatan: jika tmux belum terpasang, pasang dengan `sudo dnf install -y tmux`. tmux berasal dari repo baseos/appstream yang sama, jadi jika install tmux gagal, maka jalankan dulu cek aktivasi repo di 2.5.1. Keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
+Catatan: keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
 
 Catatan: jika sudo ditolak, minta akses sudoers untuk user sendiri ke admin VM. user postgres tidak memerlukan sudoers
 
@@ -105,24 +130,7 @@ Postgres yang kita gunakan adalah postgres dari repo PGDG, bukan dari AppStream 
 
 ### 2.5.1 PGDG repository
 
-Sebelum memasang paket PG18, pastikan repo AlmaLinux baseos dan appstream sudah aktif. Berikut adalah command untuk mengecek repo yang aktif.
-
-```bash
-dnf repolist
-```
-
-Hasil yang diterima: daftar repo menampilkan baseos dan appstream.
-
-Catatan: jika baseos atau appstream tidak muncul, maka aktifkan dengan command berikut.
-
-```bash
-dnf config-manager --set-enabled baseos appstream
-dnf makecache
-```
-
-Catatan: PG18 membutuhkan paket liburing dari AppStream. Jika dnf makecache gagal, maka kemungkinan VM tidak punya akses ke mirror AlmaLinux, perlu proxy atau mirror internal.
-
-Catatan: jika muncul pesan subscription-manager "This system is not registered with an entitlement server", maka pesan tersebut bisa diabaikan karena di AlmaLinux tidak dipakai.
+Catatan: repo baseos dan appstream harus sudah aktif dari langkah 2.1, karena PG18 membutuhkan paket liburing dari AppStream.
 
 Berikut adalah command untuk memasang repo PGDG.
 
