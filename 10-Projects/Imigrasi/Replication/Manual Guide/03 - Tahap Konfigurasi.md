@@ -129,8 +129,19 @@ Catatan: jika service gagal start, maka cek journalctl -u postgresql-18 dan log 
 
 ### 3.4.2 Verify
 
+Berikut adalah command untuk masuk ke psql di replica.
+
 ```bash
-sudo -u postgres $PGBIN/psql -c "show shared_preload_libraries;" -c "show max_worker_processes;" -c "show data_checksums;"
+sudo -u postgres $PGBIN/psql
+```
+
+Berikut adalah command yang dijalankan di dalam sesi psql tersebut.
+
+```sql
+show shared_preload_libraries;
+show max_worker_processes;
+show data_checksums;
+\q
 ```
 
 Hasil yang diterima: shared_preload_libraries pglogical,pg_stat_statements,pgaudit, max_worker_processes 16 dan data_checksums on.
