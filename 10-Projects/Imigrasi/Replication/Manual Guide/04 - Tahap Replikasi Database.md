@@ -62,7 +62,15 @@ Catatan: jika ada_pk = f tapi ada_unique_index = t, maka tabel bisa dibuat layak
 
 ### 4.2.1 CREATE EXTENSION pglogical
 
-Extension pglogical dan provider node dibuat di master. DSN provider hanya host=\<SOURCE_HOST> port=5432 dbname=\<SOURCE_DB>, tanpa user dan tanpa password. Berikut adalah command untuk membuat provider node, dijalankan di sesi psql master yang sama.
+Extension pglogical dan provider node dibuat di master. DSN provider hanya host=\<SOURCE_HOST> port=5432 dbname=\<SOURCE_DB>, tanpa user dan tanpa password. Sebelum membuat extension, cek dulu versi pglogical yang tersedia di master. Versi ini harus sama dengan pglogical yang terpasang di replica (2.5.3).
+
+```sql
+SELECT name, default_version, installed_version FROM pg_available_extensions WHERE name = 'pglogical';
+```
+
+Hasil yang diterima: default_version sama dengan versi pglogical di replica.
+
+Berikut adalah command untuk membuat provider node, dijalankan di sesi psql master yang sama.
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS pglogical;

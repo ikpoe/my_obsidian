@@ -186,7 +186,6 @@ select version();
 show wal_level;
 show rds.logical_replication;
 show shared_preload_libraries;
-select name, default_version, installed_version from pg_available_extensions where name = 'pglogical';
 select extname, extversion from pg_extension order by 1;
 \q
 ```
@@ -196,7 +195,6 @@ Hasil yang diterima diantaranya:
 - wal_level = logical
 - rds.logical_replication = on
 - shared_preload_libraries memuat pglogical
-- pglogical tersedia di master, default_version menunjukkan versi pglogical yang harus sama dengan di replica (2.5.3)
 - daftar extension yang terpasang di \<SOURCE_DB> master
 
 Catatan: tidak semua database di master memakai extension yang sama. Bandingkan daftar extension master dengan paket yang terpasang di replica (2.5.2 dan 2.5.3). Extension bawaan contrib (contoh pgcrypto, uuid-ossp, pg_stat_statements) tidak perlu paket tambahan. Extension di luar contrib (contoh postgis, pg_partman) harus dipasang dulu paketnya dengan dnf install -y \<nama paket>_18, karena restore schema akan gagal di CREATE EXTENSION jika paketnya tidak ada. pglogical di master boleh belum ada di daftar ini, karena baru dibuat di 4.2.1. Extension di master yang perlu ditambahkan ke replica: \<ISI: daftar extension tambahan, kosongkan kalau tidak ada>.
