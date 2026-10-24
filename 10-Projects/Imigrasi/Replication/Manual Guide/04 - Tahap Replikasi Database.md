@@ -7,7 +7,11 @@ source: "https://docs.google.com/document/d/1gQJbl6Z1EwsavDAqmKDYl4HIlifHwVF04zk
  
 # 4 Tahap Replikasi Database
 
-Tahap ini diulang untuk setiap database yang direplikasi. Setiap database punya env file sendiri /root/replikasi/\<SOURCE_ID>.env dengan value dari tabel nilai. \$MASTER_DSN hanya dipakai untuk sesi psql admin ke master.
+Tahap ini diulang untuk setiap database yang direplikasi. Setiap database punya env file sendiri /root/replikasi/\<SOURCE_ID>.env dengan value dari tabel nilai. \$MASTER_DSN dipakai untuk sesi psql admin ke master dan sebagai provider_dsn di 4.10.3.
+
+Variable di env file dibaca di dalam sesi psql dengan \getenv \<nama_psql> \<NAMA_ENV>, lalu dipakai sebagai :'nama_psql' untuk nilai teks atau :"nama_psql" untuk nama objek. Karena itu psql dijalankan dengan sudo -E supaya env dari bash ikut terbawa ke user postgres.
+
+Catatan: jika \echo menampilkan nilai kosong, maka env file belum di-source atau psql dijalankan tanpa sudo -E. Keluar dari psql, jalankan source /root/replikasi/\<SOURCE_ID>.env, lalu login lagi.
 
 ## 4.1 Cek kelayakan tabel di master
 
@@ -21,7 +25,7 @@ Berikut adalah command untuk masuk ke psql di master. Sesi ini tetap dibuka samp
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql "$MASTER_DSN"
+sudo -E -u postgres $PGBIN/psql "$MASTER_DSN"
 ```
 
 Berikut adalah command untuk mengecek identity semua tabel di semua schema di master.
@@ -82,7 +86,12 @@ Hasil yang diterima: extversion 2.4.6.
 ### 4.2.2 Provider node and sets
 
 ```sql
-SELECT pglogical.create_node(node_name := '<PROVIDER_NODE>', dsn := 'host=<SOURCE_HOST> port=5432 dbname=<SOURCE_DB>');
+\getenv provider_node PROVIDER_NODE
+\getenv source_host SOURCE_HOST
+\getenv source_port SOURCE_PORT
+\getenv source_db SOURCE_DB
+\echo :provider_node :source_host :source_port :source_db
+SELECT pglogical.create_node(node_name := :'provider_node', dsn := 'host=' || :'source_host' || ' port=' || :'source_port' || ' dbname=' || :'source_db');
 ```
 
 Catatan: jika provider node sudah ada (mis. saat sync ulang), maka create_node tidak dijalankan lagi.
@@ -149,19 +158,22 @@ Catatan: jika tabel_layak_belum_didaftarkan lebih dari 0, maka jalankan lagi que
 
 ## 4.5 Buat database Replika (ICU und)
 
-Database tujuan dibuat kosong dari template0 dengan locale ICU und. Collation master tidak disalin, dan ICU und berlaku untuk semua database. Ganti \<DB_NAME> dengan value TARGET_DB. Berikut adalah command untuk masuk ke psql di replica.
+Database tujuan dibuat kosong dari template0 dengan locale ICU und. Collation master tidak disalin, dan ICU und berlaku untuk semua database. Nama database diambil dari env TARGET_DB. Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
-sudo -u postgres $PGBIN/psql
+source /root/replikasi/<SOURCE_ID>.env
+sudo -E -u postgres $PGBIN/psql
 ```
 
 Berikut adalah command untuk membuat database tujuan.
 
 ```sql
-CREATE DATABASE <DB_NAME> TEMPLATE template0 ENCODING 'UTF8'
+\getenv target_db TARGET_DB
+\echo :target_db
+CREATE DATABASE :"target_db" TEMPLATE template0 ENCODING 'UTF8'
   LOCALE_PROVIDER icu ICU_LOCALE 'und'
   LC_COLLATE 'C.UTF-8' LC_CTYPE 'C.UTF-8';
-SELECT datlocprovider, datlocale FROM pg_database WHERE datname = '<DB_NAME>';
+SELECT datlocprovider, datlocale FROM pg_database WHERE datname = :'target_db';
 \q
 ```
 
@@ -205,15 +217,19 @@ Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB
+sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
 Berikut adalah command untuk restore pre-data lalu primary key di sesi psql replica tersebut.
 
 ```sql
 \set ON_ERROR_STOP on
-\i /var/lib/pgsql/pre_<SOURCE_ID>.sql
-\i /var/lib/pgsql/pk_<SOURCE_ID>.sql
+\getenv source_id SOURCE_ID
+\set pre_file /var/lib/pgsql/pre_ :source_id .sql
+\set pk_file /var/lib/pgsql/pk_ :source_id .sql
+\echo :pre_file :pk_file
+\i :pre_file
+\i :pk_file
 \q
 ```
 
@@ -229,7 +245,7 @@ Sebelum subscription dibuat, sesi psql harus benar-benar di replica. Jika sesi t
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB
+sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
 Berikut adalah command untuk mengecek sesi.
@@ -256,17 +272,23 @@ Hasil yang diterima: extversion 2.4.6, sama dengan di master.
 ### 4.10.2 Subscriber node
 
 ```sql
-SELECT pglogical.create_node(node_name := '<SUBSCRIBER_NODE>', dsn := 'host=/var/run/postgresql port=5432 dbname=<TARGET_DB>');
+\getenv subscriber_node SUBSCRIBER_NODE
+\getenv target_db TARGET_DB
+\echo :subscriber_node :target_db
+SELECT pglogical.create_node(node_name := :'subscriber_node', dsn := 'host=/var/run/postgresql port=5432 dbname=' || :'target_db');
 ```
 
 ### 4.10.3 create_subscription
 
-Ganti \<MASTER_DSN> dengan nilai MASTER_DSN dari env file.
+Nama subscription dan DSN master diambil dari env SUBSCRIPTION dan MASTER_DSN.
 
 ```sql
+\getenv subscription SUBSCRIPTION
+\getenv master_dsn MASTER_DSN
+\echo :subscription :master_dsn
 SELECT pglogical.create_subscription(
-  subscription_name := '<SUBSCRIPTION>',
-  provider_dsn := '<MASTER_DSN>',
+  subscription_name := :'subscription',
+  provider_dsn := :'master_dsn',
   replication_sets := ARRAY['default', 'default_insert_only'],
   synchronize_structure := false,
   synchronize_data := true,
@@ -291,7 +313,7 @@ Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB
+sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
 Berikut adalah command untuk mengecek progres copy di **replica**.
@@ -308,7 +330,7 @@ Berikut adalah command untuk masuk ke psql di **master**.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql "$MASTER_DSN"
+sudo -E -u postgres $PGBIN/psql "$MASTER_DSN"
 ```
 
 Berikut adalah command untuk memantau WAL yang ditahan slot di master selama copy.
@@ -325,7 +347,7 @@ Copy dianggap selesai jika status replicating dan semua sync_status = r. Berikut
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB
+sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
 Berikut adalah command untuk mengecek status subscription.
@@ -356,7 +378,7 @@ Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB
+sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
 Berikut adalah command untuk menjalankan file index lalu mengecek index yang INVALID.
