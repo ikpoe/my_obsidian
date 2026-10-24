@@ -83,7 +83,7 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -u postgres $PGBIN/dropdb $TARGET_DB
 ```
 
-Setelah itu ulangi Tahap Replikasi Database mulai dari Buat database tujuan (ICU und), dengan pemisahan pre-data dan post-data. Provider node yang sudah ada di master tidak dibuat ulang.
+Setelah itu ulangi Tahap Replikasi Database mulai dari Buat database tujuan (libc en_US.UTF-8), dengan pemisahan pre-data dan post-data. Provider node yang sudah ada di master tidak dibuat ulang.
 
 ## 7.5 Menambahkan tabel baru ke replikasi
 

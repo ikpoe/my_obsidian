@@ -36,7 +36,7 @@ Catatan: jika rmdir gagal karena /var/lib/pgsql/18/data tidak kosong, maka cek d
 
 ## 3.2 Inisialisasi cluster dengan --waldir
 
-initdb dijalankan terhadap \$PGDATA_LINK (path bawaan service postgresql-18) dengan --waldir=\$PGWAL. Opsi locale dan encoding dari master tidak dipakai, karena collation master tidak disalin. Locale diatur per database saat CREATE DATABASE (ICU und). Berikut adalah command untuk inisialisasi cluster.
+initdb dijalankan terhadap \$PGDATA_LINK (path bawaan service postgresql-18) dengan --waldir=\$PGWAL. Locale cluster tidak diatur di initdb. Locale diatur per database saat CREATE DATABASE, disamakan dengan master (libc en_US.UTF-8). Berikut adalah command untuk inisialisasi cluster.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
@@ -48,8 +48,6 @@ ls -ld "$PGDATA_LINK/pg_wal"
 Hasil yang diterima: \$PGDATA/PG_VERSION ada di disk data (/data/postgresql/18/main/PG_VERSION) dan \$PGDATA_LINK/pg_wal adalah symlink ke /data/pg_wal/18/main.
 
 Catatan: jika initdb gagal dengan pesan could not access directory ".../pg_wal": Permission denied, maka mount root masih 0700. Jalankan chmod 755 /data/postgresql /data/pg_wal (tetap milik root), pastikan \$PGDATA dan \$PGWAL kosong, lalu ulangi initdb.
-
-Catatan: di PostgreSQL 18 data checksums aktif secara default, sebaiknya dibiarkan aktif \<ISI: konfirmasi>.
 
 ## 3.3 postgresql.conf, pg_hba.conf
 

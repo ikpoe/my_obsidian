@@ -156,9 +156,9 @@ Hasil yang diterima:
 
 Catatan: jika tabel_layak_belum_didaftarkan lebih dari 0, maka jalankan lagi query di 4.3.
 
-## 4.5 Buat database Replika (ICU und)
+## 4.5 Buat database Replika (libc en_US.UTF-8)
 
-Database tujuan dibuat kosong dari template0 dengan locale ICU und. Collation master tidak disalin, dan ICU und berlaku untuk semua database. Nama database diambil dari env TARGET_DB. Berikut adalah command untuk masuk ke psql di replica.
+Database tujuan dibuat kosong dari template0 dengan locale yang sama dengan master, yaitu provider libc dengan Collate dan Ctype en_US.UTF-8. Cek locale database di master dengan \l, kolom Locale memang kosong untuk provider libc. Nama database diambil dari env TARGET_DB. Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
@@ -171,15 +171,19 @@ Berikut adalah command untuk membuat database tujuan.
 \getenv target_db TARGET_DB
 \echo :target_db
 CREATE DATABASE :"target_db" TEMPLATE template0 ENCODING 'UTF8'
-  LOCALE_PROVIDER icu ICU_LOCALE 'und'
-  LC_COLLATE 'C.UTF-8' LC_CTYPE 'C.UTF-8';
-SELECT datlocprovider, datlocale FROM pg_database WHERE datname = :'target_db';
+  LOCALE_PROVIDER libc
+  LC_COLLATE 'en_US.UTF-8' LC_CTYPE 'en_US.UTF-8';
+SELECT datlocprovider, datcollate, datctype FROM pg_database WHERE datname = :'target_db';
 \q
 ```
 
-Hasil yang diterima: i | und.
+Hasil yang diterima: c | en_US.UTF-8 | en_US.UTF-8.
 
-Catatan: locale tidak bisa diubah setelah ada objek di database. Jika hasilnya bukan i | und, maka drop database dan buat ulang sebelum restore schema.
+Catatan: locale tidak bisa diubah setelah ada objek di database. Jika hasilnya bukan c | en_US.UTF-8 | en_US.UTF-8, maka drop database dan buat ulang sebelum restore schema.
+
+Catatan: jika CREATE DATABASE gagal dengan invalid locale name "en_US.UTF-8", maka install dulu glibc-langpack-en dengan dnf install -y glibc-langpack-en, lalu ulangi.
+
+Catatan: collation libc mengikuti versi glibc OS. Jika glibc di VM di-upgrade major (mis. upgrade AlmaLinux major), maka jalankan REINDEX untuk index bertipe text.
 
 ## 4.6 Dump struktur pre-data dan post-data
 
@@ -233,7 +237,7 @@ Berikut adalah command untuk restore pre-data lalu primary key di sesi psql repl
 \q
 ```
 
-Catatan: jika restore error karena extension khusus RDS (mis. aws_s3, aws_commons), maka drop database, buat ulang dengan ICU und, tambahkan --exclude-extension=\<nama extension> di pg_dump, lalu ulangi.
+Catatan: jika restore error karena extension khusus RDS (mis. aws_s3, aws_commons), maka drop database, buat ulang dengan libc en_US.UTF-8, tambahkan --exclude-extension=\<nama extension> di pg_dump, lalu ulangi.
 
 ## 4.8 Roles from the master
 
