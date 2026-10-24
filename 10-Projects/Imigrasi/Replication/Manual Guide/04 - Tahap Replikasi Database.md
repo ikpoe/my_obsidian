@@ -25,7 +25,7 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -u postgres $PGBIN/psql "$MASTER_DSN"
 ```
 
-Berikut adalah command untuk mengecek identity setiap tabel di master. Ganti \<REPL_SCHEMAS> dengan daftar schema yang direplikasi, contoh 'public','app'.
+Berikut adalah command untuk mengecek identity semua tabel di semua schema di master.
 
 ```sql
 SELECT n.nspname, c.relname,
@@ -36,7 +36,9 @@ SELECT n.nspname, c.relname,
     ELSE 'tanpa_identity'
   END AS identity
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
-WHERE c.relkind = 'r' AND n.nspname IN (<REPL_SCHEMAS>)
+WHERE c.relkind IN ('r','p')
+  AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical')
+  AND n.nspname NOT LIKE 'pg_toast%'
 ORDER BY 3, 1, 2;
 ```
 
