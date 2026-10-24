@@ -172,17 +172,23 @@ Di vi ganti GANTI_PASSWORD dengan \<ISI: password replication_backup>. Kalau pas
 
 ## 2.7 Tes login ke master
 
-Berikut adalah command untuk tes login ke Master Database memakai user replication_backup dan password dari file .pgpass.
+Berikut adalah command untuk tes login ke Master Database memakai user replication_backup dan password dari file .pgpass, sekaligus masuk ke psql di master.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql "$MASTER_DSN" \
-  -c "select version();" \
-  -c "show wal_level;" \
-  -c "show rds.logical_replication;" \
-  -c "show shared_preload_libraries;" \
-  -c "select name, default_version, installed_version from pg_available_extensions where name = 'pglogical';" \
-  -c "select extname, extversion from pg_extension order by 1;"
+sudo -u postgres $PGBIN/psql "$MASTER_DSN"
+```
+
+Berikut adalah command yang dijalankan di dalam sesi psql master tersebut.
+
+```sql
+select version();
+show wal_level;
+show rds.logical_replication;
+show shared_preload_libraries;
+select name, default_version, installed_version from pg_available_extensions where name = 'pglogical';
+select extname, extversion from pg_extension order by 1;
+\q
 ```
 
 Hasil yang diterima diantaranya:
