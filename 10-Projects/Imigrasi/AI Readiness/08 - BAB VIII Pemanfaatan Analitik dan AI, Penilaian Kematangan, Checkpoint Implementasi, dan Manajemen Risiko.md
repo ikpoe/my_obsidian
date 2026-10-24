@@ -54,7 +54,7 @@ Kerangka penilaian kematangan berikut diusulkan sebagai alat untuk mengukur kesi
 
 Uraian setiap tingkat bersifat usulan awal dan perlu disepakati dalam kalibrasi bersama unit terkait. Keterkaitan antara lima dimensi dan lima tingkat kapabilitas tersebut ditunjukkan pada Gambar 4.
 
-![[Gambar 4 - Kerangka Penilaian Kematangan.png]]
+![[Gambar 4 - Kerangka Penilaian Kematangan.excalidraw]]
 
 *Gambar 4. Kerangka Penilaian Kematangan Tata Kelola Data yang Diusulkan, yang terdiri atas lima dimensi dan lima tingkat kapabilitas SPBE. Sumber: diolah dari DAMA-DMBOK dan PermenPANRB Nomor 59 Tahun 2020.*
 
@@ -74,7 +74,7 @@ Uraian setiap tingkat bersifat usulan awal dan perlu disepakati dalam kalibrasi 
 | **3: AI terbatas boleh masuk** | • Kriteria kelayakan AI dipakai untuk setiap usulan baru.<br>• Ada 0–2 *use case* AI/BI terbatas yang memenuhi kriteria kelayakan. Jumlahnya dapat nol apabila belum ada yang siap; yang terpenting kriteria kelayakannya diterapkan.<br>• *Backlog* *use case* AI terpisah dari yang sudah disetujui. |
 | **4: Perluasan terkendali** | • Domain tambahan masuk register.<br>• SOP gelombang 2 mulai ditulis sesuai kebutuhan.<br>• Pemetaan ke indikator Renstra/SPBE dilengkapi bila dokumen resminya sudah tersedia.<br>• Kebijakan dan RACI ditinjau ulang. |
 
-![[Gambar 5 - Alur Checkpoint Implementasi.png]]
+![[Gambar 5 - Alur Checkpoint Implementasi.excalidraw]]
 
 *Gambar 5. Alur Checkpoint Implementasi (Urutan Syarat, Bukan Jadwal Kalender). Sumber: hasil olahan kajian.*
 

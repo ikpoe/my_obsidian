@@ -33,7 +33,7 @@ Sistem Big Data Imigrasi terdiri atas platform sinkronisasi data dari banyak sat
 
 Secara konsep, pemisahan beban transaksi dari beban analitik sudah dijalankan. Beban transaksi harian, seperti permohonan paspor, dilayani oleh sistem *online transaction processing* (OLTP). Namun, dari sudut pandang tata kelola data modern, katalog, keamanan berbasis kebijakan, pemantauan kualitas, dan *lineage* belum sebanding dengan volume ETL. Perbandingan data antarsiklus untuk mendeteksi anomali dan menelusuri kebenaran angka juga masih menjadi tantangan. Gambaran umum arsitektur data saat ini secara konseptual ditunjukkan pada Gambar 1.
 
-![[Gambar 1 - Arsitektur Data Saat Ini.png]]
+![[Gambar 1 - Arsitektur Data Saat Ini.excalidraw]]
 
 *Gambar 1. Gambaran Umum Arsitektur Data Saat Ini (Konseptual). SISTIK dikelola oleh DITTIK, aplikasi layanan dan Big Data berada di AWS, dan PUSDAKIM berfungsi sebagai lokasi DR. Sumber: hasil olahan kajian.*
 
@@ -51,7 +51,7 @@ Berdasarkan gambaran kondisi di atas, permasalahan utama tata kelola data di lin
 
 Di samping itu, infrastruktur yang tersebar di lebih dari satu lokasi, yaitu pusat data utama dan lokasi DR, serta banyaknya interkoneksi eksternal memperbesar kebutuhan akan *guardrail* PDP dan keamanan serta kejelasan kepemilikan data. Umpan balik ke operasional juga masih lemah karena hasil analitik belum selalu kembali ke proses layanan, sebagaimana terlihat pada kasus *overstay*. Hubungan antara akar masalah, masalah inti, dan akibatnya dipetakan pada Gambar 2.
 
-![[Gambar 2 - Peta Permasalahan.png]]
+![[Gambar 2 - Peta Permasalahan.excalidraw]]
 
 *Gambar 2. Peta Permasalahan Tata Kelola Data. Sumber: hasil olahan kajian.*
 

@@ -32,7 +32,7 @@ Contoh RACI untuk domain laporan prioritas disajikan pada tabel berikut. Nama un
 
 Keterangan: tanda \* menunjukkan bahwa peran "A" pada kolom platform teknis hanya berlaku untuk operasional teknis, sedangkan tanggung jawab akhir atas makna angka tetap berada pada pemilik data. R = mengerjakan; A = bertanggung jawab akhir; C = dimintai pendapat; I = diberi tahu. Templat ini bersifat awal dan akan diperdalam setelah diuji pada domain pilot. Ringkasan pembagian peran ditunjukkan pada Gambar 3.
 
-![[Gambar 3 - Peran dan RACI Ringkas.png]]
+![[Gambar 3 - Peran dan RACI Ringkas.excalidraw]]
 
 *Gambar 3. Peran Tata Kelola Data dan RACI Ringkas (Templat). Sumber: hasil olahan kajian.*
 
