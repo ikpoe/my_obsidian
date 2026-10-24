@@ -15,8 +15,7 @@ Tabel dicek dulu sebelum didaftarkan ke replication set. Sebisa mungkin semua ta
 
 - Ada primary key, atau replica identity unique index yang valid: masuk set default
 - REPLICA IDENTITY FULL: tidak didaftarkan, karena pglogical tidak bisa mereplikasi tabel dengan REPLICA IDENTITY FULL
-- Tanpa identity: masuk set default_insert_only, hanya jika aplikasinya tidak pernah UPDATE atau DELETE
-- Tanpa identity dan aplikasinya UPDATE atau DELETE: tidak didaftarkan
+- Tanpa identity (tanpa PK dan tanpa replica identity index): tidak didaftarkan
 
 Berikut adalah command untuk masuk ke psql di master. Sesi ini tetap dibuka sampai selesai 4.3.
 
@@ -42,7 +41,7 @@ SELECT n.nspname AS schema,
     WHEN c.relreplident = 'f' THEN 'tidak (REPLICA IDENTITY FULL)'
     WHEN c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') THEN 'ya (default)'
     WHEN c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid) THEN 'ya (default)'
-    ELSE 'cek (tanpa identity: default_insert_only atau tidak)'
+    ELSE 'tidak (tanpa identity)'
   END AS didaftarkan
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
 WHERE c.relkind IN ('r','p')
@@ -55,11 +54,9 @@ Hasil yang diterima diantaranya:
 
 - ada_pk dan ada_unique_index bernilai t atau f
 - replica_identity berisi default, index, full, atau nothing
-- didaftarkan berisi ya (default) untuk tabel yang masuk set default di 4.3, tidak untuk REPLICA IDENTITY FULL, dan cek untuk tabel tanpa identity
+- didaftarkan berisi ya (default) untuk tabel yang masuk set default di 4.3, dan tidak untuk REPLICA IDENTITY FULL atau tabel tanpa identity
 
 Catatan: jika ada_pk = f tapi ada_unique_index = t, maka tabel bisa dibuat layak dengan ALTER TABLE \<TABLE> REPLICA IDENTITY USING INDEX \<UNIQUE_INDEX>, asalkan semua kolom index tersebut NOT NULL.
-
-Keputusan untuk tabel tanpa identity: \<ISI: daftar tabel tanpa identity dan keputusannya>.
 
 ## 4.2 Buat provider node di master
 
