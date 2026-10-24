@@ -13,12 +13,34 @@ DDL biasa di master dijalankan seperti biasa, tidak dibungkus fungsi apa pun. Ev
 - Lalu master: ddl_capture.sql dari role platform.postgres.provider (files/ddl_capture.sql)
 - Jika urutannya kebalik, maka baris antrean tiba sebelum tabel ada di replica dan subscription berhenti
 
-Berikut adalah command untuk memasang kedua skrip.
+Berikut adalah command untuk masuk ke psql di replica.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql -d $TARGET_DB -v ON_ERROR_STOP=1 -f <ISI: path files/ddl_apply.sql dari role platform.postgres.subscription>
-sudo -u postgres $PGBIN/psql "$MASTER_DSN" -v ON_ERROR_STOP=1 -f <ISI: path files/ddl_capture.sql dari role platform.postgres.provider>
+sudo -u postgres $PGBIN/psql -d $TARGET_DB
+```
+
+Berikut adalah command untuk memasang skrip apply di replica (lebih dulu).
+
+```sql
+\set ON_ERROR_STOP on
+\i <ISI: path files/ddl_apply.sql dari role platform.postgres.subscription>
+\q
+```
+
+Berikut adalah command untuk masuk ke psql di master.
+
+```bash
+source /root/replikasi/<SOURCE_ID>.env
+sudo -u postgres $PGBIN/psql "$MASTER_DSN"
+```
+
+Berikut adalah command untuk memasang skrip capture di master.
+
+```sql
+\set ON_ERROR_STOP on
+\i <ISI: path files/ddl_capture.sql dari role platform.postgres.provider>
+\q
 ```
 
 Berikut adalah kelas DDL dan perlakuannya di replica.
@@ -38,11 +60,19 @@ Beberapa hal yang perlu diketahui diantaranya:
 - Tabel baru tercipta di replica, tetapi tidak otomatis masuk replication set. Barisnya tidak mengalir sampai didaftarkan dengan replication_set_add_table
 - Role aplikasi tidak ada di replica. Statement yang menyebut role (OWNER TO, GRANT, POLICY ... TO role) bisa gagal dan menghentikan subscription. Yang tidak menyebut role berjalan sebagai postgres
 
-Berikut adalah command untuk mendaftarkan tabel baru ke replication set.
+Berikut adalah command untuk masuk ke psql di master.
 
 ```bash
 source /root/replikasi/<SOURCE_ID>.env
-sudo -u postgres $PGBIN/psql "$MASTER_DSN" -c "SET lock_timeout = '3s'" -c "SELECT pglogical.replication_set_add_table('default', '<ISI: schema.tabel_baru>'::regclass, synchronize_data := true);"
+sudo -u postgres $PGBIN/psql "$MASTER_DSN"
+```
+
+Berikut adalah command untuk mendaftarkan tabel baru ke replication set.
+
+```sql
+SET lock_timeout = '3s';
+SELECT pglogical.replication_set_add_table('default', '<ISI: schema.tabel_baru>'::regclass, synchronize_data := true);
+\q
 ```
 
 Catatan: jika subscription berhenti karena statement auto gagal, maka cek log replica dan repl.ddl_queue, perbaiki penyebabnya, lalu subscription jalan lagi.
