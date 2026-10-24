@@ -39,8 +39,8 @@ sudo dnf install -y tmux
 Gunakan tmux supaya proses yang lama (dump, restore, sinkronisasi awal) tidak putus jika koneksi SSH terputus.
 
 ```bash
-tmux new -s replikasi
 sudo -i
+tmux new -s replikasi
 ```
 
 Jika koneksi terputus, masuk lagi ke VM lalu sambungkan kembali ke sesi yang sama:
@@ -50,6 +50,8 @@ tmux attach -t replikasi
 ```
 
 Catatan: keluar dari sesi tanpa menghentikan proses dengan `Ctrl+b` lalu `d`.
+
+Catatan: untuk navigasi tmux (pane, window, scroll), lihat [tmux cheatsheet](https://tmuxcheatsheet.com/) dan [dokumentasi resmi tmux](https://github.com/tmux/tmux/wiki/Getting-Started).
 
 Catatan: jika sudo ditolak, minta akses sudoers untuk user sendiri ke admin VM. user postgres tidak memerlukan sudoers
 
