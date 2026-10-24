@@ -11,12 +11,12 @@ Tahap ini diulang untuk setiap database yang direplikasi. Setiap database punya 
 
 ## 4.1 Cek kelayakan tabel di master
 
-Tabel dicek dulu sebelum didaftarkan ke replication set. Cek tidak punya PK saja tidak cukup. Aturan kelayakan diantaranya:
+Tabel dicek dulu sebelum didaftarkan ke replication set. Sebisa mungkin semua tabel dimasukkan, kecuali yang memang tidak bisa direplikasi. Cek tidak punya PK saja tidak cukup. Aturan kelayakan diantaranya:
 
-- Ada primary key, atau replica identity unique index yang valid, atau REPLICA IDENTITY FULL: masuk set default
+- Ada primary key, atau replica identity unique index yang valid: masuk set default
+- REPLICA IDENTITY FULL: tidak didaftarkan, karena pglogical tidak bisa mereplikasi tabel dengan REPLICA IDENTITY FULL
 - Tanpa identity: masuk set default_insert_only, hanya jika aplikasinya tidak pernah UPDATE atau DELETE
 - Tanpa identity dan aplikasinya UPDATE atau DELETE: tidak didaftarkan
-- Nama %_tmp, %_temp, %_staging, %_bak, %_backup, %_old: tidak didaftarkan
 
 Berikut adalah command untuk masuk ke psql di master. Sesi ini tetap dibuka sampai selesai 4.3.
 
@@ -30,12 +30,11 @@ Berikut adalah command untuk mengecek identity setiap tabel di master. Ganti \<R
 ```sql
 SELECT n.nspname, c.relname,
   CASE
-    WHEN c.relreplident = 'f' THEN 'full'
+    WHEN c.relreplident = 'f' THEN 'full_tidak_didaftarkan'
     WHEN c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid) THEN 'unique_index'
     WHEN c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p') THEN 'pk'
     ELSE 'tanpa_identity'
-  END AS identity,
-  c.relname LIKE ANY (ARRAY['%\_tmp','%\_temp','%\_staging','%\_bak','%\_backup','%\_old']) AS nama_dikecualikan
+  END AS identity
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
 WHERE c.relkind = 'r' AND n.nspname IN (<REPL_SCHEMAS>)
 ORDER BY 3, 1, 2;
@@ -74,9 +73,7 @@ SET lock_timeout = '3s';
 SELECT format('SELECT pglogical.replication_set_add_table(''default'', %L::regclass, synchronize_data := false);', c.oid::regclass::text)
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
 WHERE c.relkind = 'r' AND n.nspname IN (<REPL_SCHEMAS>)
-  AND NOT c.relname LIKE ANY (ARRAY['%\_tmp','%\_temp','%\_staging','%\_bak','%\_backup','%\_old'])
-  AND (c.relreplident = 'f'
-    OR (c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid))
+  AND ((c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid))
     OR (c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p')))
   AND NOT EXISTS (SELECT 1 FROM pglogical.replication_set_table rt WHERE rt.set_reloid = c.oid)
 ORDER BY 1 \gexec
