@@ -96,7 +96,9 @@ Tabel tidak didaftarkan sekaligus per schema, karena itu mengunci semua tabel. S
 SET lock_timeout = '3s';
 SELECT format('SELECT pglogical.replication_set_add_table(''default'', %L::regclass, synchronize_data := false);', c.oid::regclass::text)
 FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
-WHERE c.relkind = 'r' AND n.nspname IN (<REPL_SCHEMAS>)
+WHERE c.relkind IN ('r','p')
+  AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical','pg_toast')
+  AND n.nspname NOT LIKE 'pg_temp%' AND n.nspname NOT LIKE 'pg_toast_temp%'
   AND ((c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid))
     OR (c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p')))
   AND NOT EXISTS (SELECT 1 FROM pglogical.replication_set_table rt WHERE rt.set_reloid = c.oid)
@@ -106,6 +108,8 @@ ORDER BY 1 \gexec
 Hasil yang diterima: setiap statement mengembalikan t.
 
 Catatan: jika ada statement yang gagal karena lock timeout, maka jalankan lagi query yang sama. Tabel yang sudah masuk set tidak muncul lagi di hasil query.
+
+Catatan: jika schema pglogical ikut terdaftar di set, maka initial copy di replica gagal dengan error duplicate key "node_pkey". Schema sistem (pg_catalog, information_schema, pglogical, pg_toast) tidak boleh masuk replication set.
 
 Tabel tanpa identity yang aplikasinya tidak pernah UPDATE atau DELETE didaftarkan manual ke set default_insert_only. Berikut adalah command untuk satu tabel, di sesi psql master yang sama.
 
