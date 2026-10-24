@@ -117,9 +117,33 @@ SELECT pglogical.replication_set_add_table('default_insert_only', '<ISI: schema.
 
 ## 4.4 Readiness?
 
-Catatan: <ISI: langkah ini ada di diagram, isi belum ditulis>
+Langkah ini memastikan semua step di master (4.1 sampai 4.3) sudah dilakukan sebelum lanjut ke replica. Berikut adalah command untuk mengecek kesiapan, dijalankan di sesi psql master.
 
-## 4.5 Buat database tujuan (ICU und)
+```sql
+SELECT
+  (SELECT extversion FROM pg_extension WHERE extname = 'pglogical') AS pglogical_version,
+  (SELECT string_agg(node_name, ',') FROM pglogical.node) AS provider_node,
+  (SELECT count(*) FROM pglogical.tables WHERE set_name = 'default') AS tabel_di_set_default,
+  (SELECT count(*)
+     FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
+    WHERE c.relkind IN ('r','p')
+      AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical')
+      AND n.nspname NOT LIKE 'pg_toast%'
+      AND ((c.relreplident = 'i' AND EXISTS (SELECT 1 FROM pg_index i WHERE i.indrelid = c.oid AND i.indisreplident AND i.indisvalid))
+        OR (c.relreplident = 'd' AND EXISTS (SELECT 1 FROM pg_constraint k WHERE k.conrelid = c.oid AND k.contype = 'p')))
+      AND NOT EXISTS (SELECT 1 FROM pglogical.replication_set_table rt WHERE rt.set_reloid = c.oid)) AS tabel_layak_belum_didaftarkan;
+```
+
+Hasil yang diterima:
+
+- pglogical_version = 2.4.6
+- provider_node berisi \<PROVIDER_NODE>
+- tabel_di_set_default sama dengan jumlah tabel berstatus ya (default) di 4.1
+- tabel_layak_belum_didaftarkan = 0
+
+Catatan: jika tabel_layak_belum_didaftarkan lebih dari 0, maka jalankan lagi query di 4.3.
+
+## 4.5 Buat database Replika (ICU und)
 
 Database tujuan dibuat kosong dari template0 dengan locale ICU und. Collation master tidak disalin, dan ICU und berlaku untuk semua database. Ganti \<DB_NAME> dengan value TARGET_DB. Berikut adalah command untuk masuk ke psql di replica.
 
