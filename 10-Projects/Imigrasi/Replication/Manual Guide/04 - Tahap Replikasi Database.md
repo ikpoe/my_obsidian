@@ -85,12 +85,21 @@ Hasil yang diterima: extversion 2.4.6.
 
 ### 4.2.2 Provider node and sets
 
+Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: PROVIDER_NODE, SOURCE_HOST, SOURCE_PORT, SOURCE_DB.
+
 ```sql
 \getenv provider_node PROVIDER_NODE
 \getenv source_host SOURCE_HOST
 \getenv source_port SOURCE_PORT
 \getenv source_db SOURCE_DB
 \echo :provider_node :source_host :source_port :source_db
+```
+
+Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kosong.
+
+Berikut adalah command untuk menjalankan SQL-nya.
+
+```sql
 SELECT pglogical.create_node(node_name := :'provider_node', dsn := 'host=' || :'source_host' || ' port=' || :'source_port' || ' dbname=' || :'source_db');
 ```
 
@@ -165,11 +174,18 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -E -u postgres $PGBIN/psql
 ```
 
-Berikut adalah command untuk membuat database tujuan.
+Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: TARGET_DB.
 
 ```sql
 \getenv target_db TARGET_DB
 \echo :target_db
+```
+
+Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kosong.
+
+Berikut adalah command untuk menjalankan SQL-nya.
+
+```sql
 CREATE DATABASE :"target_db" TEMPLATE template0 ENCODING 'UTF8'
   LOCALE_PROVIDER libc
   LC_COLLATE 'en_US.UTF-8' LC_CTYPE 'en_US.UTF-8';
@@ -224,14 +240,21 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
-Berikut adalah command untuk restore pre-data lalu primary key di sesi psql replica tersebut.
+Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: SOURCE_ID.
 
 ```sql
-\set ON_ERROR_STOP on
 \getenv source_id SOURCE_ID
 \set pre_file /var/lib/pgsql/pre_ :source_id .sql
 \set pk_file /var/lib/pgsql/pk_ :source_id .sql
 \echo :pre_file :pk_file
+```
+
+Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kosong.
+
+Berikut adalah command untuk restore pre-data lalu primary key di sesi psql replica tersebut.
+
+```sql
+\set ON_ERROR_STOP on
 \i :pre_file
 \i :pk_file
 \q
@@ -275,21 +298,37 @@ Hasil yang diterima: extversion 2.4.6, sama dengan di master.
 
 ### 4.10.2 Subscriber node
 
+Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: SUBSCRIBER_NODE, TARGET_DB.
+
 ```sql
 \getenv subscriber_node SUBSCRIBER_NODE
 \getenv target_db TARGET_DB
 \echo :subscriber_node :target_db
+```
+
+Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kosong.
+
+Berikut adalah command untuk menjalankan SQL-nya.
+
+```sql
 SELECT pglogical.create_node(node_name := :'subscriber_node', dsn := 'host=/var/run/postgresql port=5432 dbname=' || :'target_db');
 ```
 
 ### 4.10.3 create_subscription
 
-Nama subscription dan DSN master diambil dari env SUBSCRIPTION dan MASTER_DSN.
+Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: SUBSCRIPTION, MASTER_DSN.
 
 ```sql
 \getenv subscription SUBSCRIPTION
 \getenv master_dsn MASTER_DSN
 \echo :subscription :master_dsn
+```
+
+Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kosong.
+
+Berikut adalah command untuk menjalankan SQL-nya.
+
+```sql
 SELECT pglogical.create_subscription(
   subscription_name := :'subscription',
   provider_dsn := :'master_dsn',
