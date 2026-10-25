@@ -100,8 +100,23 @@ Hasil yang diterima: \echo menampilkan nilai setiap variable, tidak ada yang kos
 Berikut adalah command untuk menjalankan SQL-nya.
 
 ```sql
-SELECT pglogical.create_node(node_name := :'provider_node', dsn := 'host=' || :'source_host' || ' port=' || :'source_port' || ' dbname=' || :'source_db');
+SELECT pglogical.create_node(
+  node_name := :'provider_node', 
+  dsn := 'host=' || :'source_host' || ' port=' || :'source_port' || ' dbname=' || :'source_db');
 ```
+
+Berikut adalah command untuk mengecek provider node dan replication set, di sesi psql master yang sama.
+
+```sql
+SELECT n.node_name, i.if_dsn
+FROM pglogical.node n JOIN pglogical.node_interface i ON i.if_nodeid = n.node_id;
+SELECT set_name FROM pglogical.replication_set ORDER BY 1;
+```
+
+Hasil yang diterima diantaranya:
+
+- node_name sama dengan nilai :provider_node, dan if_dsn berisi host, port dan dbname master tanpa user dan password
+- replication set berisi default, default_insert_only dan ddl_sql
 
 Catatan: jika provider node sudah ada (mis. saat sync ulang), maka create_node tidak dijalankan lagi.
 
@@ -257,8 +272,23 @@ Berikut adalah command untuk restore pre-data lalu primary key di sesi psql repl
 \set ON_ERROR_STOP on
 \i :pre_file
 \i :pk_file
+```
+
+Berikut adalah command untuk mengecek hasil restore, di sesi psql replica yang sama.
+
+```sql
+SELECT count(*) AS jumlah_tabel FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace
+WHERE c.relkind IN ('r','p') AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical') AND n.nspname NOT LIKE 'pg_toast%';
+SELECT count(*) AS jumlah_pk FROM pg_constraint WHERE contype = 'p';
+SELECT relname, n_live_tup FROM pg_stat_user_tables WHERE n_live_tup > 0;
 \q
 ```
+
+Hasil yang diterima diantaranya:
+
+- jumlah_tabel sama dengan jumlah tabel di 4.1
+- jumlah_pk sama dengan jumlah tabel ada_pk = t di 4.1
+- query terakhir tidak mengembalikan baris, semua tabel masih kosong
 
 Catatan: jika restore error karena extension khusus RDS (mis. aws_s3, aws_commons), maka drop database, buat ulang dengan libc en_US.UTF-8, tambahkan --exclude-extension=\<nama extension> di pg_dump, lalu ulangi.
 
@@ -314,6 +344,17 @@ Berikut adalah command untuk menjalankan SQL-nya.
 SELECT pglogical.create_node(node_name := :'subscriber_node', dsn := 'host=/var/run/postgresql port=5432 dbname=' || :'target_db');
 ```
 
+Berikut adalah command untuk mengecek subscriber node, di sesi psql replica yang sama.
+
+```sql
+SELECT n.node_name, i.if_dsn
+FROM pglogical.local_node l
+JOIN pglogical.node n ON n.node_id = l.node_id
+JOIN pglogical.node_interface i ON i.if_id = l.node_local_interface;
+```
+
+Hasil yang diterima: node_name sama dengan nilai :subscriber_node, dan if_dsn berisi host=/var/run/postgresql dengan dbname replica.
+
 ### 4.10.3 create_subscription
 
 Berikut adalah command untuk membaca variable dari env file ke sesi psql. Variable yang dibutuhkan: SUBSCRIPTION, MASTER_DSN.
@@ -337,8 +378,17 @@ SELECT pglogical.create_subscription(
   synchronize_data := true,
   forward_origins := '{}'
 );
+```
+
+Berikut adalah command untuk mengecek subscription, di sesi psql replica yang sama.
+
+```sql
+SELECT subscription_name, status, provider_node, replication_sets
+FROM pglogical.show_subscription_status();
 \q
 ```
+
+Hasil yang diterima: subscription_name sama dengan nilai :subscription, dan status initializing (initial copy sedang berjalan) atau replicating.
 
 Catatan: jika log replica berisi nonrecoverable step, maka drop subscription di replica, drop slot pgl_... di master hanya jika active = f, buat database tujuan dari kosong, lalu ulangi dari Dump struktur pre-data dan post-data. Jangan buat subscription kedua dengan nama yang sama.
 
