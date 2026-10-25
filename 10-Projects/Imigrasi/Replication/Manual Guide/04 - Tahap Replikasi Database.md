@@ -144,6 +144,29 @@ Catatan: jika ada statement yang gagal karena lock timeout, maka jalankan lagi q
 
 Catatan: jika schema pglogical ikut terdaftar di set, maka initial copy di replica gagal dengan error duplicate key "node_pkey". Schema sistem (pg_catalog, information_schema, pglogical, pg_toast) tidak boleh masuk replication set.
 
+Berikut adalah command untuk report jumlah tabel per schema yang masuk dan yang tidak masuk replication set, di sesi psql master yang sama.
+
+```sql
+SELECT n.nspname AS schema,
+  count(*) AS total_tabel,
+  count(rt.set_reloid) AS di_replication_set,
+  count(*) - count(rt.set_reloid) AS tidak_di_replication_set
+FROM pg_class c
+JOIN pg_namespace n ON n.oid = c.relnamespace
+LEFT JOIN pglogical.replication_set_table rt ON rt.set_reloid = c.oid
+WHERE c.relkind IN ('r','p')
+  AND n.nspname NOT IN ('pg_catalog','information_schema','pglogical','pg_toast')
+  AND n.nspname NOT LIKE 'pg_temp%' AND n.nspname NOT LIKE 'pg_toast_temp%'
+GROUP BY ROLLUP (n.nspname)
+ORDER BY n.nspname NULLS LAST;
+```
+
+Hasil yang diterima diantaranya:
+
+- satu baris per schema, dan baris terakhir dengan schema kosong adalah total semua schema
+- tidak_di_replication_set sama dengan jumlah tabel berstatus tidak di 4.1
+- schema pglogical tidak muncul
+
 Tabel tanpa identity yang aplikasinya tidak pernah UPDATE atau DELETE didaftarkan manual ke set default_insert_only. Berikut adalah command untuk satu tabel, di sesi psql master yang sama.
 
 ```sql
