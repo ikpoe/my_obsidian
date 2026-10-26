@@ -11,6 +11,26 @@ Semua perintah di tahap ini dijalankan di VM replica sebagai root, cukup sekali 
 
 ## 3.1 Siapkan direktori data dan WAL
 
+Sebelum menyiapkan direktori, cek dulu ukuran database di master dan kapasitas partisi data di replica. Data inventaris bisa saja tidak terupdate, jadi ukuran selalu dicek langsung di master. Berikut adalah command untuk cek ukuran semua database di master (dari psql ke master).
+
+```sql
+SELECT datname, pg_size_pretty(pg_database_size(datname)) AS size
+FROM pg_database
+WHERE datname NOT IN ('template0','template1','rdsadmin')
+ORDER BY pg_database_size(datname) DESC;
+```
+
+Berikut adalah command untuk cek kapasitas partisi di replica.
+
+```bash
+df -hT /data/postgresql /data/pg_wal
+sudo vgs
+```
+
+Hasil yang diterima: Avail di /data/postgresql minimal 1.5x total ukuran database yang akan direplikasi ke VM ini (data, index yang dibangun ulang saat initial copy, dan ruang tumbuh). /data/pg_wal cukup 100G.
+
+Catatan: jika kapasitas kurang, maka minta perbesar disk data terlebih dahulu, jangan lanjut ke initial copy. Jika disk sudah diperbesar di hypervisor, maka jalankan echo 1 > /sys/class/block/sdb/device/rescan, pvresize /dev/sdb, lvextend -l +100%FREE /dev/vg_data_db/lv_postgresql, lalu xfs_growfs /data/postgresql. Initial copy yang gagal karena disk penuh muncul di log sebagai No space left on device, lalu table copy failed, dan subscription menjadi down.
+
 Data dan WAL berada di partisi yang terpisah. PGDATA_LINK /var/lib/pgsql/18/data (path bawaan PGDG) adalah symlink ke \$PGDATA /data/postgresql/18/main, dan WAL ada di \$PGWAL /data/pg_wal/18/main. Service postgresql-18 dipakai apa adanya, tidak ada Environment=PGDATA dan tidak ada data_directory. Mount root /data/postgresql dan /data/pg_wal tetap milik root dengan permission 0755, chmod 700 hanya pada \$PGDATA dan \$PGWAL. Berikut adalah command untuk menyiapkan direktori sebelum initdb.
 
 ```bash
