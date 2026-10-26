@@ -58,6 +58,10 @@ Aturan skor: 1 = tidak ada/ad hoc; 2 = kebijakan ada tetapi praktik belum terbuk
 - **Peserta/TK dan PK/BU:** *registry → consolidation* dulu (golden record di sisi analitik, kunci NIK/identitas PK [perlu konfirmasi kunci PK]). Setelah SoR, owner, dan SOP disepakati, bergerak ke *coexistence*.
 - **Alasan:** (a) belum ada SOP/owner (D2 hlm. 24), sehingga pola invasif belum siap tata kelolanya; (b) core monolitik dan database beragam (D2 hlm. 37) meningkatkan risiko pola *centralized* untuk entitas transaksional; (c) arah akhir tetap dapat menyesuaikan diri ke kewajiban repository tunggal di D1. Interpretasi "terpusat" (hub fisik vs. tata kelola terpusat) perlu dikonfirmasi ke Unit Manajemen Data.
 
+**Diagram pola MDM hibrid bertahap & alur golden record (usulan):**
+
+![[11-Master-Data-MDM.excalidraw]]
+
 ## 5. Implikasi ke Blueprint (3.4, 5.2, 5.3)
 - **SoR (SMILE dan aplikasi operasional):** tetap menjadi tempat transaksi dan entri awal. SoR ditetapkan per entitas/atribut dalam blueprint [perlu konfirmasi daftar SoR].
 - **MDM:** satu-satunya tempat identitas, *match/merge*, golden record, dan cross-reference ID. Juga menjadi pemilik kode referensi. Bukan tempat transaksi dan bukan gudang analitik.

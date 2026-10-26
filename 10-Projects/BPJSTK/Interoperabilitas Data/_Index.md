@@ -35,3 +35,13 @@ tags: [project, bpjstk, data-platform]
 - `02-Analysis`: `00–09` = bahan dasar & metodologi; `11–19` = sesi per area (11 = sesi 1, 12 = sesi 2, dst.).
 - File turunan satu sesi memakai nomor yang sama + sufiks, mis. `11-Master-Data.md` dan `11-Master-Data-Klarifikasi.md`.
 - Notulen di `04-Meetings`: `YYYY-MM-DD-Topik.md`.
+
+- [[02-Analysis/12-Integrasi|Sesi 2 — Integrasi & Interoperabilitas]]
+- [[02-Analysis/12-Integrasi-Klarifikasi|Klarifikasi sesi 2]]
+- [[02-Analysis/13-Arsitektur-Data|Sesi 3 — Arsitektur Data]]
+- [[02-Analysis/13-Arsitektur-Data-Klarifikasi|Klarifikasi sesi 3]]
+- [[02-Analysis/14-Pemodelan-Data|Sesi 4 — Pemodelan & Desain Data]]
+- [[02-Analysis/14-Pemodelan-Data-Klarifikasi|Klarifikasi sesi 4]]
+- [[02-Analysis/15-Metadata-Kualitas|Sesi 5 — Metadata & Kualitas Data]]
+- [[02-Analysis/15-Metadata-Kualitas-Klarifikasi|Klarifikasi sesi 5]]
+- [[02-Analysis/03-Roadmap-Tema.excalidraw|Roadmap tema besar (DRAFT)]]
