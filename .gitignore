@@ -4,3 +4,4 @@
 .DS_Store
 # dokumen klien yang bersifat terbatas
 **/01-Sources/*.pdf
+**/01-Sources/**/*.png

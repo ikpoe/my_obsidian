@@ -6,7 +6,7 @@ sesi: 3
 blueprint: [3.1, 3.2, 3.3, 3.4, 4, 5.1, 5.2, 6]
 status: draft-diskusi
 acuan_internal: DAMA-DMBOK v2, bab Data Architecture
-sumber: [D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 01-Inventori-Tender-BPJSTK.csv, 11-Master-Data.md, 12-Integrasi.md]
+sumber: [D3 paparan kapabilitas & arsitektur target, D4 kebijakan API Data Hub, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 01-Inventori-Tender-BPJSTK.csv, 11-Master-Data.md, 12-Integrasi.md]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 77 = cetak '- 76 -')."
 ---
 
@@ -22,7 +22,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **Komponen referensi D1 yang belum tampak di as-is:** ODS, MD&DR yang menjadi rujukan DWH, dan cubes/OLAP (D1 hlm. 77). Data Staging di D2 berupa standby database via ADG (D2 hlm. 21); apakah berfungsi sebagai ODS [perlu konfirmasi].
 - **Sisi sumber kompleks dan berisiko.** SMILE adalah core yang dipakai seluruh direktorat (D2 hlm. 35), monolitik di WebLogic (D2 hlm. 37), dengan lima jenis database: Oracle (30 aplikasi), MariaDB, Yugabyte, SQL Server, PostgreSQL (D2 hlm. 37–38).
 - **Kebijakan arsitektur data ada, praktik belum terbukti.** D1 Ps. 13 mewajibkan arsitektur data (DBB, domain, entitas, pemetaan ke bisnis dan aplikasi, aliran data) beserta roadmap dan analisis kesenjangan (D1 hlm. 14–15). D2 memuat DBB dan alur, tetapi dokumentasi DBB masih mengacu ITMP 2019–2024 (D2 hlm. 31) dan EDM baru sebagian (D2 hlm. 29–30).
-- **Skor usulan rata-rata ±1,8.**
+- **Skor usulan rata-rata ±1,8** (31 Okt 2026: tetap ±1,8; AD-7 naik, AD-10 turun, lihat Pembaruan 2026-10-31).
 - **Rekomendasi:** **Opsi B — ESDP sebagai platform terpadu berlapis di atas Cloudera eksisting**, dengan pemisahan zona (staging/lake, DWH, serving), ODS untuk kebutuhan latensi rendah, dan lapisan layanan ESDP untuk upstream/downstream. Opsi ini dipilih setelah dibandingkan dengan tiga opsi lain (bagian 5).
 
 ## 2. Arsitektur saat ini (as-is)
@@ -65,12 +65,12 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 | AD-2. Roadmap & analisis kesenjangan | Roadmap arsitektur data selaras renstra, ditinjau berkala | Ps. 13(5) (D1 hlm. 15) | D2 adalah identifikasi as-is; roadmap arsitektur data tidak ada di dokumen | Roadmap belum ada (studi ini mengisinya) | 2 |
 | AD-3. Lapisan sumber & SoR | SoR ditetapkan per domain; sumber dapat diakses tanpa membebani produksi | Repository master tunggal (D1 hlm. 88) | SMILE core (D2 hlm. 35), monolitik (D2 hlm. 37), 5 jenis DB (D2 hlm. 37–38), aplikasi tidak terhubung ke SMILE (D2 hlm. 45) | SoR per domain belum ditetapkan; heterogenitas tinggi | 2 |
 | AD-4. Lapisan integrasi | Pola standar upstream/downstream | Ps. 66 (D1 hlm. 50–51); komponen data integration (D1 hlm. 77) | Lihat [[12-Integrasi]]: rata-rata upstream ±1,6, downstream ±1,6 | Lihat sesi 2 | 2 |
-| AD-5. Lapisan penyimpanan (staging, lake, DWH) | Zona terpisah dengan kontrol akses dan isolasi berbeda | Staging, central warehouse, big data platform (D1 hlm. 77) | Staging (ADG) → Data Lake → DWH di Cloudera, satu environment, risiko dampak serangan lebih besar (D2 hlm. 21); unstructured belum operasional (D2 hlm. 20) | Zona belum terisolasi | 2 |
+| AD-5. Lapisan penyimpanan (staging, lake, DWH) | Zona terpisah dengan kontrol akses dan isolasi berbeda | Staging, central warehouse, big data platform (D1 hlm. 77) | Staging (ADG) → Data Lake → DWH di Cloudera, satu environment, risiko dampak serangan lebih besar (D2 hlm. 21); unstructured belum operasional (D2 hlm. 20) | Zona belum terisolasi | 2 (31 Okt 2026, tetap): raw, model, dan data bersih hanya dibedakan skema (R1 [S 00:44:54–00:45:06]) |
 | AD-6. ODS / operational serving | Penyimpanan latensi rendah, non-historis, untuk kebutuhan operasional | ODS (D1 hlm. 77) | Tidak disebut; staging standby ADG (D2 hlm. 21). Riset publik: tender "Oracle ODS" | Komponen ODS tidak tampak | 1 [perlu konfirmasi] |
-| AD-7. Master data & metadata dalam arsitektur | MD&DR menjadi rujukan DWH; metadata terintegrasi | D1 hlm. 76–77 | Master data manual, big data tidak mengacu master data (D2 hlm. 24); dua katalog terpisah (D2 hlm. 26) | Lihat [[11-Master-Data]] | 1 |
+| AD-7. Master data & metadata dalam arsitektur | MD&DR menjadi rujukan DWH; metadata terintegrasi | D1 hlm. 76–77 | Master data manual, big data tidak mengacu master data (D2 hlm. 24); dua katalog terpisah (D2 hlm. 26) | Lihat [[11-Master-Data]] | 1 → **2** (31 Okt 2026): POC MDM (D3-02) dan Dataedo aktif (R1 [P 00:21:08–00:21:14]); lineage dan katalog merah (D3-01) |
 | AD-8. Lapisan analitik & konsumsi | Self-service terkontrol, produk data, BI terpadu | Self-service, transparansi (D1 hlm. 76); jenis analitik (D1 hlm. 78) | 17 dashboard, Tableau & QlikSense, Python & KNIME (D2 hlm. 22); prescriptive belum operasional (D2 hlm. 20); request ke MDT lambat (D2 hlm. 22) | Self-service dan katalog produk data belum ada | 2 |
 | AD-9. Keamanan & tata kelola sebagai lapisan horizontal | Kontrol per lapisan dan per klasifikasi data | Klasifikasi Biasa/Terbatas/Rahasia (D1 hlm. 93–94); kriteria keamanan & privasi (D1 hlm. 78) | Lapisan digambarkan (D2 hlm. 20); risiko satu environment dan pengiriman eksternal (D2 hlm. 21–22) | Penerapan kontrol per lapisan tidak terbukti | 2 |
-| AD-10. Infrastruktur & ketahanan | Kapasitas terencana, DR teruji, pemisahan environment | Kriteria kinerja & ketersediaan (D1 hlm. 78); DRP diuji (D1 Ps. 42, lihat 00-Analisis) | On-prem, virtualisasi/container, DC & DRC Tier III; tape tanpa restore testing berkala; monitoring belum dipetakan ke aplikasi (D2 hlm. 50) | DR untuk platform data dan restore test belum terbukti | 2 |
+| AD-10. Infrastruktur & ketahanan | Kapasitas terencana, DR teruji, pemisahan environment | Kriteria kinerja & ketersediaan (D1 hlm. 78); DRP diuji (D1 Ps. 42, lihat 00-Analisis) | On-prem, virtualisasi/container, DC & DRC Tier III; tape tanpa restore testing berkala; monitoring belum dipetakan ke aplikasi (D2 hlm. 50) | DR untuk platform data dan restore test belum terbukti | 2 → **1** (31 Okt 2026): belum ada komponen Cloudera di DRC (R1 [S 00:35:03–00:37:39]), bertentangan dengan D3-01 [perlu konfirmasi]; Retention Policy merah, Restore Testing tanpa status (D3-01) |
 | AD-11. Prinsip arsitektur | Prinsip tertulis, dipakai dalam keputusan desain | Quality- & innovation-oriented (D1 hlm. 15); prinsip DWBI (D1 hlm. 76) | Tidak ada bukti prinsip dipakai sebagai kriteria keputusan | Prinsip belum dioperasionalkan | 2 |
 
 **Rata-rata: ±1,8.**
@@ -155,3 +155,27 @@ Prinsip ini menurunkan D1 hlm. 15 dan 76 menjadi kriteria keputusan, dan dapat m
 - [ ] Validasi tema roadmap tahunan (Fondasi → Layanan → Optimasi) dan apakah perlu dipecah per semester.
 - [ ] Validasi skor, terutama AD-6 (ODS) dan AD-7 (master data & metadata).
 - [ ] Prioritaskan pertanyaan 2, 3, 7, dan 9 untuk sesi dengan Unit Manajemen Data dan Unit Operasional TI.
+
+
+## Pembaruan 2026-10-31
+
+**Bukti baru (kondisi saat ini):**
+- **Arsitektur target BPJS (D3-07)** memuat lapisan Data Source → Data Integration (API, SFTP, ETL Tools) → Data Storage (Data Staging → Data Lake dengan Data Classification → Data Warehouse/EDW dengan Metadata, Data Catalog, Data Reference, Data Mart) → Data Analytics → Data Insight, dengan Data Security dan Data Governance sebagai lapisan horizontal. Lapisan ini **sama dengan D2 hlm. 20**; D3-07 tidak menampilkan ODS, MDM, maupun lapisan serving/API terpisah. Opsi B (§6) tetap menambah ketiganya.
+- **Penyimpanan:** CDC masuk Kudu (update per jam), lalu dibentuk Parquet (≥1–2 jam) untuk analitik; HDFS; data mart sebagian besar Kudu/Parquet hasil Talend (R1 [S 00:17:55–00:19:21; S 00:29:19–00:31:48]). Oracle tetap dipakai untuk kebutuhan tertentu (finance) (R1 [S 00:45:44–00:47:04]).
+- **Pemisahan lapis hanya berbasis skema** (R1 [S 00:44:54–00:45:06]); BPJS menerima pendekatan medallion (R1 [S 00:44:12–00:44:48]).
+- **Konsumsi operasional dari big data** ada tetapi sedikit (mis. report untuk core system) (R1 [S 00:21:48–00:22:42]); relevan untuk kebutuhan ODS (AD-6).
+- **Status kapabilitas (D3-01):** kuning untuk CDC, batch, ETL, data mart, BI, enkripsi, masking, archive; merah untuk data catalog, lineage, audit trail, retention policy, API Management, message broker, workflow orchestration, event streaming; tanpa status untuk Metadata Management, Data Profiling, Restore Testing. Storage/warehouse dan API Gateway dalam kotak "Belum tersedia".
+- **Konflik DRC:** D3-01 menggambarkan "DRC (Active)" dengan infrastruktur 20 node (Coordinator, Worker, MDM Engine); R1 [S 00:35:03–00:37:39] menyatakan Cloudera di DRC belum ada komponennya (hanya rack dan uji coba 1 mesin), dan hubungan DC–DRC belum didefinisikan [perlu konfirmasi]. Penilaian memakai pernyataan yang lebih konservatif sampai dikonfirmasi.
+- **DMZ belum terdefinisi** (R1 [S 00:38:53–00:40:30]); posisi Data Hub (D4: DMZ, B2B, REST/JSON, 3scale) dibahas di [[12-Integrasi]] §5.6.
+- Ekspektasi kajian: horizon 3 tahun, memaksimalkan teknologi yang ada (R1 [S 00:32:26–00:32:36; S 00:47:28–00:47:46]); sejalan dengan Opsi B.
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| AD-1. Dokumentasi arsitektur | 2 → 2 | D3-07 dan model konseptual (D3-04, D3-06) ada; tidak memuat ODS/MDM/serving dan model belum mencakup JKP |
+| AD-5. Lapisan penyimpanan | 2 → 2 | Pemisahan hanya skema (R1) |
+| AD-6. ODS | 1 [pk] → 1 [pk] | Konsumsi operasional kecil dari big data (R1); komponen ODS tetap tidak tampak |
+| AD-7. Master data & metadata | 1 → 2 | POC MDM (D3-02); Dataedo aktif; lineage/katalog merah (D3-01) |
+| AD-9. Keamanan horizontal | 2 → 2 | Enkripsi/masking kuning, audit trail merah (D3-01) |
+| AD-10. Infrastruktur & ketahanan | 2 → 1 | DRC platform belum ada menurut R1; retensi merah; restore test tanpa status (D3-01) [perlu konfirmasi] |
+
+**Rata-rata baru: ±1,8** (tetap).

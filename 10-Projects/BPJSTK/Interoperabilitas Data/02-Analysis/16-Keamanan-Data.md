@@ -5,7 +5,7 @@ area: Keamanan Data
 sesi: 6
 blueprint: [3.1, 3.2, 3.3, 3.4, 4, 5.3, 5.4, 6]
 status: draft-diskusi
-sumber: [D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md, 15-Metadata-Kualitas.md]
+sumber: [D3 status kapabilitas, D4 kebijakan API Data Hub, D5 dokumen teknis API Kemnaker, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md, 15-Metadata-Kualitas.md]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 94 = cetak '- 93 -')."
 ---
 
@@ -20,7 +20,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **D2 hanya menyebut "Data Security" sebagai lapisan horizontal pada diagram** (D2 hlm. 20), tanpa uraian kondisi. Yang dijelaskan justru risikonya: kebocoran pada transfer eksternal (D2 hlm. 21–22), serta data lake dan DWH dalam satu environment sehingga dampak serangan lebih besar (D2 hlm. 21).
 - **Pertukaran eksternal paling matang.** Ps. 66 mengatur persetujuan OKI, PKS/NDA, whitelist IP, dan teknologi web service/SFTP host-to-host (D1 hlm. 50–51). Praktiknya sejalan: API untuk pertukaran eksternal dan SFTP untuk bulk dengan K/L (D2 hlm. 21), ditambah lapisan WAF/API Security (D2 hlm. 37) dan tender API security 2024 (publik).
 - **Celah utama untuk ESDP:** klasifikasi belum dipetakan ke kategori UU 27/2022 (data pribadi umum vs spesifik); belum ada bukti klasifikasi tercatat sebagai metadata (tag); kebijakan akses terpusat di Cloudera (Ranger) dan masking/tokenisasi tidak disebut; audit akses data (siapa membaca apa) belum terlihat; Ps. 3(4) menyerahkan PDP ke peraturan direksi tersendiri yang belum kami terima [perlu konfirmasi].
-- **Skor usulan: Keamanan Data ±1,7** (rentang 1–3).
+- **Skor usulan: Keamanan Data ±1,7** (rentang 1–3) (31 Okt 2026: **±1,6** dengan 12 aspek; lihat Pembaruan 2026-10-31).
 - **Rekomendasi (usulan, berbasis perbandingan):** **Opsi C — kontrol berbasis klasifikasi (tag-based)**. Klasifikasi dan label PDP ditetapkan di katalog (Dataedo/Atlas), di-propagasi sebagai tag Atlas, lalu ditegakkan oleh Ranger dalam bentuk kombinasi RBAC (peran dari matriks akses D1) dan ABAC (atribut klasifikasi, unit, tujuan). Masking dinamis di serving, tokenisasi NIK/no. KPJ di silver, enkripsi at-rest dan in-transit di semua zona, dan audit terpusat.
 
 ---
@@ -71,14 +71,15 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 | KS-3. Pemetaan PDP (UU 27/2022) | Label data pribadi umum/spesifik, dasar pemrosesan, tujuan | Ps. 3(4) dirujuk ke Perdir tersendiri (hlm. 6); Ps. 67(1)c (hlm. 52) | Tidak ada bukti | Pemetaan klasifikasi ↔ PDP | 1 [perlu konfirmasi] |
 | KS-4. Kontrol akses (RBAC/ABAC) | Matriks CRUD per elemen, ditegakkan terpusat di platform; least privilege | Ps. 56; Lampiran III B (hlm. 97–101) | Tidak ada bukti matriks maupun Ranger | Matriks & penegakan di ESDP | 2 (batas kebijakan) |
 | KS-5. Akses istimewa & reviu akses | PAM, reviu periodik, pencabutan saat mutasi | Lampiran III B.1c (hlm. 98–99) | Tidak ada bukti untuk platform data | Bukti pelaksanaan | 2 (batas kebijakan) |
-| KS-6. Masking & tokenisasi | Masking dinamis per peran; tokenisasi identitas; data uji ter-masking | Ps. 61 huruf c, f (hlm. 47); "kontrol lain sesuai risiko" (hlm. 94) | Tidak disebut | Belum ada | 1 |
-| KS-7. Enkripsi & key management | At-rest dan in-transit; KMS terpusat | Ps. 57(3)–(4) (hlm. 45) | HTTPS/WAF di aplikasi (D2 hlm. 37); enkripsi di Cloudera tidak terlihat | Bukti at-rest di HDFS/Ozone & KMS | 2 [perlu konfirmasi] |
-| KS-8. Audit & monitoring akses data | Log akses data terpusat, tidak bisa diubah admin, dianalisis | Lampiran III D.1g (hlm. 106–107) | Tidak ada bukti audit akses data | Audit tingkat data | 1 [perlu konfirmasi] |
-| KS-9. Keamanan pertukaran eksternal | Persetujuan OKI, PKS/NDA, web service/SFTP, whitelist IP, enkripsi | Ps. 66(1)–(5) (hlm. 50–51); Ps. 71(1)d (hlm. 56) | API & SFTP berjalan (D2 hlm. 21); WAF/API Security (D2 hlm. 37); risiko kebocoran diakui (D2 hlm. 21–22) | Konsistensi antarmitra, akses DB langsung | 3 |
+| KS-6. Masking & tokenisasi | Masking dinamis per peran; tokenisasi identitas; data uji ter-masking | Ps. 61 huruf c, f (hlm. 47); "kontrol lain sesuai risiko" (hlm. 94) | Tidak disebut | Belum ada | 1 → **2** (31 Okt 2026): masking sebagian (R1 [P 00:09:26–00:09:29]); respons API BPJS ter-masking (D5 hlm. 7–8); D3-01 kuning |
+| KS-7. Enkripsi & key management | At-rest dan in-transit; KMS terpusat | Ps. 57(3)–(4) (hlm. 45) | HTTPS/WAF di aplikasi (D2 hlm. 37); enkripsi di Cloudera tidak terlihat | Bukti at-rest di HDFS/Ozone & KMS | 2 (31 Okt 2026, tetap): D3-01 Encryption kuning; SFTP AES-256 untuk JKP (R1 [P 01:41:27–01:43:49]); KMS tidak terlihat |
+| KS-8. Audit & monitoring akses data | Log akses data terpusat, tidak bisa diubah admin, dianalisis | Lampiran III D.1g (hlm. 106–107) | Tidak ada bukti audit akses data | Audit tingkat data | 1 (31 Okt 2026, [perlu konfirmasi] dicabut): D3-01 Audit Trail merah |
+| KS-9. Keamanan pertukaran eksternal | Persetujuan OKI, PKS/NDA, web service/SFTP, whitelist IP, enkripsi | Ps. 66(1)–(5) (hlm. 50–51); Ps. 71(1)d (hlm. 56) | API & SFTP berjalan (D2 hlm. 21); WAF/API Security (D2 hlm. 37); risiko kebocoran diakui (D2 hlm. 21–22) | Konsistensi antarmitra, akses DB langsung | 3 → **2** (31 Okt 2026): kredensial tersimpan dalam teks biasa pada dokumen konfigurasi; akses DB link; data pribadi mitra tanpa masking dan salinan lokal tanpa retensi (D5); API Management merah (D3-01); SOP pertukaran belum ada (R1 [S 00:13:48–00:15:07]) |
 | KS-10. Berbagi aman ke downstream internal | Akses ke data mart/BI sesuai klasifikasi, row/column-level security | Lampiran II DWBI (hlm. 76, 78) | Tableau/QlikSense, 17 dashboard (D2 hlm. 22); kontrol tidak diuraikan | Kontrol di serving & BI | 2 [perlu konfirmasi] |
 | KS-11. Segregasi environment & data non-prod | Lake/DWH/serving terpisah secara logis; data prod tidak mentah di non-prod | Lampiran III D.1c (hlm. 105–106); Ps. 61 (hlm. 47) | Lake dan DWH satu environment (D2 hlm. 21) | Segmentasi zona | 1 |
+| KS-12. Retensi & pemusnahan (ditambahkan 31 Okt 2026) | Jadwal retensi per kelas data; pemusnahan/arsip terdokumentasi; berlaku juga untuk salinan data mitra | Kebijakan retensi belum ada (R1 [P 01:36:45–01:38:45]) [perlu konfirmasi pasal D1 terkait] | D3-01 Retention Policy merah, Archive kuning; data disimpan 40+ tahun (R1 [P 00:39:35–00:39:49]); salinan data Kemnaker tanpa aturan retensi (D5 hlm. 1–2) | Kebijakan dan jadwal retensi | 1 |
 
-**Rata-rata Keamanan Data: ±1,7.**
+**Rata-rata Keamanan Data: ±1,7** → **±1,6** (31 Okt 2026, termasuk KS-12).
 
 ## 5. Opsi pendekatan keamanan data di ESDP
 
@@ -175,3 +176,36 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 
 ## Lampiran — Deskripsi diagram (gaya Excalidraw)
 Diagram alur kiri → kanan: **Sumber** (SMILE, Oracle, MariaDB) → panah "TLS / akun servis" → kotak ESDP dengan empat zona berjajar (**Staging | Lake/bronze | DWH/silver | Serving/gold**), tiap zona diberi ikon gembok (enkripsi KMS). Di atas zona: pita **Katalog (Dataedo + Atlas) → tag klasifikasi**, dengan panah turun ke pita **Ranger (RBAC + ABAC, masking, row filter)** yang membentang di bawah semua zona. Label "tokenisasi" di silver dan "masking dinamis" di serving. Di kanan: dua cabang downstream: **Internal** (Tableau/QlikSense, kanwil/kancab) dan **Eksternal** (Dukcapil, DJP, Kemnaker, BPJS Kesehatan) melalui gerbang **Web service / SFTP — persetujuan OKI, whitelist IP**. Di dasar diagram: pita **Audit terpusat (log tak dapat diubah)**. Akses DB langsung digambar putus-putus dengan tanda silang ("dihentikan bertahap").
+
+
+## Pembaruan 2026-10-31
+
+**Status RAG keamanan platform (D3-01):** Encryption kuning, Data Masking kuning, Audit Trail merah; Retention Policy merah, Archive kuning, Restore Testing tidak ditandai; Data Catalog dan Lineage merah (klasifikasi tidak dapat ditegakkan lewat katalog); API Management merah.
+
+**Temuan dokumen teknis API Kemnaker (D5):**
+1. **Kredensial tersimpan dalam teks biasa pada dokumen konfigurasi.** Dokumen teknis memuat parameter koneksi lengkap. Nilainya sengaja tidak disalin ke catatan ini. Risiko: dokumen yang beredar ke mitra/vendor membuka akses langsung. Kendali yang diharapkan: secret manager/vault, rotasi, dan dokumen teknis tanpa nilai rahasia.
+2. **Akses DB link ke skema operasional** (`@TO_163`; D5 hlm. 3–5). Hak akses akun DB link biasanya lebih luas dari elemen yang diatur PKS (bertentangan dengan least privilege, KS-4). Lihat anti-pola di [[12-Integrasi]] §5.7.
+3. **Masking tidak simetris.** Respons BPJS ke Kemnaker ter-masking (NIK, nama, NPP; D5 hlm. 7–8). Respons Kemnaker ke BPJS per NIB memuat data pribadi tanpa masking penuh (D5 hlm. 11–12), lalu disimpan sebagai **salinan lokal** (D5 hlm. 1–2) tanpa terlihat retensi, pembatasan akses, atau dasar pemrosesan (UU PDP: minimisasi dan pembatasan tujuan).
+4. **Kontrol yang ada:** key validation di API Management dan token (D5 hlm. 1); kebijakan Data Hub mensyaratkan PKS dan dokumen teknis, melalui 3scale (D4). Kontrol ini menunjukkan desain, tetapi praktiknya belum lengkap.
+
+**Bukti lain dari R1:** masking sebagian (R1 [P 00:09:26–00:09:29]); kebijakan klasifikasi dan retensi belum ada (R1 [P 01:36:45–01:38:45]); SFTP AES-256 untuk JKP (R1 [P 01:41:27–01:43:49]); unit bisnis dapat meminta data ke mitra tanpa satu pintu (R1 [S 00:13:22–00:16:35]).
+
+**Opsi penanganan kredensial layanan pertukaran:**
+
+| Opsi | Kelebihan | Kekurangan |
+|---|---|---|
+| A. Tetap di file konfigurasi, akses dokumen dibatasi | Tanpa biaya | Risiko kebocoran tetap; tanpa rotasi |
+| B. Secret dari platform (OpenShift secret/vault) + rotasi berkala | Sesuai praktik kontainer; audit akses | Perlu proses rotasi dan pemilik |
+| C. Hapus DB link; layanan membaca dari Data Hub dengan akun bertingkat minimum | Menghilangkan akar masalah | Bergantung pada pembangunan Data Hub |
+
+**Rekomendasi (usulan): B segera, C sebagai target.** Parameter Blueprint: periode rotasi kredensial, pemilik secret, dan larangan nilai rahasia di dokumen teknis.
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| KS-6. Masking & tokenisasi | 1 → 2 | Masking sebagian dipraktikkan (R1; D5 hlm. 7–8; D3-01 kuning) |
+| KS-7. Enkripsi | 2 → 2 | Encryption kuning; SFTP AES-256 |
+| KS-8. Audit akses | 1 [pk] → 1 | Audit Trail merah (D3-01) |
+| KS-9. Pertukaran eksternal | 3 → 2 | Kredensial teks biasa, DB link, data pribadi mitra tanpa masking dan retensi (D5); API Management merah (D3-01); SOP belum ada (R1) |
+| KS-12. Retensi & pemusnahan (baru) | – → 1 | Retention Policy merah; kebijakan belum ada (R1) |
+
+**Rata-rata baru: ±1,6** (dari ±1,7; 12 aspek).

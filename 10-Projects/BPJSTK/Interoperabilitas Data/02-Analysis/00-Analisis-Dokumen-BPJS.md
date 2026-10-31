@@ -344,3 +344,23 @@ Catatan: kedua PDF memuat watermark diagonal penerima/tanggal ("PIRANTI SEJAHTER
 - D1 dibaca dari teks OCR. Isi yang dikutip konsisten, tetapi tabel contoh formula DQ (hlm. 84) dan beberapa kata mungkin tidak sempurna.
 - D2: teks diekstrak dari PowerPoint. Beberapa diagram (hlm. 20, 37, 40, 50) diverifikasi secara visual; diagram lain (DBB, EDM, value chain) hanya dibaca dari teks sehingga relasi panahnya tidak terverifikasi.
 - Tidak ada informasi yang ditambahkan di luar kedua dokumen kecuali pada §7 (cross-check riset publik) dan bagian yang ditandai "inferensi".
+
+
+---
+
+## 11. Sumber tambahan (D3, D4, D5, R1) — pembaruan 31 Okt 2026
+
+Sumber berikut diterima setelah analisis D1–D2 dan dipakai di berkas 11–16 dengan kode singkat di bawah. Status semuanya **dokumen terbatas**.
+
+| Kode | Sumber | Isi pokok | Konvensi sitasi |
+|---|---|---|---|
+| **D3** | Tujuh tangkapan layar paparan BPJS (D3-01 s.d. D3-07) | D3-01 status RAG kapabilitas platform dan komponen DC/DRC; D3-02 alur POC MDM (sumber JMO/POM/Lapak Asik dan SMILE Pendaftaran/Klaim → pembobotan dan pengecekan kualitas → golden record → tabel data mart); D3-03 pola arsitektur MDM (Data Stewardship, Pencocokan, 360° Database, Zona Penyebaran Data via API); D3-04 dan D3-05 model konseptual Kepesertaan (Gambar 17, 13 entitas berdefinisi); D3-06 model konseptual Pelayanan/Klaim (Gambar 27); D3-07 lapisan arsitektur target | **D3-0n** (nomor gambar) |
+| **D4** | Dokumen kebijakan/teknis API Data Hub | Data Hub ditempatkan di DMZ untuk pertukaran B2B, REST/JSON, melalui API Management (3scale); kelayakan mitra berdasarkan PKS dan dokumen teknis | **D4** [halaman tidak bernomor; perlu konfirmasi rujukan bagian] |
+| **D5** | Dokumen teknis API pertukaran data BPJS TK–Kemnaker (12 hlm. PDF) | Endpoint dua arah (BPJS → Kemnaker per NIK dan NPP; Kemnaker → BPJS per NIK dan NIB), alur Client Request → Key Validation → proses → respons via API Management, kueri berbasis DB link, salinan lokal tabel mitra, berkas konfigurasi | **D5 hlm. n** |
+| **R1** | Ekstraksi rekaman diskusi dengan tim BPJS (sesi pagi dan sesi siang) | Klarifikasi praktik: kunci identitas, CDC Qlik, Talend, freshness per jam, SCD, Kudu/Parquet, pemisahan lapis berbasis skema, lineage belum ada, masking sebagian, SFTP AES-256, status DRC, POC MDM | **R1 [P hh:mm]** = sesi pagi; **R1 [S hh:mm]** = sesi siang |
+
+**Catatan penanganan.**
+- D5 memuat berkas konfigurasi dengan kredensial. Temuan dicatat hanya sebagai "kredensial tersimpan dalam teks biasa pada dokumen konfigurasi"; nilai kredensial, alamat jaringan, nama host, dan nama skema/akun **tidak** disalin ke berkas analisis mana pun.
+- D3 berupa gambar tanpa nomor halaman; status RAG dibaca dari warna titik. Butir tanpa titik (mis. Restore Testing, Metadata Management, Data Profiling pada D3-01) dicatat sebagai "status tidak ditandai".
+- **Konflik sumber yang harus dikonfirmasi:** D3-01 menyatakan DRC aktif dengan komponen platform (20 node), sedangkan R1 [S 00:35–00:37] menyatakan belum ada komponen Cloudera di DRC [perlu konfirmasi].
+- R1 adalah pernyataan lisan; bila bertentangan dengan dokumen, keduanya dicantumkan dan ditandai [perlu konfirmasi].

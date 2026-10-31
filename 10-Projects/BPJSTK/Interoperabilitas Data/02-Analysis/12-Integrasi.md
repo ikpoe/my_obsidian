@@ -7,7 +7,7 @@ blueprint: [3.4, 5.2, 5.3, 5.4, 7.2]
 versi: 2 (struktur upstream–downstream, 26 Okt 2026)
 status: draft-diskusi
 acuan_internal: DAMA-DMBOK v2, bab Data Integration & Interoperability
-sumber: [D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 01-Inventori-Tender-BPJSTK.csv, riset publik]
+sumber: [D3 paparan kapabilitas & MDM, D4 kebijakan API Data Hub, D5 dokumen teknis API Kemnaker, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 01-Inventori-Tender-BPJSTK.csv, riset publik]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 77 = cetak '- 76 -')."
 ---
 
@@ -22,7 +22,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **Downstream adalah sisi terlemah.** Konsumsi internal masih bergantung pada permintaan ke MDT yang memakan waktu (D2 hlm. 22). Distribusi ke mitra memakai API dan SFTP bulk untuk PKS K/L (D2 hlm. 21), dan Data Collaboration memakai platform eksternal yang beragam (D2 hlm. 22). Belum ada standar API, katalog layanan data, atau SLA konsumsi. Distribusi skor/insight ke aplikasi internal tidak terlihat di dokumen.
 - **Kebijakan kuat di sisi keamanan dan PKS, kosong di sisi arsitektur.** Ps. 66 mengatur otorisasi, PKS/NDA/IP whitelist, dan membatasi teknologi pada web service dan SFTP (D1 hlm. 50–51). Ps. 69–73 mengatur skema kolaborasi dan isi PKS (D1 hlm. 54–58). Standar API, data contract, SLA interface, dan pemantauan tidak diatur.
 - **Integrasi operasional di luar platform tetap berisiko.** SMILE menjadi hub integrasi yang berpotensi SPOF, masih ada Direct-to-DB (D2 hlm. 39), dan integrasi eksternal belum seragam dan belum terpusat (D2 hlm. 40). Area ini tidak dinilai sebagai lingkup inti, tetapi standar yang dirumuskan harus dapat dipakai untuknya.
-- **Skor usulan: upstream ±1,6; downstream ±1,6.** Praktik ada di beberapa jalur, tetapi tanpa standar, kontrak, atau pengukuran.
+- **Skor usulan: upstream ±1,6; downstream ±1,6** (diperbarui 31 Okt 2026: **upstream ±1,9; downstream ±1,8**, lihat Pembaruan 2026-10-31). Praktik ada di beberapa jalur, tetapi tanpa standar, kontrak, atau pengukuran.
 - **Rekomendasi:** Blueprint menetapkan **prinsip integrasi terstandar** untuk ESDP, dengan pola dan kontrol berbeda per sisi. Upstream berfokus pada CDC-first, data contract dengan pemilik sumber, dan beban minimum pada sumber. Downstream berfokus pada API gateway, standar API, kontrol akses berbasis klasifikasi, SLA, dan keterkaitan dengan PKS. Prinsip ini juga berlaku bagi integrasi operasional dan dapat menjadi dasar revisi Ps. 66.
 
 ## 2. Peta integrasi saat ini
@@ -65,14 +65,14 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 | Aspek | Praktik yang diharapkan | Kebijakan BPJS (D1) | Kondisi saat ini (D2) | Gap | Skor usulan (1-5) |
 |---|---|---|---|---|---|
 | US-1. Cakupan & kelengkapan ingest | Semua sumber prioritas terdaftar dan masuk platform; kelengkapan diukur | Arsitektur DWBI wajib menjelaskan dari mana, ke mana, kapan, dan bagaimana data diintegrasikan (D1 hlm. 76) | Baru sebagian Data Building Block tersimpan lengkap dan terstruktur (D2 hlm. 21). Sebagian aplikasi belum terhubung ke SMILE (D2 hlm. 45) | Tidak ada daftar sumber ter-ingest maupun ukuran kelengkapan | 2 |
-| US-2. Pola & tool ingest | Pola standar per jenis sumber (CDC, batch, file), tool terkelola | Komponen data integration (ETL/virtualization) dan staging (D1 hlm. 77) | ADG → staging, Talend, Qlik Replicate (D2 hlm. 21). Tender Qlik/Talend terkonfirmasi (inventori tender) | Praktik konsisten di jalur Oracle, tetapi aturan pemilihan pola tidak terdokumentasi; cakupan database lain [perlu konfirmasi] | 2 (calon 3) |
-| US-3. freshness data & SLA ingest | Target latensi per domain, dipantau | Tidak diatur | Tidak disebut | Tidak ada SLA freshness | 1 |
+| US-2. Pola & tool ingest | Pola standar per jenis sumber (CDC, batch, file), tool terkelola | Komponen data integration (ETL/virtualization) dan staging (D1 hlm. 77) | ADG → staging, Talend, Qlik Replicate (D2 hlm. 21). Tender Qlik/Talend terkonfirmasi (inventori tender) | Praktik konsisten di jalur Oracle, tetapi aturan pemilihan pola tidak terdokumentasi; cakupan database lain [perlu konfirmasi] | 2 (calon 3) → **3** (31 Okt 2026): Qlik Replicate CDC dari log Oracle + initial load, Talend untuk ETL (R1 [S 00:01:56–00:07:23]; D3-01) |
+| US-3. freshness data & SLA ingest | Target latensi per domain, dipantau | Tidak diatur | Tidak disebut | Tidak ada SLA freshness | 1 → **2** (31 Okt 2026): freshness CDC paling cepat per jam, Parquet ≥1–2 jam (R1 [S 00:03:54–00:04:21; S 00:29:19–00:30:41]); belum ada target/SLA |
 | US-4. Data contract dengan pemilik sumber | Kontrak skema, semantik, kualitas minimum, dan notifikasi perubahan dengan owner aplikasi sumber | PDM wajib sesuai Kamus Data & EDM (D1 hlm. 16–17) dapat menjadi dasar | Kamus Data antar-skema tidak konsisten (D2 hlm. 26). Kewenangan perubahan elemen data tidak jelas (D2 hlm. 26) | Tidak ada kontrak; perubahan skema sumber berisiko memutus pipeline | 1 |
 | US-5. Beban minimum pada sumber | Ingest dari standby/log, bukan query ke database produksi | Tidak diatur | ADG standby dipakai sebagai staging (D2 hlm. 21); CDC Qlik Replicate (D2 hlm. 21) | Praktik baik ada, tetapi tidak menjadi prinsip tertulis dan tidak diukur | 2 |
 | US-6. Ingest sumber eksternal | Data eksternal masuk melalui jalur terkontrol, dengan validasi format dan asal | Ps. 66 untuk pertukaran eksternal (D1 hlm. 50–51); skema verifikasi dan pertukaran data (D1 hlm. 54) | Sistem sudah mengakomodasi data eksternal; risiko format berbeda (D2 hlm. 21) | Jalur, validasi, dan pencatatan asal data eksternal tidak terdokumentasi | 2 |
 | US-7. Pemantauan, rekonsiliasi & lineage ingest | Monitoring per pipeline, rekonsiliasi jumlah/nilai, lineage sumber → platform | Integrasi DWBI dengan metadata (D1 hlm. 76) | Dua katalog terpisah: Dataedo dan Atlas (D2 hlm. 26). Monitoring belum dipetakan ke aplikasi (D2 hlm. 50) | Tidak ada rekonsiliasi atau lineage end-to-end | 1 |
 
-**Rata-rata upstream: ±1,6.**
+**Rata-rata upstream: ±1,6** → **±1,9** (31 Okt 2026).
 
 ### 3.2 Downstream
 
@@ -82,12 +82,12 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 | DS-2. Distribusi ke aplikasi internal (skor, insight) | Hasil analitik dikirim ke aplikasi operasional via API/event dengan kontrak | Tidak diatur khusus | Tidak terdokumentasi | Jalur balik platform → aplikasi tidak terlihat | 1 [perlu konfirmasi] |
 | DS-3. Distribusi ke mitra K/L (API, SFTP) | Satu pintu keluar, pola seragam, terkait PKS | Ps. 66(3): web service dan SFTP melalui host-to-host (D1 hlm. 51) | API untuk pertukaran eksternal; SFTP bulk untuk PKS K/L (D2 hlm. 21). Integrasi eksternal per aplikasi, belum terpusat (D2 hlm. 40) | Belum ada pintu tunggal; asal data (platform atau aplikasi) tidak jelas | 2 |
 | DS-4. Data sebagai layanan | Katalog produk data, proses permintaan, value data | Skema data sebagai layanan (D1 hlm. 54, Ps. 69(3)); value data (D1 hlm. 56–57, Ps. 72) | Data Collaboration memakai platform eksternal beragam (D2 hlm. 22) | Belum ada katalog produk data atau platform baku | 2 |
-| DS-5. Standar API & data contract konsumen | Standar desain (REST, versioning, error, paging), spesifikasi terbuka, kontrak per konsumen | Tidak diatur | Tidak disebut | Tidak ada standar maupun kontrak | 1 |
-| DS-6. API gateway & kontrol akses berbasis klasifikasi | Gateway tunggal; autentikasi, otorisasi, rate limit; kontrol mengikuti klasifikasi Biasa/Terbatas/Rahasia | Ps. 66(5): otorisasi, otentikasi, akses kontrol, perimeter, IP whitelist (D1 hlm. 51). Data Rahasia wajib pertukaran terenkripsi (D1 hlm. 93–94) | API Security, API Management (D2 hlm. 37); API Gateway (D2 hlm. 50); tidak tampak di diagram integrasi (D2 hlm. 39–40). Risiko kebocoran pengiriman eksternal diakui (D2 hlm. 21–22) | Status gateway dan penerapan kontrol per klasifikasi tidak terbukti | 2 [perlu konfirmasi] |
+| DS-5. Standar API & data contract konsumen | Standar desain (REST, versioning, error, paging), spesifikasi terbuka, kontrak per konsumen | Tidak diatur | Tidak disebut | Tidak ada standar maupun kontrak | 1 → **2** (31 Okt 2026): standar REST/JSON Data Hub (D4); spesifikasi tabel respons per layanan Kemnaker (D5 hlm. 7–12); belum ada versioning/kontrak |
+| DS-6. API gateway & kontrol akses berbasis klasifikasi | Gateway tunggal; autentikasi, otorisasi, rate limit; kontrol mengikuti klasifikasi Biasa/Terbatas/Rahasia | Ps. 66(5): otorisasi, otentikasi, akses kontrol, perimeter, IP whitelist (D1 hlm. 51). Data Rahasia wajib pertukaran terenkripsi (D1 hlm. 93–94) | API Security, API Management (D2 hlm. 37); API Gateway (D2 hlm. 50); tidak tampak di diagram integrasi (D2 hlm. 39–40). Risiko kebocoran pengiriman eksternal diakui (D2 hlm. 21–22) | Status gateway dan penerapan kontrol per klasifikasi tidak terbukti | 2 (31 Okt 2026, tetap; tanda [perlu konfirmasi] produk dicabut): 3scale (D4); key validation di API Management (D5 hlm. 1); cakupan sebagian (R1 [S 00:11:47–00:12:25]); D3-01 menandai API Management merah |
 | DS-7. SLA & pemantauan konsumsi | SLA ketersediaan/latensi per layanan, analitik pemakaian, alerting | Monev kinerja TI umum (D1 hlm. 58, Ps. 75) | Tidak disebut | Tidak ada SLA layanan data | 1 |
 | DS-8. Tata kelola PKS & onboarding mitra | PKS memuat metode integrasi, elemen data, keamanan; onboarding teknis baku | Isi minimum PKS (D1 hlm. 56, Ps. 71); kriteria mitra Non-KL termasuk teknologi integrasi (D1 hlm. 55); mekanisme PKS (D1 hlm. 56–58, Ps. 73) | SFTP bulk berbasis PKS K/L (D2 hlm. 21) | Daftar PKS aktif dan keterkaitannya dengan interface tidak terdokumentasi | 2 |
 
-**Rata-rata downstream: ±1,6.**
+**Rata-rata downstream: ±1,6** → **±1,8** (31 Okt 2026).
 
 ### 3.3 Catatan: integrasi operasional (tidak dinilai sebagai lingkup inti)
 - Internal: pola beragam, Direct-to-DB masih ada, SMILE sebagai hub berpotensi SPOF (D2 hlm. 39). Setara skor 2 bila dinilai.
@@ -144,6 +144,50 @@ Prinsip ini disusun agar dapat diadopsi sebagai juknis turunan atau masukan revi
 
 ![[12-Integrasi-Upstream-Downstream.excalidraw]]
 
+### 5.5 Studi kasus: API pertukaran data BPJS TK–Kemnaker (D5, pembaruan 31 Okt 2026)
+
+**Arah 1 — BPJS TK → Kemnaker (BPJS sebagai penyedia).**
+- Layanan per **NIK** (data kepesertaan TK, Tabel 1.0; D5 hlm. 7–8) dan per **NPP** (data perusahaan, Tabel 4.0; D5 hlm. 9–10). Contoh respons memuat NIK, nama, dan NPP yang ter-masking.
+- Implementasi: layanan kontainer di OpenShift (D5 hlm. 1). Data diambil dengan kueri SQL melalui **DB link `@TO_163`** ke skema aplikasi operasional, dari tabel snapshot TK aktif **bulan proses sebelumnya** (D5 hlm. 3–5). Kode program dan skala usaha diterjemahkan dengan DECODE yang di-*hardcode* di kueri (D5 hlm. 3–5).
+- Implikasi: freshness respons = bulanan (snapshot bulan lalu), bukan per jam seperti pipeline CDC (R1 [S 00:03:54–00:04:21]). Sumber data **bukan** platform data/ESDP, melainkan database operasional via DB link [perlu konfirmasi apakah snapshot berada di lingkungan big data].
+
+**Arah 2 — Kemnaker → BPJS TK (BPJS sebagai konsumen).**
+- Layanan per **NIK** (jabatan, pendidikan, disabilitas, dsb.; Tabel 2.0; D5 hlm. 8–9) dan per **NIB** (data perusahaan; D5 hlm. 11–12).
+- Respons disimpan sebagai **salinan lokal** di tabel BPJS (INSERT ke tabel lokal data TK dan PK/BU dari Kemnaker; D5 hlm. 1–2). Tidak terlihat aturan retensi, minimisasi elemen, atau penandaan sumber pada salinan itu.
+- Contoh respons Kemnaker per NIB memuat data pribadi tanpa masking penuh (D5 hlm. 11–12); lihat [[16-Keamanan-Data]].
+
+**Alur kontrol:** Client Request → Key Validation → Sent Request → Proses → Return, melalui API Management (D5 hlm. 1). Mekanisme token/JWT dipakai untuk autentikasi [perlu konfirmasi rincian].
+
+**Penilaian terhadap prinsip integrasi (§5.1):**
+
+| Prinsip | Kondisi pada kasus Kemnaker | Status |
+|---|---|---|
+| 1. Tidak ada Direct-to-DB lintas aplikasi | Kueri via DB link ke skema operasional | Tidak terpenuhi |
+| 2. Pemilik & data contract | Spesifikasi tabel respons ada (D5 hlm. 7–12); versi, SLA, aturan perubahan tidak ada | Sebagian |
+| 3. Kontrol sesuai klasifikasi | Masking di respons BPJS; respons mitra tidak ter-masking penuh; kredensial tersimpan dalam teks biasa pada dokumen konfigurasi (D5) | Sebagian |
+| 4. Satu pintu eksternal | Melalui API Management | Terpenuhi [perlu konfirmasi cakupan] |
+| 5. Terpantau & direkonsiliasi | Tidak ada bukti | Belum |
+| 6. Pola sesuai kebutuhan | API sinkron untuk lookup per NIK/NPP/NIB: tepat; sumber snapshot bulanan | Sebagian |
+
+### 5.6 Posisi Data Hub (D4)
+- **Data Hub** adalah lapisan pertukaran B2B yang ditempatkan di **DMZ**, dengan antarmuka **REST/JSON**, diekspos melalui **API Management (Red Hat 3scale)** (D4). Kelayakan mitra didasarkan pada PKS dan dokumen teknis (D4).
+- Zona jaringan DMZ belum terdefinisi jelas di sisi infrastruktur (R1 [S 00:38:53–00:40:30]); BPJS juga belum memutuskan apakah "pusat data"/Data Hub berada di dalam environment big data atau di luar (R1 [S 00:20:13–00:21:13]). D3-01 menandai API Gateway dan lapisan storage terkait "belum tersedia".
+- Posisi dalam ESDP: Data Hub = **lapisan serving eksternal** dari ESDP. Data Hub tidak menjadi sumber kebenaran, tidak menyimpan histori, dan hanya memuat produk data/golden record yang sudah dipublikasikan dari gold/MDM.
+
+| Opsi letak Data Hub | Deskripsi | Keamanan | Freshness | Kompleksitas | Catatan |
+|---|---|---|---|---|---|
+| A. Di dalam environment big data | API membaca langsung dari gold di Cloudera | − (cluster terekspos ke jalur eksternal) | ++ | + | Bertentangan dengan pemisahan zona |
+| B. Penyimpanan serving terpisah di DMZ/zona serving, diisi pipeline dari gold/MDM | API 3scale → Data Hub → (pipeline) ← gold/MDM | ++ | + (mengikuti jadwal pipeline) | 0 | Sejalan dengan R1 "perlu pipeline sendiri" |
+| C. Tanpa Data Hub; tiap aplikasi menyediakan API sendiri ke 3scale | Pola saat ini (mis. kasus Kemnaker) | − | 0 | + jangka pendek, −− jangka panjang | Melanggengkan DB link |
+
+**Rekomendasi (usulan): Opsi B.** Freshness Data Hub ditetapkan sebagai parameter per produk data; Opsi A hanya untuk konsumen internal yang berada di zona yang sama.
+
+### 5.7 Anti-pola: DB link langsung untuk layanan eksternal
+- **Gejala:** layanan API membaca skema operasional via DB link (D5 hlm. 3–5), kode referensi di-*hardcode*, dan respons mitra disalin ke tabel lokal tanpa retensi (D5 hlm. 1–2).
+- **Risiko:** kopling ketat ke skema sumber (perubahan skema memutus layanan tanpa peringatan, lihat Temuan 4); beban query ke database operasional; hak akses DB link biasanya lebih luas daripada elemen yang diatur PKS; tidak ada lineage; salinan data mitra tersebar.
+- **Pengganti:** layanan membaca dari produk data di gold/Data Hub (§5.6) melalui kontrak; kode referensi dari reference data terpusat ([[11-Master-Data]] §4A); respons mitra masuk melalui jalur ingest terkelola (US-6) dengan penandaan sumber dan retensi.
+- **Transisi:** sesuai Keputusan Diskusi butir 9, integrasi langsung tetap dimungkinkan bila lebih efisien **dan** memenuhi standar; DB link ke skema operasional tidak memenuhi prinsip 1 sehingga masuk daftar penghentian bertahap.
+
 ## 6. Implikasi ke Blueprint (batas peran per sisi)
 
 | Komponen | Upstream | Downstream |
@@ -195,3 +239,28 @@ Prinsip ini disusun agar dapat diadopsi sebagai juknis turunan atau masukan revi
 8. **Letak prinsip integrasi:** bagian dari Blueprint; usulan awal di Bab Prinsip Arsitektur (subbab Prinsip Integrasi), detail standar di kerangka interoperabilitas [perlu dikonfirmasi ikpu].
 9. **Pintu ESDP:** secara desain pertukaran eksternal diarahkan lewat ESDP, tetapi integrasi langsung tetap dimungkinkan bila lebih efisien **dan** memenuhi standar.
 10. **SLA & parameter layanan:** belum perlu ditetapkan nilainya; Blueprint cukup mendefinisikan **daftar parameter yang wajib didefinisikan** per interface/domain (mis. SLA freshness, ketersediaan, latensi, volume, retensi, owner).
+
+
+## Pembaruan 2026-10-31
+
+**Bukti baru (kondisi saat ini):**
+- Upstream: Qlik Replicate CDC membaca log Oracle (insert/update/delete) dengan initial load; frekuensi berkembang dari harian → 6 jam → paling cepat per jam; Talend untuk ETL; batch hanya sebagian (R1 [S 00:01:56–00:08:24; P 01:39:29–01:39:47]). D3-01: CDC dan batch ingestion kuning.
+- Streaming belum ada; diadopsi bila ada kebutuhan bisnis nyata (R1 [S 00:04:21–00:04:47; S 00:32:22–00:33:31]); D3-01: Event Streaming dan Message Broker merah.
+- Pertukaran eksternal: rutin dengan Kemenkes dan BPJS Kesehatan; JKP via SFTP AES-256 dengan validasi semi-otomatis; perbedaan logika status (per tanggal vs per bulan) dengan mitra (R1 [P 01:29:29–01:29:43; P 01:41:27–01:43:49; P 01:50:13–01:54:03]).
+- API Gateway di bawah tim Infra; sebagian layanan sudah melaluinya (R1 [S 00:11:47–00:12:25]). Produk: Red Hat 3scale (D4). D3-01 menandai API Management merah → konflik status [perlu konfirmasi].
+- Unit bisnis dapat meminta data langsung ke mitra tanpa satu pintu (R1 [S 00:13:22–00:16:35]); SOP PKS pertukaran data belum ada (R1 [S 00:13:48–00:15:07]).
+- Studi kasus Kemnaker (§5.5), posisi Data Hub (§5.6), anti-pola DB link (§5.7).
+- Keputusan Diskusi 26 Okt 2026 tidak berubah.
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| US-2. Pola & tool ingest | 2 (calon 3) → 3 | CDC Qlik + Talend terkonfirmasi sebagai pola baku (R1; D3-01) |
+| US-3. freshness & SLA ingest | 1 → 2 | Freshness per jam dipraktikkan; belum ada target/SLA (R1) |
+| US-6. Ingest eksternal | 2 → 2 | SFTP AES-256 ada, validasi semi-otomatis, salinan lokal tanpa retensi (R1; D5) |
+| US-7. Pemantauan & lineage | 1 → 1 | Lineage belum ada (R1 [P 01:36:23–01:36:41]; D3-01 merah) |
+| DS-3. Distribusi ke mitra K/L | 2 → 2 | API berjalan, tetapi berbasis DB link ke DB operasional (D5) |
+| DS-5. Standar API & kontrak | 1 → 2 | REST/JSON (D4), spesifikasi respons per layanan (D5) |
+| DS-6. API gateway | 2 [pk] → 2 | 3scale (D4), cakupan sebagian (R1); D3-01 merah |
+| DS-8. PKS & onboarding | 2 → 2 | Kelayakan berbasis PKS + dokumen teknis (D4); SOP belum ada (R1) |
+
+**Rata-rata baru: upstream ±1,9 (dari ±1,6); downstream ±1,8 (dari ±1,6).**

@@ -6,7 +6,7 @@ sesi: 4
 blueprint: [3.1, 3.2, 3.3, 3.4, 4, 5.1, 5.3, 6]
 status: draft-diskusi
 acuan_internal: DAMA-DMBOK v2, bab Data Modeling & Design
-sumber: [D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md]
+sumber: [D3 model konseptual Kepesertaan & Pelayanan, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 77 = cetak '- 76 -')."
 ---
 
@@ -20,7 +20,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **Model data konseptual sudah dimulai, model logis/fisik dan tata kelolanya belum terbukti.** D2 memiliki Data Building Block bertingkat L0–L3 (D2 hlm. 15–18) dan Enterprise Data Model as-is per domain (D2 hlm. 29–30). Namun dokumentasi DBB masih mengacu ITMP 2019–2024, dan sebagian entitas masih diolah dengan spreadsheet (D2 hlm. 31).
 - **Kebijakan D1 cukup jelas.** Ps. 14 mewajibkan EDM yang dikelola Unit Manajemen Data, prinsip formalisasi, ruang lingkup, dan dokumentasi, serta Physical Data Model (PDM) aplikasi yang direviu kesesuaiannya dengan Kamus Data dan EDM (D1 hlm. 16–17). Standar Kamus Data memuat 11 atribut termasuk nama elemen fisik/logis dan lokasi tabel (D1 hlm. 75).
 - **Pola pemodelan platform tidak terdokumentasi.** D2 menunjukkan alur Staging → Data Lake → DWH/data mart (D2 hlm. 20–21), tanpa bukti pola model DWH, penanganan historis (SCD), atau dimensi yang mengacu master data. Big data tidak mengacu master data (D2 hlm. 24).
-- **Skor usulan rata-rata ±1,5**, terendah di antara sesi 1–4. Ini wajar: pemodelan adalah area yang paling bergantung pada praktik, bukan kebijakan.
+- **Skor usulan rata-rata ±1,5** (31 Okt 2026: **±1,6**, PD-5 dan PD-7 naik), terendah di antara sesi 1–4. Ini wajar: pemodelan adalah area yang paling bergantung pada praktik, bukan kebijakan.
 - **Rekomendasi (usulan, untuk disepakati): pola hybrid.** Medallion dipetakan ke zona Opsi B. Lapis **silver** memakai **Data Vault 2.0** untuk domain inti (kepesertaan, iuran, klaim), lapis **gold** memakai **Kimball dimensional** dengan conformed dimension dari MDM. Inmon 3NF tidak dipilih sebagai inti karena paling rentan terhadap perubahan SMILE. Pilihan ini didasarkan pada perbandingan empat opsi (bagian 6).
 
 ## 2. Kondisi saat ini (as-is)
@@ -57,15 +57,15 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 | PD-2. Enterprise Data Model                  | EDM logis per domain, relasi, dikelola UMD, direviu                           | Ps. 14(3) (D1 hlm. 16)                                    | EDM as-is sebagian (D2 hlm. 29–30); entitas belum tersistem (D2 hlm. 29–31)    | Kelengkapan dan siklus reviu belum terbukti        | 2                    |
 | PD-3. PDM aplikasi & reviu kesesuaian        | PDM tiap aplikasi, direviu terhadap EDM dan Kamus Data                        | Ps. 14(5) (D1 hlm. 17)                                    | Tidak ada bukti                                                                | Proses reviu belum tampak                          | 1 [perlu konfirmasi] |
 | PD-4. Kamus Data & standar penamaan          | Kamus data lengkap; konvensi penamaan fisik/logis per lapisan                 | Standar Kamus Data (D1 hlm. 75)                           | Standar disalin di D2 hlm. 25; konvensi penamaan platform tidak ada            | Standar ada, penerapan dan konvensi platform belum | 2                    |
-| PD-5. Pola pemodelan platform (lapisan)      | Pola per lapisan terdokumentasi (raw, terintegrasi, presentasi)               | Komponen DWBI (D1 hlm. 77)                                | Staging → Lake → DWH/mart (D2 hlm. 20–21), pola model tidak disebut            | Pola belum ditetapkan                              | 1 [perlu konfirmasi] |
+| PD-5. Pola pemodelan platform (lapisan)      | Pola per lapisan terdokumentasi (raw, terintegrasi, presentasi)               | Komponen DWBI (D1 hlm. 77)                                | Staging → Lake → DWH/mart (D2 hlm. 20–21), pola model tidak disebut            | Pola belum ditetapkan                              | 1 [pk] → **2** (31 Okt 2026): Kudu untuk CDC, Parquet untuk analitik, data mart Kudu/Parquet via Talend; lapis hanya dibedakan skema (R1 [S 00:17:55–00:19:21; S 00:29:19–00:31:48; S 00:44:54–00:45:06]) |
 | PD-6. Conformed dimension & MDM              | Dimensi kunci (peserta, PK/BU, kantor, program) dari MDM, dipakai lintas mart | MD&DR rujukan DWH (D1 hlm. 77)                            | Big data tidak mengacu master data (D2 hlm. 24)                                | Dimensi tidak conformed                            | 1                    |
-| PD-7. Historis, SCD & auditability           | Data atomic historis, kebijakan SCD per atribut, lineage ke sumber            | Central warehouse atomic historis (D1 hlm. 77)            | Tidak ada bukti penanganan historis/SCD                                        | Belum ditetapkan                                   | 1 [perlu konfirmasi] |
+| PD-7. Historis, SCD & auditability           | Data atomic historis, kebijakan SCD per atribut, lineage ke sumber            | Central warehouse atomic historis (D1 hlm. 77)            | Tidak ada bukti penanganan historis/SCD                                        | Belum ditetapkan                                   | 1 [pk] → **2** (31 Okt 2026): SCD sudah diterapkan [tipe per tabel perlu konfirmasi] (R1 [S 00:00:37–00:00:49]); lineage belum ada (R1 [P 01:36:23–01:36:41]) |
 | PD-8. Tata kelola & versi model              | Siklus reviu, versioning, analisis dampak perubahan sumber (SMILE)            | Reviu quality control (D1 hlm. 16)                        | Unit bisnis sulit mengetahui perubahan terbaru (D2 hlm. 31)                    | Change management model belum ada                  | 1                    |
 | PD-9. Data contract / skema antarmuka        | Skema, semantik, dan parameter per interface tercatat di katalog              | Ps. 66 (D1 hlm. 50–51); lihat [[12-Integrasi]]            | Tidak ada bukti data contract                                                  | Belum ada                                          | 1                    |
 | PD-10. Cakupan model terhadap data tersistem | Seluruh entitas kritikal tersistem dan termodelkan                            | Formalisasi & ruang lingkup (D1 hlm. 16)                  | Sebagian data diolah spreadsheet (D2 hlm. 31)                                  | Entitas di luar sistem                             | 2                    |
 | PD-11. Model presentasi (mart, BI)           | Mart dimensional, lapisan semantik, self-service                              | Data mart, cubes (D1 hlm. 77); portofolio BI (D1 hlm. 79) | Data mart dan 17 dashboard (D2 hlm. 20–22); request ke MDT lambat (D2 hlm. 22) | Belum ada lapisan semantik dan cubes               | 2                    |
 
-**Rata-rata: ±1,5.**
+**Rata-rata: ±1,5** → **±1,6** (31 Okt 2026).
 
 ## 5. Medallion: pemetaan ke zona Opsi B
 
@@ -189,3 +189,54 @@ Sebuah entitas dijadikan shared dimension bila memenuhi kriteria wajib dan minim
 - Satu definisi, satu kunci, satu sumber (MDM/silver) untuk semua mart di gold.
 - Perubahan struktur melalui tata kelola model (versi dan persetujuan owner).
 - Tercatat di katalog metadata beserta owner dan data contract-nya.
+
+
+## Pembaruan 2026-10-31
+
+**Bukti baru (kondisi saat ini):**
+- **Model konseptual Kepesertaan** (D3-04, "Gambar 17") dan **Pelayanan** (D3-06, "Gambar 27") serta daftar 13 entitas Kepesertaan (D3-05). Model Kepesertaan memuat antara lain Individu, Peserta, Perusahaan, GrupPerusahaan, KantorPerusahaan, PemberiKerja, UnitPemberiKerja, Kantor, Pendaftaran, HubunganKerja, LaporanUpah, IuranProgramPekerja, SaldoProgramPeserta, SumberData. Model Pelayanan berpusat pada KasusKlaim dengan subtipe per program (UsiaTua, Pensiun, Kematian, KecelakaanKerja, KehilanganPekerjaan, PenempatanPMI).
+- **Platform:** CDC ke Kudu, Parquet untuk analitik, data mart Kudu/Parquet via Talend; SCD sudah diterapkan (R1 [S 00:00:37–00:00:49; S 00:17:55–00:19:21; S 00:29:19–00:31:48]).
+- BPJS bertanya apakah kepesertaan termasuk dimensi atau fakta (R1 [P 01:32:39–01:33:45]). Usulan jawaban: **Peserta** = dimensi (shared); **kepesertaan/pendaftaran per pemberi kerja dan periode** = fakta (periodic snapshot / accumulating) atau tabel link di silver.
+- Model peserta lama satu baris per peserta–program dengan pengulangan data individu (R1 [P 01:21:33–01:22:26]); model konseptual sudah memisahkan Individu dan Peserta.
+
+### Pemeriksaan shared dimension terhadap entitas model konseptual (D3-04, D3-05, D3-06)
+
+| Shared dimension (Keputusan 3) | Entitas model konseptual | Kesesuaian | Catatan desain |
+|---|---|---|---|
+| **Peserta** | **Individu** (orang; NIK) dan **Peserta** (individu yang terdaftar; kode TK/KPJ), plus AlamatIndividu, Keluarga, AnggotaKeluarga | Sebagian: model memisahkan orang dan peran, sedangkan nama dimensi "Peserta" mencampur keduanya | Opsi di bawah |
+| **Pemberi Kerja** | **Perusahaan** (badan; potensi atau terdaftar), **GrupPerusahaan**, **PemberiKerja** (peran pemberi kerja; NPP), **UnitPemberiKerja** (unit pengelola administrasi), KantorPerusahaan, ProyekJakon, PelaksanaPenempatanPMI, PemilikPerusahaan | Sebagian: empat tingkat (grup → perusahaan → pemberi kerja → unit) | Dimensi Pemberi Kerja pada grain **UnitPemberiKerja** dengan hierarki ke PemberiKerja, Perusahaan, GrupPerusahaan; ProyekJakon dan P3MI sebagai subtipe PemberiKerja |
+| **Kantor** | **Kantor** (hierarki "bagian dari") | Sesuai | Dimensi berhierarki; SCD tipe 2 untuk perubahan struktur kantor |
+| **Program** | Tidak ada entitas master; program tersirat di IuranProgramPekerja, SaldoProgramPeserta, PiutangProgram, dan subtipe KasusKlaim | Belum ada entitas | Tambahkan entitas reference data **Program** (JHT, JKK, JKM, JP, JKP) ke model konseptual |
+| **Kanal** | Tidak ada; terdekat **SumberData** dan Agen/Pembina | Belum ada entitas | Tambahkan reference data **Kanal** (mis. JMO, kantor cabang, Lapak Asik, mitra) [perlu konfirmasi daftar kanal] |
+
+**Perusahaan vs Pemberi Kerja vs Unit Pemberi Kerja.** Perusahaan adalah badan usaha (dapat berupa potensi, belum terdaftar). Pemberi Kerja adalah peran terdaftar yang diberi NPP. Unit Pemberi Kerja adalah unit yang bertanggung jawab atas administrasi kepesertaan atas nama pemberi kerja (D3-05 no. 4, 8, 10, 13). Satu perusahaan dapat memiliki beberapa NPP/unit [perlu konfirmasi], dan merger mengubah relasinya (R1 [P 01:06:06–01:08:42]).
+
+| Opsi grain dimensi Pemberi Kerja | Kelebihan | Kekurangan |
+|---|---|---|
+| A. Grain Perusahaan | Agregasi per badan usaha mudah | Kehilangan rincian NPP/unit; laporan iuran per NPP sulit |
+| B. Grain UnitPemberiKerja + hierarki (PemberiKerja → Perusahaan → Grup) | Mendukung laporan per unit, NPP, dan grup; sesuai model konseptual | Dimensi lebih lebar; perlu SCD tipe 2 untuk perpindahan unit/merger |
+| C. Tiga dimensi terpisah | Fleksibel | Banyak join; risiko inkonsistensi |
+
+**Rekomendasi (usulan): Opsi B.**
+
+**Individu vs Peserta.**
+
+| Opsi | Kelebihan | Kekurangan |
+|---|---|---|
+| A. Satu dimensi Peserta (grain kode TK) dengan atribut individu | Sederhana untuk mart kepesertaan | Data individu berulang (masalah model lama, R1 [P 01:21:33–01:22:26]); satu orang dengan beberapa kepesertaan sulit dihitung |
+| B. Dimensi **Individu** (grain NIK/golden ID) + dimensi **Peserta** (grain kode TK) yang merujuk Individu | Selaras model konseptual dan golden record ([[11-Master-Data]] §4A); hitung orang unik dan kepesertaan terpisah | Dua dimensi; perlu bridge untuk keluarga/ahli waris |
+| C. Individu sebagai dimensi; kepesertaan sebagai fakta saja | Paling ramping | Atribut kepesertaan (segmen, status) tersebar di fakta |
+
+**Rekomendasi (usulan): Opsi B.** Ganti nama butir pertama daftar sementara menjadi "Individu & Peserta" saat Keputusan 3 direvisit; urutan prioritas lain tetap.
+
+**Celah cakupan model:** model konseptual JKP belum ada (dikonfirmasi R1); D3-04 dan D3-06 tidak menampilkan atribut, kunci, maupun kardinalitas lengkap.
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| PD-1. Model konseptual | 2 → 2 | D3-04/05/06 ada; JKP belum; Program/Kanal belum ada sebagai entitas |
+| PD-5. Pola pemodelan platform | 1 [pk] → 2 | Pola Kudu/Parquet/data mart terkonfirmasi (R1); belum medallion |
+| PD-6. Conformed dimension | 1 → 1 | Belum ada shared dimension yang dipraktikkan; MDM masih POC |
+| PD-7. Historis & SCD | 1 [pk] → 2 | SCD diterapkan (R1); lineage belum ada |
+| PD-10. Cakupan model | 2 → 2 | JKP belum dimodelkan |
+
+**Rata-rata baru: ±1,6** (dari ±1,5).

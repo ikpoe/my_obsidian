@@ -6,7 +6,7 @@ sesi: 5
 blueprint: [3.1, 3.2, 3.3, 3.4, 4, 5.3, 5.4, 6]
 status: draft-diskusi
 acuan_internal: DAMA-DMBOK v2, bab Metadata Management & Data Quality
-sumber: [D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md]
+sumber: [D3 status kapabilitas & POC MDM, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 77 = cetak '- 76 -')."
 ---
 
@@ -21,7 +21,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **Metadata: dua katalog dan definisi yang tidak konsisten.** Dataedo dipakai untuk Oracle dan Apache Atlas untuk Cloudera (D2 hlm. 26). Glossary dan Kamus Data memuat istilah dan elemen dengan nama/definisi berbeda; kewenangan perubahan elemen data tidak jelas; struktur data baru sulit terdeteksi (D2 hlm. 26).
 - **Kualitas data: prosedur ada, hasil belum memadai.** Prosedur metrik → profiling → penilaian → cleansing → tindak lanjut → monitoring ada (D2 hlm. 27). Namun masih ada duplikasi, inkonsistensi, dan format tidak valid; tool otomatis belum memberi rekomendasi perbaikan; perbaikan bad data di kantor cabang belum optimal; awareness entry data rendah (D2 hlm. 28).
 - **Celah utama untuk ESDP:** belum ada lineage end-to-end, metadata operasional (freshness, volume, status run), quality gate per lapis, maupun data contract.
-- **Skor usulan:** Metadata **±1,4**, Kualitas Data **±1,6**.
+- **Skor usulan:** Metadata **±1,4**, Kualitas Data **±1,6** (31 Okt 2026: tetap; bukti baru di Pembaruan 2026-10-31).
 - **Rekomendasi (usulan, berbasis perbandingan):**
   - **Metadata:** federasi katalog. Atlas untuk metadata teknis dan lineage di Cloudera; Dataedo sebagai katalog bisnis (glossary, Kamus Data, owner) dan titik masuk pengguna. Katalog enterprise tunggal dievaluasi di Tahun 3.
   - **Kualitas data:** aturan didefinisikan sekali (di katalog/data contract), dijalankan di dua titik: validasi di sumber saat entri dan quality gate per lapis medallion. Talend dipakai ulang sebagai mesin profiling dan aturan.
@@ -64,8 +64,8 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 |---|---|---|---|---|---|
 | MK-1. Business Glossary | Satu definisi per istilah, owner jelas, dipakai di laporan | D1 hlm. 17, 74 | Ada; definisi berbeda antarbidang (D2 hlm. 25–26) | Konsistensi dan owner | 2 |
 | MK-2. Kamus Data | 11 atribut terisi untuk CDE dan domain prioritas | D1 hlm. 75 | Ada; nama/definisi berbeda antar-skema (D2 hlm. 26) | Harmonisasi | 2 |
-| MK-3. Katalog terpusat | Satu titik temu metadata lintas platform | D1 hlm. 5 | Dataedo dan Atlas terpisah (D2 hlm. 26) | Federasi/integrasi | 2 |
-| MK-4. Lineage end-to-end | Sumber → ingest → lapis → BI | Integrasi metadata DWBI (D1 hlm. 76) | Atlas hanya di Cloudera (D2 hlm. 26) | Lineage lintas platform belum ada | 1 |
+| MK-3. Katalog terpusat | Satu titik temu metadata lintas platform | D1 hlm. 5 | Dataedo dan Atlas terpisah (D2 hlm. 26) | Federasi/integrasi | 2 (31 Okt 2026, tetap): Dataedo dipakai pasif (R1 [P 00:21:08–00:21:14; P 01:13:24]); Data Catalog merah (D3-01) |
+| MK-4. Lineage end-to-end | Sumber → ingest → lapis → BI | Integrasi metadata DWBI (D1 hlm. 76) | Atlas hanya di Cloudera (D2 hlm. 26) | Lineage lintas platform belum ada | 1 (31 Okt 2026, terkonfirmasi): lineage belum ada (R1 [P 01:36:23–01:36:41]; D3-01 merah) |
 | MK-5. Metadata operasional | Status run, volume, freshness tercatat otomatis | – (tidak eksplisit) | Tidak ada bukti | Belum ada | 1 [perlu konfirmasi] |
 | MK-6. Kewenangan & stewardship metadata | Owner/steward per elemen, alur persetujuan | Peran UMD (D1 hlm. 17) | Kewenangan tidak jelas (D2 hlm. 26) | RACI belum ada | 1 |
 | MK-7. Deteksi perubahan skema | Perubahan struktur terdeteksi dan dinilai dampaknya | Prinsip quality & improvement (D1 hlm. 74) | Tool tidak memberi insight struktur baru (D2 hlm. 26) | Belum ada | 1 |
@@ -143,7 +143,7 @@ Per dataset/produk data, katalog wajib memuat (nilai diisi per domain):
 | KD-5. Manajemen isu & remediasi | Isu tercatat, akar masalah, SLA penanganan, perbaikan di sumber | D1 hlm. 82–83 | Perbaikan bad data di cabang belum optimal (D2 hlm. 28) | Alur isu dan SLA | 2 |
 | KD-6. Quality gate per lapis | Aturan dijalankan di ingest, bronze, silver, gold | Remediasi/transformasi saat populasi DWH (D1 hlm. 79) | Tidak ada bukti | Belum ada | 1 [perlu konfirmasi] |
 | KD-7. Pelaporan & monitoring | Laporan bulanan, evaluasi triwulan, dashboard | D1 hlm. 83 | Dashboard Kualitas Data (D2 hlm. 22) | Konsistensi pelaporan [perlu konfirmasi] | 2 |
-| KD-8. Freshness & SLA data | Target freshness per dataset, dipantau otomatis | Timeliness (D1 hlm. 83–84) | Tidak ada bukti | Belum ada | 1 |
+| KD-8. Freshness & SLA data | Target freshness per dataset, dipantau otomatis | Timeliness (D1 hlm. 83–84) | Tidak ada bukti | Belum ada | 1 (31 Okt 2026, tetap): freshness per jam dipraktikkan (R1 [S 00:03:54–00:04:21]) tanpa target atau monitoring |
 | KD-9. Kualitas di sumber & awareness | Validasi saat entri, pelatihan petugas | Perbaikan input (D1 hlm. 82) | Awareness entry rendah (D2 hlm. 28) | Pencegahan di sumber | 1 |
 
 **Rata-rata Kualitas Data: ±1,6.**
@@ -227,3 +227,24 @@ Alur: deteksi (gate/profiling/laporan pengguna) → registrasi isu (domain, CDE,
 
 ## Lampiran — Diagram
 ![[15-Metadata-Kualitas.excalidraw]]
+
+
+## Pembaruan 2026-10-31
+
+**Bukti baru (kondisi saat ini):**
+- **Metadata:** Dataedo aktif tetapi dipakai pasif untuk dokumentasi Oracle (R1 [P 00:21:08–00:21:14; P 01:13:24]). Lineage belum ada dan katalog belum dimanfaatkan (R1 [P 01:36:23–01:36:41]). D3-01: Data Catalog dan Data Lineage merah; Metadata Management tidak ditandai.
+- **Kualitas data:** POC MDM memuat tahap pembobotan dan pengecekan kualitas sebelum golden record (D3-02). Ini kontrol kualitas pertama yang terlihat di alur, tetapi masih POC. D3-01: Data Profiling tidak ditandai.
+- Validasi data pertukaran JKP semi-otomatis (R1 [P 01:50:13–01:50:27]); perbedaan logika status per tanggal vs per bulan dengan mitra memicu selisih (R1 [P 01:53:13–01:54:03]).
+- Sebagian data iuran masih diolah dengan Excel (R1 [P 00:05:38–00:05:49]); risiko kualitas di sumber (KD-9).
+- **Freshness:** CDC paling cepat per jam; Parquet ≥1–2 jam (R1 [S 00:03:54–00:04:21; S 00:29:19–00:30:41]). Layanan API Kemnaker membaca snapshot bulan sebelumnya (D5 hlm. 3–5), sehingga freshness berbeda per jalur. Belum ada target maupun pemantauan freshness, sehingga KD-8 tetap 1.
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| MK-3. Katalog terpusat | 2 → 2 | Dataedo pasif; katalog merah (R1; D3-01) |
+| MK-4. Lineage | 1 → 1 | Terkonfirmasi belum ada (R1; D3-01) |
+| MK-5. Metadata operasional | 1 [pk] → 1 [pk] | Tidak ada bukti baru |
+| KD-3. Profiling | 2 → 2 | D3-01 tanpa status; tidak ada bukti praktik baru |
+| KD-6. Quality gate per lapis | 1 [pk] → 1 [pk] | Pengecekan kualitas hanya di alur POC MDM (D3-02); belum di pipeline produksi |
+| KD-8. Freshness & SLA | 1 → 1 | Freshness per jam ada, target/monitoring tidak |
+
+**Rata-rata: Metadata ±1,4; Kualitas Data ±1,6** (tetap).
