@@ -103,7 +103,7 @@ RM-31  Uji failover rutin & SLA layanan Data Hub ^RM-31-t
 
 RM-32  Evaluasi kematangan & revisi Perdir ^RM-32-t
 
-Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi]. ^legend
+Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik, biru = rencana). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi]. ^legend
 
 %%
 ## Drawing
@@ -153,13 +153,13 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr0",
 			"type": "rectangle",
-			"x": 40,
+			"x": 60,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#343a40",
-			"backgroundColor": "#343a40",
+			"backgroundColor": "#1c7ed6",
 			"fillStyle": "solid",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
@@ -180,9 +180,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr0t",
 			"type": "text",
-			"x": 40,
+			"x": 60,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#ffffff",
@@ -217,13 +217,13 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr1",
 			"type": "rectangle",
-			"x": 640,
+			"x": 820,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#343a40",
-			"backgroundColor": "#343a40",
+			"backgroundColor": "#2f9e44",
 			"fillStyle": "solid",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
@@ -244,9 +244,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr1t",
 			"type": "text",
-			"x": 640,
+			"x": 820,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#ffffff",
@@ -281,13 +281,13 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr2",
 			"type": "rectangle",
-			"x": 1240,
+			"x": 1580,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#343a40",
-			"backgroundColor": "#343a40",
+			"backgroundColor": "#e67700",
 			"fillStyle": "solid",
 			"strokeWidth": 1,
 			"strokeStyle": "solid",
@@ -308,9 +308,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "yr2t",
 			"type": "text",
-			"x": 1240,
+			"x": 1580,
 			"y": 60,
-			"width": 600,
+			"width": 760,
 			"height": 40,
 			"angle": 0,
 			"strokeColor": "#ffffff",
@@ -345,10 +345,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane1",
 			"type": "rectangle",
-			"x": 40,
+			"x": 60,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#e7f5ff",
@@ -372,9 +372,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane1t",
 			"type": "text",
-			"x": 40,
+			"x": 60,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -409,10 +409,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane2",
 			"type": "rectangle",
-			"x": 340,
+			"x": 440,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#e7f5ff",
@@ -436,9 +436,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane2t",
 			"type": "text",
-			"x": 340,
+			"x": 440,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -473,10 +473,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane3",
 			"type": "rectangle",
-			"x": 640,
+			"x": 820,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#ebfbee",
@@ -500,9 +500,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane3t",
 			"type": "text",
-			"x": 640,
+			"x": 820,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -537,10 +537,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane4",
 			"type": "rectangle",
-			"x": 940,
+			"x": 1200,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#ebfbee",
@@ -564,9 +564,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane4t",
 			"type": "text",
-			"x": 940,
+			"x": 1200,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -601,10 +601,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane5",
 			"type": "rectangle",
-			"x": 1240,
+			"x": 1580,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#fff9db",
@@ -628,9 +628,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane5t",
 			"type": "text",
-			"x": 1240,
+			"x": 1580,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -665,10 +665,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane6",
 			"type": "rectangle",
-			"x": 1540,
+			"x": 1960,
 			"y": 100,
-			"width": 300,
-			"height": 752,
+			"width": 380,
+			"height": 940,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "#fff9db",
@@ -692,9 +692,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "lane6t",
 			"type": "text",
-			"x": 1540,
+			"x": 1960,
 			"y": 105,
-			"width": 300,
+			"width": 380,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -729,8 +729,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms0",
 			"type": "diamond",
-			"x": 50,
-			"y": 135,
+			"x": 80,
+			"y": 140,
 			"width": 20,
 			"height": 20,
 			"angle": 0,
@@ -756,9 +756,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms0t",
 			"type": "text",
-			"x": 76,
-			"y": 135,
-			"width": 250,
+			"x": 106,
+			"y": 140,
+			"width": 320,
 			"height": 20,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -793,8 +793,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms1",
 			"type": "diamond",
-			"x": 50,
-			"y": 165,
+			"x": 80,
+			"y": 170,
 			"width": 20,
 			"height": 20,
 			"angle": 0,
@@ -820,9 +820,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms1t",
 			"type": "text",
-			"x": 76,
-			"y": 165,
-			"width": 250,
+			"x": 106,
+			"y": 170,
+			"width": 320,
 			"height": 20,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -857,8 +857,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms2",
 			"type": "diamond",
-			"x": 50,
-			"y": 195,
+			"x": 80,
+			"y": 200,
 			"width": 20,
 			"height": 20,
 			"angle": 0,
@@ -884,9 +884,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms2t",
 			"type": "text",
-			"x": 76,
-			"y": 195,
-			"width": 250,
+			"x": 106,
+			"y": 200,
+			"width": 320,
 			"height": 20,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -921,8 +921,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms3",
 			"type": "diamond",
-			"x": 650,
-			"y": 135,
+			"x": 840,
+			"y": 140,
 			"width": 20,
 			"height": 20,
 			"angle": 0,
@@ -948,9 +948,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms3t",
 			"type": "text",
-			"x": 676,
-			"y": 135,
-			"width": 250,
+			"x": 866,
+			"y": 140,
+			"width": 320,
 			"height": 20,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -985,8 +985,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms4",
 			"type": "diamond",
-			"x": 950,
-			"y": 135,
+			"x": 1220,
+			"y": 140,
 			"width": 20,
 			"height": 20,
 			"angle": 0,
@@ -1012,9 +1012,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "ms4t",
 			"type": "text",
-			"x": 976,
-			"y": 135,
-			"width": 250,
+			"x": 1246,
+			"y": 140,
+			"width": 320,
 			"height": 20,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1049,9 +1049,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-1",
 			"type": "rectangle",
-			"x": 60,
-			"y": 230,
-			"width": 260,
+			"x": 130,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -1099,9 +1099,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-1-t",
 			"type": "text",
-			"x": 66,
-			"y": 234,
-			"width": 248,
+			"x": 136,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1136,9 +1136,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-2",
 			"type": "rectangle",
-			"x": 60,
-			"y": 316,
-			"width": 260,
+			"x": 130,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -1194,9 +1194,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-2-t",
 			"type": "text",
-			"x": 66,
-			"y": 320,
-			"width": 248,
+			"x": 136,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1231,9 +1231,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-3",
 			"type": "rectangle",
-			"x": 360,
-			"y": 230,
-			"width": 260,
+			"x": 510,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1285,9 +1285,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-3-t",
 			"type": "text",
-			"x": 366,
-			"y": 234,
-			"width": 248,
+			"x": 516,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1322,9 +1322,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-4",
 			"type": "rectangle",
-			"x": 60,
-			"y": 402,
-			"width": 260,
+			"x": 130,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1368,9 +1368,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-4-t",
 			"type": "text",
-			"x": 66,
-			"y": 406,
-			"width": 248,
+			"x": 136,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1405,9 +1405,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-5",
 			"type": "rectangle",
-			"x": 60,
-			"y": 488,
-			"width": 260,
+			"x": 130,
+			"y": 580,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1443,9 +1443,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-5-t",
 			"type": "text",
-			"x": 66,
-			"y": 492,
-			"width": 248,
+			"x": 136,
+			"y": 584,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1480,9 +1480,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-6",
 			"type": "rectangle",
-			"x": 360,
-			"y": 316,
-			"width": 260,
+			"x": 510,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1526,9 +1526,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-6-t",
 			"type": "text",
-			"x": 366,
-			"y": 320,
-			"width": 248,
+			"x": 516,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1563,9 +1563,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-7",
 			"type": "rectangle",
-			"x": 60,
-			"y": 574,
-			"width": 260,
+			"x": 130,
+			"y": 690,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1601,9 +1601,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-7-t",
 			"type": "text",
-			"x": 66,
-			"y": 578,
-			"width": 248,
+			"x": 136,
+			"y": 694,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1638,9 +1638,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-8",
 			"type": "rectangle",
-			"x": 60,
-			"y": 660,
-			"width": 260,
+			"x": 130,
+			"y": 800,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1680,9 +1680,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-8-t",
 			"type": "text",
-			"x": 66,
-			"y": 664,
-			"width": 248,
+			"x": 136,
+			"y": 804,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1717,9 +1717,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-9",
 			"type": "rectangle",
-			"x": 360,
-			"y": 402,
-			"width": 260,
+			"x": 510,
+			"y": 910,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1755,9 +1755,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-9-t",
 			"type": "text",
-			"x": 366,
-			"y": 406,
-			"width": 248,
+			"x": 516,
+			"y": 914,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1792,9 +1792,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-10",
 			"type": "rectangle",
-			"x": 360,
-			"y": 488,
-			"width": 260,
+			"x": 510,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1834,9 +1834,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-10-t",
 			"type": "text",
-			"x": 366,
-			"y": 492,
-			"width": 248,
+			"x": 516,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1871,9 +1871,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-11",
 			"type": "rectangle",
-			"x": 360,
-			"y": 574,
-			"width": 260,
+			"x": 510,
+			"y": 580,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -1921,9 +1921,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-11-t",
 			"type": "text",
-			"x": 366,
-			"y": 578,
-			"width": 248,
+			"x": 516,
+			"y": 584,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1958,9 +1958,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-12",
 			"type": "rectangle",
-			"x": 60,
-			"y": 746,
-			"width": 260,
+			"x": 130,
+			"y": 910,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -1996,9 +1996,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-12-t",
 			"type": "text",
-			"x": 66,
-			"y": 750,
-			"width": 248,
+			"x": 136,
+			"y": 914,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2033,9 +2033,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-13",
 			"type": "rectangle",
-			"x": 360,
-			"y": 660,
-			"width": 260,
+			"x": 510,
+			"y": 690,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2075,9 +2075,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-13-t",
 			"type": "text",
-			"x": 366,
-			"y": 664,
-			"width": 248,
+			"x": 516,
+			"y": 694,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2112,9 +2112,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-14",
 			"type": "rectangle",
-			"x": 360,
-			"y": 746,
-			"width": 260,
+			"x": 510,
+			"y": 800,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -2162,9 +2162,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-14-t",
 			"type": "text",
-			"x": 366,
-			"y": 750,
-			"width": 248,
+			"x": 516,
+			"y": 804,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2199,9 +2199,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-15",
 			"type": "rectangle",
-			"x": 660,
-			"y": 230,
-			"width": 260,
+			"x": 890,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2257,9 +2257,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-15-t",
 			"type": "text",
-			"x": 666,
-			"y": 234,
-			"width": 248,
+			"x": 896,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2294,9 +2294,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-16",
 			"type": "rectangle",
-			"x": 960,
-			"y": 230,
-			"width": 260,
+			"x": 1270,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2336,9 +2336,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-16-t",
 			"type": "text",
-			"x": 966,
-			"y": 234,
-			"width": 248,
+			"x": 1276,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2373,9 +2373,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-17",
 			"type": "rectangle",
-			"x": 660,
-			"y": 316,
-			"width": 260,
+			"x": 890,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2415,9 +2415,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-17-t",
 			"type": "text",
-			"x": 666,
-			"y": 320,
-			"width": 248,
+			"x": 896,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2452,9 +2452,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-18",
 			"type": "rectangle",
-			"x": 660,
-			"y": 402,
-			"width": 260,
+			"x": 890,
+			"y": 580,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -2502,9 +2502,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-18-t",
 			"type": "text",
-			"x": 666,
-			"y": 406,
-			"width": 248,
+			"x": 896,
+			"y": 584,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2539,9 +2539,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-19",
 			"type": "rectangle",
-			"x": 660,
-			"y": 488,
-			"width": 260,
+			"x": 890,
+			"y": 690,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2577,9 +2577,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-19-t",
 			"type": "text",
-			"x": 666,
-			"y": 492,
-			"width": 248,
+			"x": 896,
+			"y": 694,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2614,9 +2614,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-20",
 			"type": "rectangle",
-			"x": 960,
-			"y": 316,
-			"width": 260,
+			"x": 1270,
+			"y": 690,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -2664,9 +2664,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-20-t",
 			"type": "text",
-			"x": 966,
-			"y": 320,
-			"width": 248,
+			"x": 1276,
+			"y": 694,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2701,9 +2701,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-21",
 			"type": "rectangle",
-			"x": 960,
-			"y": 402,
-			"width": 260,
+			"x": 1270,
+			"y": 800,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -2751,9 +2751,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-21-t",
 			"type": "text",
-			"x": 966,
-			"y": 406,
-			"width": 248,
+			"x": 1276,
+			"y": 804,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2788,9 +2788,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-22",
 			"type": "rectangle",
-			"x": 960,
-			"y": 488,
-			"width": 260,
+			"x": 1270,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2830,9 +2830,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-22-t",
 			"type": "text",
-			"x": 966,
-			"y": 492,
-			"width": 248,
+			"x": 1276,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2867,9 +2867,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-23",
 			"type": "rectangle",
-			"x": 960,
-			"y": 574,
-			"width": 260,
+			"x": 1270,
+			"y": 580,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2913,9 +2913,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-23-t",
 			"type": "text",
-			"x": 966,
-			"y": 578,
-			"width": 248,
+			"x": 1276,
+			"y": 584,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -2950,9 +2950,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-24",
 			"type": "rectangle",
-			"x": 660,
-			"y": 574,
-			"width": 260,
+			"x": 890,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3000,9 +3000,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-24-t",
 			"type": "text",
-			"x": 666,
-			"y": 578,
-			"width": 248,
+			"x": 896,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3037,9 +3037,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-25",
 			"type": "rectangle",
-			"x": 960,
-			"y": 660,
-			"width": 260,
+			"x": 1270,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3075,9 +3075,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-25-t",
 			"type": "text",
-			"x": 966,
-			"y": 664,
-			"width": 248,
+			"x": 1276,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3112,9 +3112,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-26",
 			"type": "rectangle",
-			"x": 1260,
-			"y": 230,
-			"width": 260,
+			"x": 1650,
+			"y": 580,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
@@ -3150,9 +3150,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-26-t",
 			"type": "text",
-			"x": 1266,
-			"y": 234,
-			"width": 248,
+			"x": 1656,
+			"y": 584,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3187,9 +3187,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-27",
 			"type": "rectangle",
-			"x": 1260,
-			"y": 316,
-			"width": 260,
+			"x": 1650,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3229,9 +3229,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-27-t",
 			"type": "text",
-			"x": 1266,
-			"y": 320,
-			"width": 248,
+			"x": 1656,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3266,9 +3266,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-28",
 			"type": "rectangle",
-			"x": 1260,
-			"y": 402,
-			"width": 260,
+			"x": 1650,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3308,9 +3308,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-28-t",
 			"type": "text",
-			"x": 1266,
-			"y": 406,
-			"width": 248,
+			"x": 1656,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3345,9 +3345,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-29",
 			"type": "rectangle",
-			"x": 1260,
-			"y": 488,
-			"width": 260,
+			"x": 1650,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3387,9 +3387,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-29-t",
 			"type": "text",
-			"x": 1266,
-			"y": 492,
-			"width": 248,
+			"x": 1656,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3424,9 +3424,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-30",
 			"type": "rectangle",
-			"x": 1560,
-			"y": 230,
-			"width": 260,
+			"x": 2030,
+			"y": 470,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3462,9 +3462,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-30-t",
 			"type": "text",
-			"x": 1566,
-			"y": 234,
-			"width": 248,
+			"x": 2036,
+			"y": 474,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3499,9 +3499,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-31",
 			"type": "rectangle",
-			"x": 1560,
-			"y": 316,
-			"width": 260,
+			"x": 2030,
+			"y": 360,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3537,9 +3537,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-31-t",
 			"type": "text",
-			"x": 1566,
-			"y": 320,
-			"width": 248,
+			"x": 2036,
+			"y": 364,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3574,9 +3574,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-32",
 			"type": "rectangle",
-			"x": 1560,
-			"y": 402,
-			"width": 260,
+			"x": 2030,
+			"y": 250,
+			"width": 250,
 			"height": 64,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3612,9 +3612,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "RM-32-t",
 			"type": "text",
-			"x": 1566,
-			"y": 406,
-			"width": 248,
+			"x": 2036,
+			"y": 254,
+			"width": 238,
 			"height": 56,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -3649,23 +3649,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-1-RM-2",
 			"type": "arrow",
-			"x": 310,
-			"y": 294,
-			"width": 0,
-			"height": 22,
+			"x": 380,
+			"y": 274.0,
+			"width": 20,
+			"height": 110.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1720926263,
 			"version": 1,
 			"versionNonce": 973838694,
@@ -3677,23 +3675,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
+				],
+				[
+					20,
+					0.0
+				],
+				[
+					20,
+					110.0
 				],
 				[
 					0,
-					22
+					110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-1",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3702,10 +3708,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-2-RM-3",
 			"type": "arrow",
-			"x": 320,
-			"y": 348.0,
-			"width": 40,
-			"height": -86.0,
+			"x": 380,
+			"y": 384.0,
+			"width": 130,
+			"height": 110.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -3716,9 +3722,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 858641202,
 			"version": 1,
 			"versionNonce": 2116481899,
@@ -3730,23 +3734,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					57.0
+				],
+				[
+					112,
+					57.0
+				],
+				[
+					112,
+					110.0
+				],
+				[
+					130,
+					110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-3",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3755,10 +3775,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-1-RM-4",
 			"type": "arrow",
-			"x": 310,
-			"y": 294,
-			"width": 0,
-			"height": 108,
+			"x": 380,
+			"y": 282.0,
+			"width": 28,
+			"height": 212.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -3769,9 +3789,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1527129487,
 			"version": 1,
 			"versionNonce": 124468791,
@@ -3783,23 +3801,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
+				],
+				[
+					28,
+					0.0
+				],
+				[
+					28,
+					212.0
 				],
 				[
 					0,
-					108
+					212.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-1",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-4",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3808,10 +3834,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-1-RM-6",
 			"type": "arrow",
-			"x": 320,
-			"y": 262.0,
-			"width": 40,
-			"height": 86.0,
+			"x": 380,
+			"y": 290.0,
+			"width": 130,
+			"height": 94.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -3822,9 +3848,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 119988829,
 			"version": 1,
 			"versionNonce": 1200093500,
@@ -3836,23 +3860,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					86.0
+					36,
+					0.0
+				],
+				[
+					36,
+					41.0
+				],
+				[
+					112,
+					41.0
+				],
+				[
+					112,
+					94.0
+				],
+				[
+					130,
+					94.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-1",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-6",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3861,10 +3901,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-8-RM-9",
 			"type": "arrow",
-			"x": 320,
-			"y": 692.0,
-			"width": 40,
-			"height": -258.0,
+			"x": 380,
+			"y": 824.0,
+			"width": 130,
+			"height": 110.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -3875,9 +3915,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 2028255630,
 			"version": 1,
 			"versionNonce": 1113145427,
@@ -3889,23 +3927,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-258.0
+					18,
+					0.0
+				],
+				[
+					18,
+					57.0
+				],
+				[
+					112,
+					57.0
+				],
+				[
+					112,
+					110.0
+				],
+				[
+					130,
+					110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-8",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-9",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3914,10 +3968,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-3-RM-10",
 			"type": "arrow",
-			"x": 610,
-			"y": 294,
-			"width": 0,
-			"height": 194,
+			"x": 760,
+			"y": 494.0,
+			"width": 20,
+			"height": 220.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -3928,9 +3982,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 831698693,
 			"version": 1,
 			"versionNonce": 1478675320,
@@ -3942,23 +3994,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
+				],
+				[
+					20,
+					0.0
+				],
+				[
+					20,
+					-220.0
 				],
 				[
 					0,
-					194
+					-220.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-3",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-10",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -3967,23 +4027,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-2-RM-11",
 			"type": "arrow",
-			"x": 320,
-			"y": 348.0,
-			"width": 40,
-			"height": 258.0,
+			"x": 380,
+			"y": 392.0,
+			"width": 130,
+			"height": 212.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1920828234,
 			"version": 1,
 			"versionNonce": 1501175504,
@@ -3995,23 +4053,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					258.0
+					27,
+					0.0
+				],
+				[
+					27,
+					159.0
+				],
+				[
+					112,
+					159.0
+				],
+				[
+					112,
+					212.0
+				],
+				[
+					130,
+					212.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-11",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4020,10 +4094,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-2-RM-13",
 			"type": "arrow",
-			"x": 320,
-			"y": 348.0,
-			"width": 40,
-			"height": 344.0,
+			"x": 380,
+			"y": 400.0,
+			"width": 130,
+			"height": 314.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4034,9 +4108,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1566099206,
 			"version": 1,
 			"versionNonce": 345908636,
@@ -4048,23 +4120,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					344.0
+					36,
+					0.0
+				],
+				[
+					36,
+					261.0
+				],
+				[
+					112,
+					261.0
+				],
+				[
+					112,
+					314.0
+				],
+				[
+					130,
+					314.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-13",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4073,10 +4161,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-2-RM-14",
 			"type": "arrow",
-			"x": 320,
-			"y": 348.0,
-			"width": 40,
-			"height": 430.0,
+			"x": 380,
+			"y": 408.0,
+			"width": 130,
+			"height": 416.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4087,9 +4175,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 946878465,
 			"version": 1,
 			"versionNonce": 438761610,
@@ -4101,23 +4187,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					430.0
+					45,
+					0.0
+				],
+				[
+					45,
+					363.0
+				],
+				[
+					112,
+					363.0
+				],
+				[
+					112,
+					416.0
+				],
+				[
+					130,
+					416.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-14",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4126,23 +4228,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-11-RM-14",
 			"type": "arrow",
-			"x": 610,
-			"y": 638,
-			"width": 0,
-			"height": 108,
+			"x": 760,
+			"y": 604.0,
+			"width": 20,
+			"height": 228.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 974295421,
 			"version": 1,
 			"versionNonce": 2018978167,
@@ -4154,23 +4254,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
+				],
+				[
+					20,
+					0.0
+				],
+				[
+					20,
+					228.0
 				],
 				[
 					0,
-					108
+					228.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-11",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-14",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4179,10 +4287,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-3-RM-15",
 			"type": "arrow",
-			"x": 620,
-			"y": 262.0,
-			"width": 40,
-			"height": 0.0,
+			"x": 760,
+			"y": 502.0,
+			"width": 130,
+			"height": 281.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4193,9 +4301,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 844846558,
 			"version": 1,
 			"versionNonce": 1450571438,
@@ -4207,23 +4313,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
+					27,
 					0.0
+				],
+				[
+					27,
+					-281.0
+				],
+				[
+					112,
+					-281.0
+				],
+				[
+					112,
+					-228.0
+				],
+				[
+					130,
+					-228.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-3",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4232,10 +4354,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-6-RM-15",
 			"type": "arrow",
-			"x": 620,
-			"y": 348.0,
-			"width": 40,
-			"height": -86.0,
+			"x": 760,
+			"y": 384.0,
+			"width": 130,
+			"height": 157.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4246,9 +4368,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 877776916,
 			"version": 1,
 			"versionNonce": 2072980150,
@@ -4260,23 +4380,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-157.0
+				],
+				[
+					103,
+					-157.0
+				],
+				[
+					103,
+					-102.0
+				],
+				[
+					130,
+					-102.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-6",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4285,10 +4421,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-10-RM-15",
 			"type": "arrow",
-			"x": 620,
-			"y": 520.0,
-			"width": 40,
-			"height": -258.0,
+			"x": 760,
+			"y": 274.0,
+			"width": 130,
+			"height": 16.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4299,9 +4435,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 8196149,
 			"version": 1,
 			"versionNonce": 2059322682,
@@ -4313,23 +4447,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-258.0
+					18,
+					0.0
+				],
+				[
+					18,
+					16.0
+				],
+				[
+					130,
+					16.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-10",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4338,9 +4480,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-15-RM-16",
 			"type": "arrow",
-			"x": 920,
-			"y": 262.0,
-			"width": 40,
+			"x": 1140,
+			"y": 274.0,
+			"width": 130,
 			"height": 0.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
@@ -4352,9 +4494,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1477498383,
 			"version": 1,
 			"versionNonce": 364120812,
@@ -4366,10 +4506,18 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
+					18,
+					0.0
+				],
+				[
+					18,
+					0.0
+				],
+				[
+					130,
 					0.0
 				]
 			],
@@ -4377,12 +4525,12 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"startBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-16",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4391,10 +4539,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-5-RM-16",
 			"type": "arrow",
-			"x": 320,
-			"y": 520.0,
-			"width": 640,
-			"height": -258.0,
+			"x": 380,
+			"y": 604.0,
+			"width": 890,
+			"height": 377.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4405,9 +4553,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 514982154,
 			"version": 1,
 			"versionNonce": 1668748296,
@@ -4419,23 +4565,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					-258.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-377.0
+				],
+				[
+					863,
+					-377.0
+				],
+				[
+					863,
+					-322.0
+				],
+				[
+					890,
+					-322.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-5",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-16",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4444,10 +4606,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-4-RM-17",
 			"type": "arrow",
-			"x": 320,
-			"y": 434.0,
-			"width": 340,
-			"height": -86.0,
+			"x": 380,
+			"y": 494.0,
+			"width": 510,
+			"height": 163.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4458,9 +4620,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 856070306,
 			"version": 1,
 			"versionNonce": 2053134994,
@@ -4472,23 +4632,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-163.0
+				],
+				[
+					492,
+					-163.0
+				],
+				[
+					492,
+					-110.0
+				],
+				[
+					510,
+					-110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-4",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-17",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4497,9 +4673,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-6-RM-17",
 			"type": "arrow",
-			"x": 620,
-			"y": 348.0,
-			"width": 40,
+			"x": 760,
+			"y": 392.0,
+			"width": 130,
 			"height": 0.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
@@ -4511,9 +4687,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 766744960,
 			"version": 1,
 			"versionNonce": 1863693998,
@@ -4525,10 +4699,18 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
+					27,
+					0.0
+				],
+				[
+					27,
+					0.0
+				],
+				[
+					130,
 					0.0
 				]
 			],
@@ -4536,12 +4718,12 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"startBinding": {
 				"elementId": "RM-6",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-17",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4550,10 +4732,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-2-RM-18",
 			"type": "arrow",
-			"x": 320,
-			"y": 348.0,
-			"width": 340,
-			"height": 86.0,
+			"x": 380,
+			"y": 416.0,
+			"width": 510,
+			"height": 188.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4564,9 +4746,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1428150522,
 			"version": 1,
 			"versionNonce": 372587780,
@@ -4578,23 +4758,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					86.0
+					54,
+					0.0
+				],
+				[
+					54,
+					135.0
+				],
+				[
+					492,
+					135.0
+				],
+				[
+					492,
+					188.0
+				],
+				[
+					510,
+					188.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-2",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-18",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4603,23 +4799,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-14-RM-18",
 			"type": "arrow",
-			"x": 620,
-			"y": 778.0,
-			"width": 40,
-			"height": -344.0,
+			"x": 760,
+			"y": 824.0,
+			"width": 130,
+			"height": 267.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1700113407,
 			"version": 1,
 			"versionNonce": 1989259376,
@@ -4631,23 +4825,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-344.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-267.0
+				],
+				[
+					103,
+					-267.0
+				],
+				[
+					103,
+					-212.0
+				],
+				[
+					130,
+					-212.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-14",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-18",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4656,10 +4866,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-7-RM-19",
 			"type": "arrow",
-			"x": 320,
-			"y": 606.0,
-			"width": 340,
-			"height": -86.0,
+			"x": 380,
+			"y": 714.0,
+			"width": 510,
+			"height": 53.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4670,9 +4880,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1723943247,
 			"version": 1,
 			"versionNonce": 364725392,
@@ -4684,23 +4892,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-53.0
+				],
+				[
+					492,
+					-53.0
+				],
+				[
+					492,
+					0.0
+				],
+				[
+					510,
+					0.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-7",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-19",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4709,10 +4933,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-13-RM-20",
 			"type": "arrow",
-			"x": 620,
-			"y": 692.0,
-			"width": 340,
-			"height": -344.0,
+			"x": 760,
+			"y": 714.0,
+			"width": 510,
+			"height": 53.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4723,9 +4947,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 682281554,
 			"version": 1,
 			"versionNonce": 730160160,
@@ -4737,23 +4959,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-344.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-53.0
+				],
+				[
+					492,
+					-53.0
+				],
+				[
+					492,
+					0.0
+				],
+				[
+					510,
+					0.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-13",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-20",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4762,23 +5000,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-18-RM-20",
 			"type": "arrow",
-			"x": 920,
-			"y": 434.0,
-			"width": 40,
-			"height": -86.0,
+			"x": 1140,
+			"y": 604.0,
+			"width": 130,
+			"height": 118.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 545625653,
 			"version": 1,
 			"versionNonce": 118321418,
@@ -4790,23 +5026,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					63.0
+				],
+				[
+					103,
+					63.0
+				],
+				[
+					103,
+					118.0
+				],
+				[
+					130,
+					118.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-18",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-20",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4815,10 +5067,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-12-RM-21",
 			"type": "arrow",
-			"x": 320,
-			"y": 778.0,
-			"width": 640,
-			"height": -344.0,
+			"x": 380,
+			"y": 934.0,
+			"width": 890,
+			"height": 163.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4829,9 +5081,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 649187325,
 			"version": 1,
 			"versionNonce": 1998679711,
@@ -4843,23 +5093,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					-344.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-163.0
+				],
+				[
+					872,
+					-163.0
+				],
+				[
+					872,
+					-110.0
+				],
+				[
+					890,
+					-110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-12",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-21",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4868,23 +5134,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-20-RM-21",
 			"type": "arrow",
-			"x": 1210,
-			"y": 380,
-			"width": 0,
-			"height": 22,
+			"x": 1520,
+			"y": 714.0,
+			"width": 20,
+			"height": 118.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 627813882,
 			"version": 1,
 			"versionNonce": 2037347502,
@@ -4896,23 +5160,31 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
+				],
+				[
+					20,
+					0.0
+				],
+				[
+					20,
+					118.0
 				],
 				[
 					0,
-					22
+					118.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-20",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-21",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4921,10 +5193,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-3-RM-21",
 			"type": "arrow",
-			"x": 620,
-			"y": 262.0,
-			"width": 340,
-			"height": 172.0,
+			"x": 760,
+			"y": 510.0,
+			"width": 510,
+			"height": 330.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4935,9 +5207,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1504988819,
 			"version": 1,
 			"versionNonce": 669638768,
@@ -4949,23 +5219,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					172.0
+					36,
+					0.0
+				],
+				[
+					36,
+					273.0
+				],
+				[
+					474,
+					273.0
+				],
+				[
+					474,
+					330.0
+				],
+				[
+					510,
+					330.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-3",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-21",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -4974,10 +5260,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-4-RM-22",
 			"type": "arrow",
-			"x": 320,
-			"y": 434.0,
-			"width": 640,
-			"height": 86.0,
+			"x": 380,
+			"y": 502.0,
+			"width": 890,
+			"height": 61.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -4988,9 +5274,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 562571391,
 			"version": 1,
 			"versionNonce": 91898035,
@@ -5002,23 +5286,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					86.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-61.0
+				],
+				[
+					872,
+					-61.0
+				],
+				[
+					872,
+					-8.0
+				],
+				[
+					890,
+					-8.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-4",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-22",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5027,10 +5327,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-11-RM-22",
 			"type": "arrow",
-			"x": 620,
-			"y": 606.0,
-			"width": 340,
-			"height": -86.0,
+			"x": 760,
+			"y": 612.0,
+			"width": 510,
+			"height": 165.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5041,9 +5341,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 61172930,
 			"version": 1,
 			"versionNonce": 441402618,
@@ -5055,23 +5353,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-86.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-165.0
+				],
+				[
+					483,
+					-165.0
+				],
+				[
+					483,
+					-110.0
+				],
+				[
+					510,
+					-110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-11",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-22",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5080,10 +5394,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-8-RM-23",
 			"type": "arrow",
-			"x": 320,
-			"y": 692.0,
-			"width": 640,
-			"height": -86.0,
+			"x": 380,
+			"y": 832.0,
+			"width": 890,
+			"height": 281.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5094,9 +5408,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 598077321,
 			"version": 1,
 			"versionNonce": 1863197322,
@@ -5108,23 +5420,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					-86.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-281.0
+				],
+				[
+					872,
+					-281.0
+				],
+				[
+					872,
+					-228.0
+				],
+				[
+					890,
+					-228.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-8",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-23",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5133,10 +5461,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-15-RM-23",
 			"type": "arrow",
-			"x": 920,
-			"y": 262.0,
-			"width": 40,
-			"height": 344.0,
+			"x": 1140,
+			"y": 282.0,
+			"width": 130,
+			"height": 330.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5147,9 +5475,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 836682997,
 			"version": 1,
 			"versionNonce": 906419965,
@@ -5161,23 +5487,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					344.0
+					27,
+					0.0
+				],
+				[
+					27,
+					275.0
+				],
+				[
+					103,
+					275.0
+				],
+				[
+					103,
+					330.0
+				],
+				[
+					130,
+					330.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-23",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5186,10 +5528,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-1-RM-24",
 			"type": "arrow",
-			"x": 320,
-			"y": 262.0,
-			"width": 340,
-			"height": 344.0,
+			"x": 380,
+			"y": 298.0,
+			"width": 510,
+			"height": 196.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5200,9 +5542,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 120232147,
 			"version": 1,
 			"versionNonce": 1081622283,
@@ -5214,23 +5554,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					344.0
+					45,
+					0.0
+				],
+				[
+					45,
+					143.0
+				],
+				[
+					492,
+					143.0
+				],
+				[
+					492,
+					196.0
+				],
+				[
+					510,
+					196.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-1",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-24",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5239,10 +5595,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-14-RM-24",
 			"type": "arrow",
-			"x": 620,
-			"y": 778.0,
-			"width": 40,
-			"height": -172.0,
+			"x": 760,
+			"y": 832.0,
+			"width": 130,
+			"height": 385.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5253,9 +5609,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 913882254,
 			"version": 1,
 			"versionNonce": 1258282194,
@@ -5267,23 +5621,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-172.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-385.0
+				],
+				[
+					103,
+					-385.0
+				],
+				[
+					103,
+					-330.0
+				],
+				[
+					130,
+					-330.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-14",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-24",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5292,10 +5662,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-24-RM-25",
 			"type": "arrow",
-			"x": 920,
-			"y": 606.0,
-			"width": 40,
-			"height": 86.0,
+			"x": 1140,
+			"y": 494.0,
+			"width": 130,
+			"height": 163.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5306,9 +5676,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1033108813,
 			"version": 1,
 			"versionNonce": 1400113411,
@@ -5320,23 +5688,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-163.0
+				],
+				[
+					112,
+					-163.0
+				],
+				[
+					112,
+					-110.0
+				],
+				[
+					130,
+					-110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-24",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-25",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5345,23 +5729,21 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-21-RM-26",
 			"type": "arrow",
-			"x": 1220,
-			"y": 434.0,
-			"width": 40,
-			"height": -172.0,
+			"x": 1520,
+			"y": 824.0,
+			"width": 130,
+			"height": 273.0,
 			"angle": 0,
 			"strokeColor": "#c92a2a",
 			"backgroundColor": "transparent",
 			"fillStyle": "solid",
-			"strokeWidth": 1,
+			"strokeWidth": 2,
 			"strokeStyle": "solid",
 			"roughness": 0,
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1113963314,
 			"version": 1,
 			"versionNonce": 1799645191,
@@ -5373,23 +5755,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					-172.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-273.0
+				],
+				[
+					112,
+					-273.0
+				],
+				[
+					112,
+					-220.0
+				],
+				[
+					130,
+					-220.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-21",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-26",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5398,10 +5796,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-24-RM-27",
 			"type": "arrow",
-			"x": 920,
-			"y": 606.0,
-			"width": 340,
-			"height": -258.0,
+			"x": 1140,
+			"y": 502.0,
+			"width": 510,
+			"height": 171.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5412,9 +5810,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 562957180,
 			"version": 1,
 			"versionNonce": 261582917,
@@ -5426,23 +5822,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-258.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-171.0
+				],
+				[
+					492,
+					-171.0
+				],
+				[
+					492,
+					-118.0
+				],
+				[
+					510,
+					-118.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-24",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-27",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5451,10 +5863,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-18-RM-28",
 			"type": "arrow",
-			"x": 920,
-			"y": 434.0,
-			"width": 340,
-			"height": 0.0,
+			"x": 1140,
+			"y": 612.0,
+			"width": 510,
+			"height": 391.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5465,9 +5877,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1519490801,
 			"version": 1,
 			"versionNonce": 1967786446,
@@ -5479,23 +5889,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
+					27,
 					0.0
+				],
+				[
+					27,
+					-391.0
+				],
+				[
+					492,
+					-391.0
+				],
+				[
+					492,
+					-338.0
+				],
+				[
+					510,
+					-338.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-18",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-28",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5504,10 +5930,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-15-RM-28",
 			"type": "arrow",
-			"x": 920,
-			"y": 262.0,
-			"width": 340,
-			"height": 172.0,
+			"x": 1140,
+			"y": 290.0,
+			"width": 510,
+			"height": 63.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5518,9 +5944,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1806584668,
 			"version": 1,
 			"versionNonce": 561623934,
@@ -5532,23 +5956,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					172.0
+					36,
+					0.0
+				],
+				[
+					36,
+					-63.0
+				],
+				[
+					483,
+					-63.0
+				],
+				[
+					483,
+					-8.0
+				],
+				[
+					510,
+					-8.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-15",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-28",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5557,10 +5997,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-11-RM-29",
 			"type": "arrow",
-			"x": 620,
-			"y": 606.0,
-			"width": 640,
-			"height": -86.0,
+			"x": 760,
+			"y": 620.0,
+			"width": 890,
+			"height": 179.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5571,9 +6011,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 652132316,
 			"version": 1,
 			"versionNonce": 80336782,
@@ -5585,23 +6023,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					-86.0
+					36,
+					0.0
+				],
+				[
+					36,
+					-179.0
+				],
+				[
+					872,
+					-179.0
+				],
+				[
+					872,
+					-126.0
+				],
+				[
+					890,
+					-126.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-11",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-29",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5610,10 +6064,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-3-RM-29",
 			"type": "arrow",
-			"x": 620,
-			"y": 262.0,
-			"width": 640,
-			"height": 258.0,
+			"x": 760,
+			"y": 518.0,
+			"width": 890,
+			"height": 71.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5624,9 +6078,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 1890322093,
 			"version": 1,
 			"versionNonce": 786442398,
@@ -5638,23 +6090,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					640,
-					258.0
+					45,
+					0.0
+				],
+				[
+					45,
+					-71.0
+				],
+				[
+					863,
+					-71.0
+				],
+				[
+					863,
+					-16.0
+				],
+				[
+					890,
+					-16.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-3",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-29",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5663,10 +6131,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-20-RM-30",
 			"type": "arrow",
-			"x": 1220,
-			"y": 348.0,
-			"width": 340,
-			"height": -86.0,
+			"x": 1520,
+			"y": 722.0,
+			"width": 510,
+			"height": 281.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5677,9 +6145,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 16889874,
 			"version": 1,
 			"versionNonce": 643396776,
@@ -5691,23 +6157,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-86.0
+					27,
+					0.0
+				],
+				[
+					27,
+					-281.0
+				],
+				[
+					492,
+					-281.0
+				],
+				[
+					492,
+					-228.0
+				],
+				[
+					510,
+					-228.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-20",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-30",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5716,10 +6198,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-23-RM-31",
 			"type": "arrow",
-			"x": 1220,
-			"y": 606.0,
-			"width": 340,
-			"height": -258.0,
+			"x": 1520,
+			"y": 604.0,
+			"width": 510,
+			"height": 273.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5730,9 +6212,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 740223520,
 			"version": 1,
 			"versionNonce": 607991153,
@@ -5744,23 +6224,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					340,
-					-258.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-273.0
+				],
+				[
+					492,
+					-273.0
+				],
+				[
+					492,
+					-220.0
+				],
+				[
+					510,
+					-220.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-23",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-31",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5769,10 +6265,10 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "a-RM-27-RM-32",
 			"type": "arrow",
-			"x": 1520,
-			"y": 348.0,
-			"width": 40,
-			"height": 86.0,
+			"x": 1900,
+			"y": 384.0,
+			"width": 130,
+			"height": 163.0,
 			"angle": 0,
 			"strokeColor": "#868e96",
 			"backgroundColor": "transparent",
@@ -5783,9 +6279,7 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
+			"roundness": null,
 			"seed": 2033636663,
 			"version": 1,
 			"versionNonce": 516841822,
@@ -5797,23 +6291,39 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"points": [
 				[
 					0,
-					0
+					0.0
 				],
 				[
-					40,
-					86.0
+					18,
+					0.0
+				],
+				[
+					18,
+					-163.0
+				],
+				[
+					112,
+					-163.0
+				],
+				[
+					112,
+					-110.0
+				],
+				[
+					130,
+					-110.0
 				]
 			],
 			"lastCommittedPoint": null,
 			"startBinding": {
 				"elementId": "RM-27",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"endBinding": {
 				"elementId": "RM-32",
 				"focus": 0,
-				"gap": 2
+				"gap": 1
 			},
 			"startArrowhead": null,
 			"endArrowhead": "arrow",
@@ -5822,9 +6332,9 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 		{
 			"id": "legend",
 			"type": "text",
-			"x": 40,
-			"y": 862,
-			"width": 1800,
+			"x": 60,
+			"y": 1050,
+			"width": 2200,
 			"height": 24,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -5845,8 +6355,8 @@ Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20
 			"updated": 1761955200000,
 			"link": null,
 			"locked": false,
-			"text": "Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi].",
-			"originalText": "Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi].",
+			"text": "Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik, biru = rencana). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi].",
+			"originalText": "Legenda: kotak merah = jalur kritis (RM-1→RM-2→RM-11→RM-14→RM-18→RM-20→RM-21→RM-26); panah abu-abu = dependensi; belah ketupat = tonggak eksternal (merah = konflik, biru = rencana). Tahun 1 diasumsikan mulai Jan 2027 [perlu konfirmasi].",
 			"fontSize": 14,
 			"fontFamily": 2,
 			"textAlign": "left",

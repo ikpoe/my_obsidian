@@ -14,34 +14,22 @@ Sembilan sesi asesmen (berkas 11–19) menghasilkan rata-rata kematangan sekitar
 | Tahun 2 | **Integrasi dan Pertukaran Terstandar** | Setelah klasifikasi dan register PKS tersedia, Data Hub dapat dibangun di atas kendali tersebut. Golden record, data contract, dan gold tersertifikasi menyatukan jalur upstream dan downstream melalui ESDP sebagai poros. |
 | Tahun 3 | **Pemanfaatan dan Skala** | Pemanfaatan baru aman setelah data tersertifikasi dan aksesnya terkendali. Tahun 3 memperluas self-service, MDM, stewardship, otomasi kebijakan, dan analitik lanjut. |
 
-## 3. Quick win 90 hari
-
-| ID | Quick win | Tantangan | Hasil 90 hari | Owner | Lanjut ke |
-|---|---|---|---|---|---|
-| QW-1 | Inventaris antarmuka upstream/downstream ESDP | US-4 = 1, PD-9 = 1 | Daftar antarmuka dengan pemilik, pola, frekuensi | Hub/UMD + tim platform | RM-7 |
-| QW-2 | Katalog KPI awal (KPI prioritas direksi) | DB-4 = 1 | Definisi, rumus, grain, owner tercatat di Dataedo | Hub/UMD | RM-12 |
-| QW-3 | Uji restore klaster (sampel zona gold & metadata) | PS-4 = 1 | Berita acara uji restore, waktu pulih aktual | Custodian (Ops TI) | RM-8 |
-| QW-4 | Klarifikasi status DRC untuk platform | PS-5 = 1; konflik D3-01 vs R1 vs D2 hlm. 50 | Keputusan tertulis status DRC | Custodian + KPTI | RM-8, RM-23 |
-| QW-5 | Integrasi Kemnaker: tutup kredensial teks biasa, batasi akses DB link | KS-9 = 2 (D5) | Kredensial dirotasi dan keluar dari dokumen; akses dibatasi ke elemen PKS | Custodian + OKI | RM-5, RM-16 |
-| QW-6 | Juknis peran (draf) dan penetapan forum | TK-2 = 1, TK-5 = 1 | Draf juknis & RACI dibahas forum/KPTI | Hub/UMD | RM-1 |
-| QW-7 | Kebijakan retensi versi awal untuk kelas prioritas | KS-12 = 1, TK-12 = 1 | Draf jadwal retensi siap sebelum 16 Jan 2027 [perlu konfirmasi] | Hub/UMD + domain owner | RM-4 |
-
-## 4. Tabel inisiatif
+## 3. Tabel inisiatif
 
 | ID | Inisiatif | Tema / waktu | Tantangan (sesi, aspek, skor) | Prinsip | Ukuran keberhasilan | Parameter yang ditetapkan | Teknologi eksisting | Owner | Dependensi | UC |
 |---|---|---|---|---|---|---|---|---|---|---|
-| RM-1 | Juknis peran & forum tata kelola data | Fondasi dan Kendali / Th1 S1 | TK-2 = 1; TK-5 = 1; TK-1 = 2; TK-11 = 1 (s17) | Akuntabilitas sebelum teknologi | Juknis terbit; forum TKD bersidang dan risalah tercatat; pejabat PDP ditunjuk [perlu konfirmasi] | Definisi peran; RACI keputusan; kuorum & frekuensi forum; ambang eskalasi | Dataedo (register peran) | Hub/UMD | — | UC3 |
+| RM-1 | Juknis peran & forum tata kelola data | Fondasi dan Kendali / Th1 S1 | TK-2 = 1; TK-5 = 1; TK-1 = 2; TK-11 = 1 (s17) | Akuntabilitas sebelum teknologi | Draf juknis & RACI dibahas forum/KPTI di awal semester; juknis terbit; forum TKD bersidang dan risalah tercatat; pejabat PDP ditunjuk [perlu konfirmasi] | Definisi peran; RACI keputusan; kuorum & frekuensi forum; ambang eskalasi | Dataedo (register peran) | Hub/UMD | — | UC3 |
 | RM-2 | Penunjukan owner & steward domain pilot | Fondasi dan Kendali / Th1 S1 | s11 Kepemilikan & stewardship = 1; MK-6 = 1 (s15) | Data dimiliki domain, dikelola hub | % domain pilot dengan owner & steward tercatat di katalog | Daftar domain pilot; kriteria owner/steward; SLA keputusan steward | Dataedo | Hub/UMD + domain owner | RM-1 | UC3 |
 | RM-3 | Klasifikasi & label PDP di katalog dan tag Ranger | Fondasi dan Kendali / Th1 S2 | KS-2 = 2; KS-3 = 1 (s16); MK-3 = 2 (s15) | Kontrol mengikuti klasifikasi | % dataset ESDP berklasifikasi & berlabel PDP; % kebijakan Ranger berbasis tag | Kelas klasifikasi; atribut label PDP; aturan pewarisan tag | Dataedo, Atlas, Ranger | Domain owner (A), Hub (R), custodian | RM-2 | UC3, UC1 |
-| RM-4 | Kebijakan retensi & minimisasi (versi awal) | Fondasi dan Kendali / Th1 S1 | KS-12 = 1 (s16); TK-12 = 1 (s17); PS-7 = 1 (s18) | Simpan seperlunya, musnahkan dengan bukti | Kebijakan disahkan sebelum PP 33/2026 berlaku [perlu konfirmasi]; jadwal retensi untuk kelas prioritas | Masa retensi per kelas; pemicu awal retensi; metode & bukti pemusnahan; aturan minimisasi elemen | Dataedo (atribut retensi) | Domain owner (A), Hub (R) | RM-1 | UC3 |
-| RM-5 | Remediasi integrasi Kemnaker (interim) | Fondasi dan Kendali / Th1 S1 | KS-9 = 2 (s16); DS-3 = 2 (s12); TK-7 = 1 (s17) | Tidak ada nilai rahasia di dokumen; akses minimum | Kredensial dirotasi dan keluar dari dokumen; cakupan akses DB dibatasi ke elemen PKS; adendum PKS memuat retensi & audit | Pemilik secret; periode rotasi; daftar elemen PKS; klausul retensi mitra | 3scale, Ranger | Custodian (Ops TI) + OKI; Unit Pemrakarsa | — | UC2, UC3 |
+| RM-4 | Kebijakan retensi & minimisasi (versi awal) | Fondasi dan Kendali / Th1 S1 | KS-12 = 1 (s16); TK-12 = 1 (s17); PS-7 = 1 (s18) | Simpan seperlunya, musnahkan dengan bukti | Jadwal retensi awal kelas prioritas siap sebelum 16 Jan 2027; kebijakan disahkan sebelum PP 33/2026 berlaku [perlu konfirmasi]; jadwal retensi untuk kelas prioritas | Masa retensi per kelas; pemicu awal retensi; metode & bukti pemusnahan; aturan minimisasi elemen | Dataedo (atribut retensi) | Domain owner (A), Hub (R) | RM-1 | UC3 |
+| RM-5 | Remediasi integrasi Kemnaker (interim) | Fondasi dan Kendali / Th1 S1 | KS-9 = 2 (s16); DS-3 = 2 (s12); TK-7 = 1 (s17) | Tidak ada nilai rahasia di dokumen; akses minimum | Langkah awal: kredensial teks biasa dirotasi dan keluar dari dokumen; akses DB link dibatasi ke elemen PKS; adendum PKS memuat retensi & audit | Pemilik secret; periode rotasi; daftar elemen PKS; klausul retensi mitra | 3scale, Ranger | Custodian (Ops TI) + OKI; Unit Pemrakarsa | — | UC2, UC3 |
 | RM-6 | Register PKS, templat dokumen teknis & siklus PKS | Fondasi dan Kendali / Th1 S2 | DS-8 = 2 (s12); TK-6 = 2; TK-7 = 1 (s17) | Satu pintu, eligibility dari PKS + dokumen teknis | % PKS aktif di register; % PKS dengan dokumen teknis baku; status adendum Ps. 78 | Atribut register; isi minimum dokumen teknis; periode reviu; syarat pengakhiran | Dataedo (tautan PKS), 3scale | Hub/UMD + Unit Pemrakarsa | RM-1 | UC2, UC3 |
-| RM-7 | Inventaris antarmuka & data contract awal | Fondasi dan Kendali / Th1 S1 | US-4 = 1 (s12); PD-9 = 1 (s14); MK-8 = 1 (s15) | Setiap antarmuka punya kontrak dan pemilik | % antarmuka upstream/downstream terinventaris; % prioritas dengan data contract | Atribut inventaris; isi minimum data contract; aturan perubahan skema | Qlik Replicate, Talend, Dataedo | Hub/UMD + tim platform | — | UC2 |
-| RM-8 | Ketahanan platform tahap 1 & keputusan DRC | Fondasi dan Kendali / Th1 S1 | PS-4 = 1; PS-5 = 1 (s18); AD-10 = 1 (s13) | Platform harus terbukti dapat dipulihkan | Uji restore klaster berhasil & terdokumentasi; status DRC diputuskan | RPO/RTO per kelas & zona; frekuensi snapshot; frekuensi uji restore; cakupan backup metadata | Cloudera (snapshot HDFS, backup metastore/Atlas/Ranger) | Custodian (Ops TI) | — | UC1 |
+| RM-7 | Inventaris antarmuka & data contract awal | Fondasi dan Kendali / Th1 S1 | US-4 = 1 (s12); PD-9 = 1 (s14); MK-8 = 1 (s15) | Setiap antarmuka punya kontrak dan pemilik | Daftar antarmuka (pemilik, pola, frekuensi) lengkap di awal semester; % antarmuka upstream/downstream terinventaris; % prioritas dengan data contract | Atribut inventaris; isi minimum data contract; aturan perubahan skema | Qlik Replicate, Talend, Dataedo | Hub/UMD + tim platform | — | UC2 |
+| RM-8 | Ketahanan platform tahap 1 & keputusan DRC | Fondasi dan Kendali / Th1 S1 | PS-4 = 1; PS-5 = 1 (s18), status DRC bertentangan; AD-10 = 1 (s13) | Platform harus terbukti dapat dipulihkan | Langkah awal: keputusan tertulis status DRC (konflik D3-01, R1, D2 hlm. 50) dan uji restore sampel gold & metadata; berita acara uji restore; uji restore berkala berjalan | RPO/RTO per kelas & zona; frekuensi snapshot; frekuensi uji restore; cakupan backup metadata | Cloudera (snapshot HDFS, backup metastore/Atlas/Ranger) | Custodian (Ops TI) | — | UC1 |
 | RM-9 | Rencana kapasitas & monitoring platform | Fondasi dan Kendali / Th1 S2 | PS-3 = 2; PS-13 = 2 (s18) | Kapasitas direncanakan, bukan direaksi | Dokumen kapasitas per zona; peringatan ambang aktif | Ambang pemakaian per zona; horizon proyeksi; pemicu penambahan node | Cloudera Manager | Custodian (Ops TI) + tim platform | RM-8 | UC1 |
 | RM-10 | Zona medallion & isolasi lingkungan | Fondasi dan Kendali / Th1 S2 | AD-5 = 2 (s13); PS-1 = 2 (s18); KS-11 = 1 (s16) | Zona dengan aturan masuk-keluar | Zona staging/bronze/silver/gold terpisah dengan aturan akses; data non-prod dimasking | Aturan promosi antarzona; konvensi penamaan; aturan data non-prod | Cloudera, Ranger | Tim platform + Hub | RM-3 | UC1 |
 | RM-11 | Katalog aktif & lineage | Fondasi dan Kendali / Th1 S2 | MK-3 = 2; MK-4 = 1 (s15); TK-13 = 1 (s17) | Metadata sebagai alat kendali | % dataset dengan owner, klasifikasi, lineage end-to-end | Atribut metadata wajib; cakupan lineage; frekuensi sinkron Atlas–Dataedo | Dataedo, Atlas | Hub/UMD | RM-2 | UC3, UC1 |
-| RM-12 | Katalog KPI awal & inventaris laporan | Fondasi dan Kendali / Th1 S1 | DB-4 = 1; DB-6 = 2 (s19) | Satu angka untuk semua pengguna | KPI prioritas terdefinisi dengan owner; inventaris laporan lengkap | Atribut KPI (definisi, rumus, grain, owner, CDE); atribut inventaris laporan | Dataedo, Tableau, QlikSense | Hub/UMD + domain owner | — | UC3 |
+| RM-12 | Katalog KPI awal & inventaris laporan | Fondasi dan Kendali / Th1 S1 | DB-4 = 1; DB-6 = 2 (s19) | Satu angka untuk semua pengguna | KPI prioritas direksi terdefinisi (definisi, rumus, grain, owner) di Dataedo; inventaris laporan lengkap | Atribut KPI (definisi, rumus, grain, owner, CDE); atribut inventaris laporan | Dataedo, Tableau, QlikSense | Hub/UMD + domain owner | — | UC3 |
 | RM-13 | Dimensi Program & Kanal + reference data | Fondasi dan Kendali / Th1 S2 | DB-2 = 2 (s19); PD-6 = 1 (s14); s11 Reference data = 2 | Conformed dimension sebelum KPI | Dimensi Program & Kanal tersedia di gold dan dipakai mart prioritas | Grain dimensi; atribut SCD; pemilik kode referensi | Talend, Cloudera (Kudu/Parquet) | Domain owner + Hub | RM-2 | UC1, UC3 |
 | RM-14 | CDE & quality gate per lapis | Fondasi dan Kendali / Th1 S2 | KD-2 = 1; KD-6 = 1 (s15) | Kualitas diukur di titik kritis | % CDE dengan ambang & skor; quality gate aktif di bronze→silver | Daftar CDE; ambang per dimensi; aksi gate gagal | Talend, Dataedo | Domain owner (ambang), steward, Hub | RM-2, RM-11 | UC3 |
 | RM-15 | Data Hub (DMZ) & 3scale per PKS | Integrasi dan Pertukaran Terstandar / Th2 S1 | DS-5 = 2; DS-6 = 2 (s12); DB-12 = 1 (s19); PS-9 = 1 (s18) | Satu jalur downstream eksternal | Data Hub produksi; satu application plan per PKS; log per transaksi | Kuota per PKS; freshness produk data; ketersediaan layanan; retensi cache serving | 3scale, Cloudera (gold), Ranger | Hub/UMD (produk) + custodian (operasi) | RM-3, RM-6, RM-10 | UC2, UC1 |
@@ -65,7 +53,7 @@ Sembilan sesi asesmen (berkas 11–19) menghasilkan rata-rata kematangan sekitar
 
 Catatan: "s11" sampai "s19" merujuk berkas sesi 11–19. Berkas 11 tidak memakai ID aspek, sehingga aspeknya dirujuk dengan nama.
 
-## 5. Daftar dependensi
+## 4. Daftar dependensi
 
 Aturan urutan utama:
 - Owner domain (RM-2) mendahului golden record (RM-18).
@@ -106,18 +94,18 @@ Aturan urutan utama:
 
 **Jalur kritis (rantai ketergantungan terpanjang, 8 langkah):** RM-1 → RM-2 → RM-11 → RM-14 → RM-18 → RM-20 → RM-21 → RM-26. Keterlambatan juknis peran (RM-1) menggeser golden record, gold tersertifikasi, lapisan metrik, dan self-service. Jalur kedua: RM-1 → RM-2 → RM-3 → RM-10 → RM-15 → RM-23 → RM-31.
 
-## 6. Tonggak eksternal
+## 5. Tonggak eksternal
 
 | Tonggak | Waktu | Inisiatif terdampak | Catatan konflik |
 |---|---|---|---|
-| PP 33/2026 berlaku (retensi Ps. 75, minimisasi Ps. 59) | 16 Jan 2027 [perlu konfirmasi] | RM-4, RM-22, RM-5, RM-17 | **Konflik.** Sisa waktu sekitar 2,5 bulan dari 1 Nov 2026, sebelum Tahun 1 dimulai. Owner retensi (TK-12 = 1) belum ada. Kebijakan awal harus ditarik ke QW-7 dengan kepemilikan sementara di Hub/UMD. Otomasi (RM-22) baru Tahun 2. |
-| Target POC MDM | Okt 2026 | RM-18, RM-28 | **Konflik.** Target sudah lewat; statusnya belum terkonfirmasi (11-Klarifikasi). Bila manajemen mendorong produksi segera, aturan "owner domain sebelum golden record" dilanggar. Usulan: POC dibekukan sebagai baseline, produksi Tahun 2 S1. |
+| PP 33/2026 berlaku (retensi Ps. 75, minimisasi Ps. 59) | 16 Jan 2027 [perlu konfirmasi] | RM-4, RM-22, RM-5, RM-17 | **Kunci waktu, konflik.** Bila Tahun 1 dimulai Jan 2027 [perlu konfirmasi], PP 33/2026 berlaku pada pekan-pekan pertama Tahun 1 S1. Karena itu RM-4 ditempatkan sebagai langkah pertama Tahun 1 S1, dan penyusunan jadwal retensi untuk kelas prioritas perlu dimulai sebelum tanggal berlaku. Owner retensi (TK-12 = 1) belum ada, sehingga kepemilikan sementara dipegang Hub/UMD sampai RM-2 menetapkan owner domain. Otomasi retensi (RM-22) baru berjalan di Tahun 2. |
+| Target POC MDM | Okt 2026 | RM-18, RM-28 | **Konflik.** Target sudah lewat dan statusnya belum terkonfirmasi (11-Klarifikasi). Bila manajemen mendorong produksi segera, aturan "owner domain sebelum golden record" dilanggar. Usulan: hasil POC dibekukan sebagai baseline, dan produksi dijadwalkan di Tahun 2 S1. |
 | Data Hub (bangun baru, DMZ) | Jadwal BPJS [perlu konfirmasi] | RM-15, RM-16, RM-28 | **Konflik potensial.** Bila pembangunan berjalan sebelum klasifikasi (RM-3) dan register PKS (RM-6), kontrol akses berbasis kelas tidak dapat ditegakkan. Usulan: klasifikasi minimum untuk produk data pilot sebagai gerbang go-live. |
 | Status DRC | Belum terselesaikan | RM-8, RM-23, RM-31, RM-15 | **Konflik.** D3-01, R1, dan D2 hlm. 50 bertentangan. Data Hub (Tahun 2 S1) akan berjalan tanpa DR platform sampai RM-23 (Tahun 2 S2). |
-| Penutupan DB link Kemnaker | QW (interim) vs Tahun 2 S2 (final) | RM-5, RM-16 | Penutupan penuh menunggu Data Hub. Selama masa itu berlaku kontrol interim (QW-5). |
+| Penutupan DB link Kemnaker | Tahun 1 S1 (interim) vs Tahun 2 S2 (final) | RM-5, RM-16 | Penutupan penuh menunggu Data Hub. Selama masa itu berlaku kontrol interim RM-5 (rotasi kredensial, pembatasan akses). |
 | Integrasi Taspen/Asabri | 2029 (s11, tidak dinilai) | RM-28 | Di luar horizon; dipantau sebagai masukan perluasan MDM. |
 
-## 7. Matriks cakupan use case TOR
+## 6. Matriks cakupan use case TOR
 
 | Use case | Tahun 1 | Tahun 2 | Tahun 3 | Jumlah |
 |---|---|---|---|---|
@@ -130,7 +118,7 @@ Celah cakupan:
 - ODS/operational serving (AD-6 = 1) belum memiliki inisiatif. Kebutuhannya bergantung pada konfirmasi pola konsumsi operasional.
 - Kapasitas jangka panjang terkait volume peserta hanya dicakup RM-9 di tingkat rencana.
 
-## 8. Pertanyaan terbuka yang menghambat pengurutan
+## 7. Pertanyaan terbuka yang menghambat pengurutan
 
 1. Kapan Tahun 1 dimulai (Jan 2027 atau mengikuti tahun anggaran/RKA)? [perlu konfirmasi]
 2. Apakah PP 33/2026 berlaku 16 Jan 2027, dan adakah masa transisi untuk retensi dan minimisasi? [perlu konfirmasi]
