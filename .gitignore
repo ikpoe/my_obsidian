@@ -5,3 +5,7 @@
 # dokumen klien yang bersifat terbatas
 **/01-Sources/*.pdf
 **/01-Sources/**/*.png
+**/01-Sources/**/*.pdf
+**/01-Sources/**/*.docx
+**/01-Sources/**/*.pptx
+**/01-Sources/**/*.xlsx
