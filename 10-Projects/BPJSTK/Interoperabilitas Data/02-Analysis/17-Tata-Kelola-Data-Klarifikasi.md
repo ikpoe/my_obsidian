@@ -15,6 +15,7 @@ tags: [klarifikasi, tata-kelola-data, pdp, berbagi-data]
 2. Perdir 2015 tentang Organisasi dan Pedoman Data Governance Kepesertaan dicabut oleh Perdir 4/2025. Apa yang menggantikan pengaturan peran di dalamnya (SK, SOP, atau belum ada)?
 3. Berapa orang di tim data governance saat ini, dan apa program kerja 2026–2027-nya?
 4. Apakah KPTI pernah membahas atau memutus isu data (definisi, kualitas, berbagi data)? Bersediakah tim membagikan risalah dua rapat terakhir?
+4a. **[Baru 2026-11-01]** Informasi awal menyebut sudah ada semacam *data governance council* yang terdiri dari beberapa tim. Tim apa saja anggotanya dan siapa ketuanya? Apa dasar pembentukannya (SK/Perdir atau informal)? Seberapa sering rapat dan keputusan apa yang sudah diambil? Bagaimana hubungannya dengan Asdep Data Governance, UMD, dan KPTI? [perlu konfirmasi]
 
 ## B. Peran & Hak Keputusan (P1)
 5. Apakah data owner dan data steward sudah ditunjuk untuk domain mana pun? Jika ya, di mana tercatat?

@@ -68,7 +68,7 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 
 | Aspek | Praktik yang diharapkan | Kebijakan BPJS (D1) | Kondisi saat ini (D2/D3/R1/D5) | Gap | Skor usulan (1-5) |
 |---|---|---|---|---|---|
-| TK-1. Struktur & forum keputusan (komite) | Forum keputusan data dengan mandat, agenda, dan risalah; eskalasi ke KPTI/Direksi | KPTI Ps. 6–7 (hlm. 7–9), fokus TI | Bukti KPTI memutus isu data tidak ada; governance "tidak pernah masuk" (R1 [P 02:04:27–02:05:01]) | Forum khusus data | 2 (batas kebijakan) |
+| TK-1. Struktur & forum keputusan (komite) | Forum keputusan data dengan mandat, agenda, dan risalah; eskalasi ke KPTI/Direksi | KPTI Ps. 6–7 (hlm. 7–9), fokus TI | Bukti KPTI memutus isu data tidak ada; governance "tidak pernah masuk" (R1 [P 02:04:27–02:05:01]); info awal 2026-11-01: ada semacam *data governance council* lintas tim, mandat & praktik belum diketahui (lihat Klarifikasi A.4a) [perlu konfirmasi] | Forum khusus data | 2 (batas kebijakan) |
 | TK-2. Peran data owner, steward, custodian | Peran terdefinisi, ditunjuk per domain, tercatat di katalog | Hanya prinsip kepemilikan MD&DR (hlm. 87), *data liaison* (hlm. 89), *data producer* (Ps. 8(6), hlm. 10) | Data Steward hanya ilustrasi (D2 hlm. 23; D3-03); owner per domain tidak diketahui (R1 [P 00:44:22–00:44:29]) | Definisi & penunjukan | 1 |
 | TK-3. Kantor tata kelola data (hub) | Unit dengan mandat, kapasitas, dan program kerja | UMD Ps. 8(3) (hlm. 9) | Asdep Data Governance ada (D2 hlm. 51); tim relatif baru (R1 [P 01:16:53–01:17:05]) | Mandat & program kerja terlihat | 2 [perlu konfirmasi] |
 | TK-4. Kerangka kebijakan & standar (hierarki) | Perdir → kebijakan/juknis → standar → SOP, ter-versi dan dipublikasi | Ps. 3(2)–(3) (hlm. 6); rujukan SOP UMD (hlm. 85–86) | SOP master data tidak ada (D2 hlm. 24); SOP pertukaran tidak ada (R1 [S 00:13:48–00:15:07]) | Lapis standar & SOP | 2 (batas kebijakan) |
@@ -87,11 +87,11 @@ Aturan skor: 1 = Awal; 2 = Berulang (atau batas atas jika hanya ada kebijakan); 
 
 ## 5. Opsi model operasi tata kelola data
 
-| Opsi | Deskripsi |
-|---|---|
-| A. Kantor tata kelola terpusat | Satu kantor (di UMD/Asdep Data Governance) memegang kebijakan, definisi, persetujuan akses dan berbagi, serta stewardship semua domain |
+| Opsi                                 | Deskripsi                                                                                                                                                                                                                                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| A. Kantor tata kelola terpusat       | Satu kantor (di UMD/Asdep Data Governance) memegang kebijakan, definisi, persetujuan akses dan berbagi, serta stewardship semua domain                                                                                                           |
 | B. Federasi hub-and-spoke (bertahap) | Hub (kantor tata kelola data di UMD, dipimpin pejabat setingkat CDO) menetapkan kebijakan, standar, katalog, metrik; data owner (pejabat Unit Bisnis) dan steward per domain DBB memutus hal domain; forum keputusan data sebagai sub-forum KPTI |
-| C. Tertanam di unit eksisting | Tidak ada kantor baru; fungsi dibagi ke KPTI, UMD, OKI, Unit Pemrakarsa, Hukum, dan Unit Bisnis sesuai tugas yang sudah ada di D1 |
+| C. Tertanam di unit eksisting        | Tidak ada kantor baru; fungsi dibagi ke KPTI, UMD, OKI, Unit Pemrakarsa, Hukum, dan Unit Bisnis sesuai tugas yang sudah ada di D1                                                                                                                |
 
 **Perbandingan (++ sangat baik, + baik, 0 netral, − kurang, −− buruk)**
 
