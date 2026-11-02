@@ -31,7 +31,7 @@ Sembilan sesi asesmen (berkas 11–19) menghasilkan rata-rata kematangan sekitar
 | RM-11 | Katalog aktif & lineage | Fondasi dan Kendali / Y1Q3–Y1Q4 | MK-3 = 2; MK-4 = 1 (s15); TK-13 = 1 (s17) | Metadata sebagai alat kendali | % dataset dengan owner, klasifikasi, lineage end-to-end | Atribut metadata wajib; cakupan lineage; frekuensi sinkron Atlas–Dataedo | Dataedo, Atlas | Hub/UMD | RM-2 | UC3, UC1 |
 | RM-12 | Katalog KPI awal & inventaris laporan | Fondasi dan Kendali / Y1Q1–Y1Q2 | DB-4 = 1; DB-6 = 2 (s19) | Satu angka untuk semua pengguna | KPI prioritas direksi terdefinisi (definisi, rumus, grain, owner) di Dataedo; inventaris laporan lengkap | Atribut KPI (definisi, rumus, grain, owner, CDE); atribut inventaris laporan | Dataedo, Tableau, QlikSense | Hub/UMD + domain owner | — | UC3 |
 | RM-13 | Dimensi Program & Kanal + reference data | Fondasi dan Kendali / Y1Q4–Y2Q1 | DB-2 = 2 (s19); PD-6 = 1 (s14); s11 Reference data = 2 | Conformed dimension sebelum KPI | Dimensi Program & Kanal tersedia di gold dan dipakai mart prioritas | Grain dimensi; atribut SCD; pemilik kode referensi | Talend, Cloudera (Kudu/Parquet) | Domain owner + Hub | RM-2 | UC1, UC3 |
-| RM-14 | CDE & quality gate per lapis | Fondasi dan Kendali / Y1Q4–Y1Q4 | KD-2 = 1; KD-6 = 1 (s15) | Kualitas diukur di titik kritis | % CDE dengan ambang & skor; quality gate aktif di bronze→silver | Daftar CDE; ambang per dimensi; aksi gate gagal | Talend, Dataedo | Domain owner (ambang), steward, Hub | RM-2, RM-11 | UC3 |
+| RM-14 | CDE & quality gate per lapis | Fondasi dan Kendali / Y1Q4–Y1Q4 | KD-2 = 2 (D6: CDE kepesertaan ada di prosedur); KD-6 = 1 (s15) | Kualitas diukur di titik kritis | % CDE dengan ambang & skor; quality gate aktif di bronze→silver | Daftar CDE; ambang per dimensi; aksi gate gagal | Talend, Dataedo | Domain owner (ambang), steward, Hub | RM-2, RM-11 | UC3 |
 | RM-15 | Data Hub (DMZ) & 3scale per PKS | Integrasi dan Pertukaran Terstandar / Y2Q1–Y2Q2 | DS-5 = 2; DS-6 = 2 (s12); DB-12 = 1 (s19); PS-9 = 1 (s18) | Satu jalur downstream eksternal | Data Hub produksi; satu application plan per PKS; log per transaksi | Kuota per PKS; freshness produk data; ketersediaan layanan; retensi cache serving | 3scale, Cloudera (gold), Ranger | Hub/UMD (produk) + custodian (operasi) | RM-3, RM-6, RM-10 | UC2, UC1 |
 | RM-16 | Migrasi mitra ke Data Hub & penghentian DB link | Integrasi dan Pertukaran Terstandar / Y2Q3–Y2Q4 | DS-3 = 2 (s12); KS-9 = 2 (s16) | Tidak ada akses langsung ke DB operasional | Akses DB langsung mitra = nol; seluruh PKS aktif via Data Hub/SFTP | Urutan migrasi mitra; masa transisi; kriteria penutupan akses lama | 3scale | Unit Pemrakarsa + custodian | RM-15, RM-5 | UC2 |
 | RM-17 | Pertukaran file terstandar (SFTP/MFT) via Data Hub | Integrasi dan Pertukaran Terstandar / Y2Q1–Y2Q2 | US-6 = 2 (s12); PS-11 = 2 (s18) | Validasi otomatis dan masa simpan file | % pertukaran file via jalur baku dengan validasi otomatis & checksum | Masa simpan file masuk/keluar; aturan validasi; format & ukuran file | SFTP eksisting, Talend | Custodian + Hub | RM-4, RM-6 | UC2 |
@@ -94,7 +94,7 @@ Setiap milestone menjadi bukti kemajuan yang dapat dilaporkan pada laporan triwu
   - Y1Q4: Grain & SCD dimensi Program/Kanal disahkan; pemilik kode referensi ditetapkan
   - Y2Q1: Dimensi Program & Kanal di gold dipakai mart prioritas
 - **RM-14 CDE & quality gate per lapis** (Y1Q4–Y1Q4)
-  - Y1Q4: Daftar CDE & ambang domain pilot; quality gate bronze→silver aktif
+  - Y1Q4: Daftar CDE & ambang domain pilot (mulai dari CDE kepesertaan dan indeks dalam D6, diselaraskan ke D1); quality gate bronze→silver aktif
 - **RM-15 Data Hub (DMZ) & 3scale per PKS** (Y2Q1–Y2Q2)
   - Y2Q1: Desain & application plan per PKS; produk data pilot lulus gerbang klasifikasi
   - Y2Q2: Data Hub go-live; log per transaksi aktif
@@ -258,4 +258,4 @@ Celah cakupan:
 
 ## Sumber
 
-Berkas 11–19 beserta Klarifikasi; 00-Analisis-Dokumen-BPJS.md; D1, D2 hlm. 22 dan 50, D3-01, D3-02, D4, D5 (temuan saja); R1; PP 33/2026.
+Berkas 11–19 beserta Klarifikasi; 00-Analisis-Dokumen-BPJS.md; D6 (SOP kualitas data); D1, D2 hlm. 22 dan 50, D3-01, D3-02, D4, D5 (temuan saja); R1; PP 33/2026.

@@ -13,7 +13,7 @@ Data kepesertaan juga tidak lagi hanya dipakai untuk kepentingan internal. Kebij
 *Gambar 1.2 Ekosistem Pertukaran Data Ketenagakerjaan dengan ESDP sebagai Poros*
 
 
-BPJS Ketenagakerjaan sebenarnya telah menyiapkan landasan kebijakan untuk tuntutan ini. Peraturan Direksi Nomor 4/PERDIR.06/042025 tentang Pedoman Tata Kelola Data dan Teknologi Informasi menyatukan pengaturan tata kelola data dan TI ke dalam satu pedoman, termasuk kolaborasi data dengan mitra. Kebijakannya sudah tersedia. Tantangan berikutnya adalah menerjemahkan kebijakan tersebut ke dalam praktik, peran, dan arsitektur yang berjalan sehari-hari.
+BPJS Ketenagakerjaan sebenarnya telah menyiapkan landasan kebijakan untuk tuntutan ini. Peraturan Direksi Nomor 4/PERDIR.06/042025 tentang Pedoman Tata Kelola Data dan Teknologi Informasi menyatukan pengaturan tata kelola data dan TI ke dalam satu pedoman, termasuk kolaborasi data dengan mitra. Pada tingkat prosedur, Deputi Bidang Manajemen Data dan Analitik juga telah menyusun Prosedur Pengelolaan Kualitas Data yang mengatur penetapan metrik, profiling, cleansing, penilaian, dan tindak lanjut kualitas data (D6 hlm. 4). Kebijakannya sudah tersedia. Tantangan berikutnya adalah menerjemahkan kebijakan tersebut ke dalam praktik, peran, dan arsitektur yang berjalan sehari-hari.
 
 
 Asesmen arsitektur kondisi saat ini menunjukkan bahwa penerjemahan tersebut belum tuntas. Data mengalir dari aplikasi inti dan aplikasi pendukung melalui berbagai pola, yaitu API, middleware, replikasi, SFTP, dan koneksi langsung ke basis data. Aplikasi inti SMILE berperan sebagai simpul integrasi yang berpotensi menjadi titik kegagalan tunggal (D2 hlm. 20–21, 39). Pengelolaan master data masih manual. Big data belum mengacu pada master data, sehingga belum dapat dipastikan menjadi sumber kebenaran tunggal (D2 hlm. 23–24). Definisi istilah dan elemen data berbeda antarbidang, dan kewenangan atas perubahannya belum jelas (D2 hlm. 26). Kolaborasi data dengan mitra berlangsung melalui platform yang beragam sesuai mitra (D2 hlm. 22). Di sisi lain, BPJS Ketenagakerjaan telah memulai sejumlah langkah yang menjadi modal penting. Platform data perusahaan (Enterprise Strategic Data Platform/ESDP) berbasis Cloudera sudah beroperasi. Uji konsep Master Data Management untuk menghasilkan *golden record* peserta sedang berjalan dengan target Oktober 2026 [perlu konfirmasi status]. Data Hub juga direncanakan sebagai jalur tunggal pertukaran data antarlembaga yang terkelola melalui API Management. Langkah-langkah ini baru akan memberi hasil optimal bila disusun dalam satu arsitektur yang utuh. Dalam arsitektur itu ESDP berperan sebagai poros: data dari sistem sumber mengalir masuk ke ESDP, diolah dan dikendalikan di dalamnya, lalu disalurkan ke pengguna internal maupun mitra eksternal dengan standar yang sama.
@@ -25,6 +25,8 @@ Atas dasar itu, studi Reviu dan Perancangan Arsitektur Interoperabilitas Data Ke
 ## Catatan Review & Tindak Lanjut
 
 *(Bagian ini dihapus pada versi final.)*
+
+> **Integrasi D6 (2026-11-02):** satu kalimat tentang Prosedur Pengelolaan Kualitas Data (D6 hlm. 4) ditambahkan pada paragraf landasan kebijakan. Fakta lain tidak berubah.
 
 > **Catatan aset:** sumber gambar yang dapat disunting (SVG, teks asli, font Arial/Helvetica) tersedia di `assets/` (G1-1, G1-2 `.svg`). PNG pada dokumen ini diekspor dari SVG tersebut pada 220 dpi. Perubahan gambar dilakukan pada SVG, lalu PNG diekspor ulang.
 

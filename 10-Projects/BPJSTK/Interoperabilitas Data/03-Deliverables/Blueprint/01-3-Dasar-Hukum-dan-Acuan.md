@@ -37,6 +37,11 @@ Ketentuan internal menjadi **acuan langsung** Blueprint. Blueprint tidak membuat
   - keamanan informasi, termasuk CISO dan klasifikasi data (D1 hlm. 39–52);
   - kolaborasi data dengan pihak eksternal (Bab VI, D1 hlm. 53–58). Setiap PKS wajib memuat tujuan, metode integrasi, elemen data, dan aspek keamanan;
   - adendum PKS yang sudah berjalan paling lambat 6 bulan sejak penetapan, yaitu sekitar Oktober 2025 (D1 hlm. 61–62).
+- **Prosedur Pengelolaan Kualitas Data** Nomor 4.009/SOP/MDT/082024 versi 0.1, disusun Bidang Data Governance dengan pemilik Deputi Bidang Manajemen Data dan Analitik (D6 hlm. 1). Prosedur ini menjabarkan siklus kualitas data ke tingkat operasional:
+  - penetapan metrik dan *critical data element* (CDE), profiling, cleansing, penilaian, dan tindak lanjut (D6 hlm. 4, 10–12);
+  - indeks kualitas data peserta beserta tindak lanjut per tingkat (D6 hlm. 30–31);
+  - peran Data Quality, Data Liaison, dan Business Owner, termasuk persetujuan laporan kualitas data bulanan (D6 hlm. 5, 29).
+
 - **Peraturan OJK** yang dirujuk D1, terutama POJK Nomor 4/POJK.05/2021 tentang Penerapan Manajemen Risiko dalam Penggunaan Teknologi Informasi oleh Lembaga Jasa Keuangan Nonbank (D1 hlm. 3). Penerapannya pada BPJS Ketenagakerjaan perlu dipastikan [perlu konfirmasi].
 
 ## 1.3.5 Kerangka Kerja dan Dokumen Studi
@@ -51,6 +56,7 @@ Dokumen studi yang menjadi sumber fakta kondisi saat ini adalah sebagai berikut.
 - **D2** paparan Arsitektur Enterprise kondisi saat ini;
 - **D3** tangkapan layar paparan BPJS Ketenagakerjaan (status kapabilitas platform, POC MDM, model konseptual);
 - **D4** dokumen kebijakan/teknis API Data Hub;
+- **D6** Prosedur Pengelolaan Kualitas Data (4.009/SOP/MDT/082024);
 - **R1** rekaman diskusi dengan tim BPJS Ketenagakerjaan;
 - **Laporan Terintegrasi BPJS Ketenagakerjaan 2024 dan 2025** untuk data kepesertaan dan konteks organisasi.
 
@@ -67,6 +73,7 @@ Setiap acuan di atas berpengaruh langsung terhadap rancangan arsitektur data. Ta
 | Perpres 39/2019 + Inpres 4/2025 | Standar data, metadata, kode referensi, dan identitas tunggal | 4.3, 4.6, 4.7 |
 | Perdir 4/2025 | Peran, forum, klasifikasi, standar kolaborasi, dan penyesuaian PKS | 4.1–4.10, BAB V |
 | POJK 4/POJK.05/2021 [perlu konfirmasi] | Manajemen risiko TI | 4.2, 5.2 |
+| Prosedur Pengelolaan Kualitas Data (D6) | Metrik, CDE, indeks kualitas data peserta, dan peran Data Quality, Data Liaison, serta Business Owner menjadi titik awal rancangan kualitas data | 4.1, 4.7, 4.10 |
 | DAMA-DMBOK | Kerangka fungsi manajemen data sebagai acuan pembagian area dan praktik baik | 4.1–4.10 |
 
 ---
@@ -74,6 +81,8 @@ Setiap acuan di atas berpengaruh langsung terhadap rancangan arsitektur data. Ta
 ## Catatan Review & Tindak Lanjut
 
 *(Bagian ini dihapus pada versi final.)*
+
+> **Integrasi D6 (2026-11-02):** Prosedur Pengelolaan Kualitas Data ditambahkan pada 1.3.4 (ketentuan internal), daftar dokumen studi 1.3.5 (kode D6), dan tabel 1.3.6. **Tindak lanjut:** skala indeks kualitas data di D6 belum konsisten, yaitu tiga tingkat di batang tubuh (hlm. 30) dan lima grade di lampiran (hlm. 60). Perlu dikonfirmasi ke BPJS Ketenagakerjaan. **Tindak lanjut (prioritas rendah):** dasar hukum D6 masih merujuk Pedoman Tata Kelola Data 2022 yang telah dicabut Perdir 4/2025 (D6 hlm. 4; D1 hlm. 62). Dapat ditanyakan saat ada kesempatan.
 
 **Keputusan yang perlu diambil ikpu**
 1. **Selesai (2026-11-02):** rincian regulasi dari 1.1 telah dipindahkan ke subbab ini. Subbab 1.1 kini hanya merujuk ke 1.3.

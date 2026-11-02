@@ -43,13 +43,15 @@ Periode perencanaan Blueprint ini adalah tiga tahun, dengan jadwal yang dirinci 
 - pemilihan produk atau alat; serta
 - penetapan nilai target operasional, seperti RPO/RTO, waktu retensi, dan batas kualitas.
 
-Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan.
+Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan. Untuk kualitas data peserta, nilai tersebut diselaraskan dengan skala indeks kualitas data yang sudah diatur dalam prosedur internal (D6 hlm. 30), bukan ditetapkan ulang.
 
 ---
 
 ## Catatan Review & Tindak Lanjut
 
 *(Bagian ini dihapus pada versi final.)*
+
+> **Integrasi D6 (2026-11-02):** batas parameter kini menyebut bahwa ambang kualitas data peserta diselaraskan dengan skala indeks dalam D6 (hlm. 30). Nilai ambang sengaja tidak dikutip.
 
 > **Catatan aset:** sumber gambar yang dapat disunting tersedia di `assets/` (`G1-4-Ruang-Lingkup.svg` dan `G1-5-Tujuan-Tema-Area.svg`; teks asli, elemen dikelompokkan dalam `<g>` ber-id). PNG diekspor dari SVG pada 220 dpi.
 

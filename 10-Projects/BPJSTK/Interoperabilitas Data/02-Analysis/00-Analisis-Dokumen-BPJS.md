@@ -364,3 +364,11 @@ Sumber berikut diterima setelah analisis D1–D2 dan dipakai di berkas 11–16 d
 - D3 berupa gambar tanpa nomor halaman; status RAG dibaca dari warna titik. Butir tanpa titik (mis. Restore Testing, Metadata Management, Data Profiling pada D3-01) dicatat sebagai "status tidak ditandai".
 - **Konflik sumber yang harus dikonfirmasi:** D3-01 menyatakan DRC aktif dengan komponen platform (20 node), sedangkan R1 [S 00:35–00:37] menyatakan belum ada komponen Cloudera di DRC [perlu konfirmasi].
 - R1 adalah pernyataan lisan; bila bertentangan dengan dokumen, keduanya dicantumkan dan ditandai [perlu konfirmasi].
+
+### 11.1 Sumber tambahan D6 — pembaruan 2 Nov 2026
+
+| Kode | Sumber | Isi pokok | Konvensi sitasi |
+|---|---|---|---|
+| **D6** | Prosedur Pengelolaan Kualitas Data, No. 4.009/SOP/MDT/082024 v0.1; pembuat Bidang Data Governance, pemilik Deputi Bidang Manajemen Data dan Analitik (66 hlm., "Dokumen Terbatas", ber-watermark). Berkas: `01-Sources/Dokumen-Klien/4.009-SOP-Prosedur-Pengelolaan-Kualitas-Data.pdf` (gitignored); catatan sumber di sebelahnya | Siklus metrik → profiling → cleansing → penilaian → tindak lanjut; CDE dan indeks kualitas data peserta; penanganan khusus peserta non-aktif; deteksi inkonsistensi; peran Data Quality, Data Liaison, Business Owner; lampiran kertas kerja CDE dan metrik | **D6 hlm. n** = nomor halaman tercetak di kaki halaman (sama dengan halaman PDF) |
+
+**Catatan penanganan D6.** Dokumen terbatas. Yang dikutip hanya pola umum (tahapan, peran, keberadaan CDE/indeks). Kriteria penanganan khusus, aturan validasi per elemen, nama modul aplikasi, dan contoh kueri tidak disalin.

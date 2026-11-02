@@ -9,7 +9,7 @@ Penyusunan Blueprint berjalan dalam enam tahap berurutan. Validasi bersama BPJS 
 ![[G1-6-Tahapan-Metodologi.png]]
 *Gambar 1.6 Tahapan Penyusunan Blueprint*
 
-**Kajian dokumen.** Tahap pertama membedakan dua sudut pandang. Peraturan Direksi Nomor 4/PERDIR.06/042025 (D1) dibaca sebagai **kondisi seharusnya**, yaitu cara data dan TI semestinya dikelola menurut kebijakan BPJS Ketenagakerjaan sendiri. Paparan Arsitektur Enterprise kondisi saat ini (D2) dibaca sebagai **kondisi saat ini**. Keduanya dilengkapi dengan dua dokumen lain:
+**Kajian dokumen.** Tahap pertama membedakan dua sudut pandang. Peraturan Direksi Nomor 4/PERDIR.06/042025 (D1) dibaca sebagai **kondisi seharusnya**, yaitu cara data dan TI semestinya dikelola menurut kebijakan BPJS Ketenagakerjaan sendiri. Paparan Arsitektur Enterprise kondisi saat ini (D2) dibaca sebagai **kondisi saat ini**. Untuk area kualitas data, Prosedur Pengelolaan Kualitas Data (D6) juga dibaca sebagai kondisi seharusnya karena merinci D1 hingga tingkat langkah dan peran. Ketiganya dilengkapi dengan dua dokumen lain:
 
 - tangkapan layar paparan BPJS Ketenagakerjaan pada 31 Oktober 2026 (D3), berisi status kapabilitas platform, POC MDM, dan model konseptual;
 - dokumen kebijakan/teknis API Data Hub (D4).
@@ -44,7 +44,7 @@ Kesenjangan yang muncul di beberapa area sekaligus dirumuskan sebagai tantangan 
 Sumber yang digunakan dikelompokkan sebagai berikut:
 
 - **Regulasi:** undang-undang, peraturan pemerintah, dan kebijakan data nasional yang berkaitan dengan jaminan sosial, sistem elektronik, dan pelindungan data pribadi.
-- **Kebijakan internal:** Perdir 4/PERDIR.06/042025 (D1).
+- **Kebijakan internal:** Perdir 4/PERDIR.06/042025 (D1) dan Prosedur Pengelolaan Kualitas Data 4.009/SOP/MDT/082024 (D6).
 - **Dokumen klien:** paparan Arsitektur Enterprise kondisi saat ini (D2), tangkapan layar paparan BPJS Ketenagakerjaan (D3), dan dokumen kebijakan/teknis API Data Hub (D4).
 - **Rekaman diskusi:** diskusi dengan tim BPJS Ketenagakerjaan (R1).
 - **Publikasi resmi:** Laporan Terintegrasi BPJS Ketenagakerjaan 2024 dan 2025, untuk angka kepesertaan dan konteks organisasi.
@@ -68,6 +68,8 @@ Blueprint ini memiliki beberapa keterbatasan:
 ## Catatan Review & Tindak Lanjut
 
 *(Bagian ini dihapus pada versi final.)*
+
+> **Integrasi D6 (2026-11-02):** D6 ditambahkan pada tahap kajian dokumen (sebagai kondisi seharusnya untuk area kualitas data) dan pada kelompok kebijakan internal di 1.4.2.
 
 > **Catatan aset:** `assets/G1-6-Tahapan-Metodologi.svg` (sumber yang dapat disunting; teks asli, grup `<g>` ber-id) dan `.png` (ekspor 220 dpi).
 

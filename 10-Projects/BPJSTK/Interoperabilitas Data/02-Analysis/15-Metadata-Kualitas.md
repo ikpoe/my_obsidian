@@ -6,7 +6,7 @@ sesi: 5
 blueprint: [3.1, 3.2, 3.3, 3.4, 4, 5.3, 5.4, 6]
 status: draft-diskusi
 acuan_internal: DAMA-DMBOK v2, bab Metadata Management & Data Quality
-sumber: [D3 status kapabilitas & POC MDM, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md]
+sumber: [D6 SOP Prosedur Pengelolaan Kualitas Data 4.009/SOP/MDT/082024 v0.1, D3 status kapabilitas & POC MDM, R1 rekaman diskusi, D1 Perdir 4/PERDIR.06/042025, D2 EA As-Is, 00-Analisis-Dokumen-BPJS.md, bpjstk_tender_inventory.csv, 11-Master-Data.md, 12-Integrasi.md, 13-Arsitektur-Data.md, 14-Pemodelan-Data.md]
 konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). Di D1 mulai Lampiran, nomor cetak = hlm. PDF − 1 (mis. hlm. 77 = cetak '- 76 -')."
 ---
 
@@ -21,7 +21,7 @@ konvensi_halaman: "hlm. = nomor halaman PDF (penanda =====Pn===== di d1p/d2p). D
 - **Metadata: dua katalog dan definisi yang tidak konsisten.** Dataedo dipakai untuk Oracle dan Apache Atlas untuk Cloudera (D2 hlm. 26). Glossary dan Kamus Data memuat istilah dan elemen dengan nama/definisi berbeda; kewenangan perubahan elemen data tidak jelas; struktur data baru sulit terdeteksi (D2 hlm. 26).
 - **Kualitas data: prosedur ada, hasil belum memadai.** Prosedur metrik → profiling → penilaian → cleansing → tindak lanjut → monitoring ada (D2 hlm. 27). Namun masih ada duplikasi, inkonsistensi, dan format tidak valid; tool otomatis belum memberi rekomendasi perbaikan; perbaikan bad data di kantor cabang belum optimal; awareness entry data rendah (D2 hlm. 28).
 - **Celah utama untuk ESDP:** belum ada lineage end-to-end, metadata operasional (freshness, volume, status run), quality gate per lapis, maupun data contract.
-- **Skor usulan:** Metadata **±1,4**, Kualitas Data **±1,6** (31 Okt 2026: tetap; bukti baru di Pembaruan 2026-10-31).
+- **Skor usulan:** Metadata **±1,4**, Kualitas Data **±1,7** (2 Nov 2026: KD-2 naik 1 → 2 karena daftar CDE dan indeks ada di D6; lihat Pembaruan 2026-11-02).
 - **Rekomendasi (usulan, berbasis perbandingan):**
   - **Metadata:** federasi katalog. Atlas untuk metadata teknis dan lineage di Cloudera; Dataedo sebagai katalog bisnis (glossary, Kamus Data, owner) dan titik masuk pengguna. Katalog enterprise tunggal dievaluasi di Tahun 3.
   - **Kualitas data:** aturan didefinisikan sekali (di katalog/data contract), dijalankan di dua titik: validasi di sumber saat entri dan quality gate per lapis medallion. Talend dipakai ulang sebagai mesin profiling dan aturan.
@@ -212,7 +212,7 @@ Alur: deteksi (gate/profiling/laporan pengguna) → registrasi isu (domain, CDE,
 1. Sejauh mana Dataedo dipakai (skema tercakup, pengguna), dan apakah glossary disimpan di Dataedo?
 2. Apakah Atlas aktif mencatat lineage untuk semua job di Cloudera?
 3. Tool DQ otomatis apa yang dimaksud (D2 hlm. 28)? Talend Data Quality atau lainnya?
-4. Apakah daftar CDE, metrik, dan skala indeks D1 sudah ditetapkan dan dipakai?
+4. Daftar CDE kepesertaan, metrik, dan indeks sudah ada di D6 (hlm. 56–62). Apakah sudah dipakai secara berkala, dan apakah ada CDE untuk domain selain kepesertaan? Mana yang berlaku: tiga tingkat (D6 hlm. 30) atau lima grade (D6 hlm. 60)?
 5. Apa isi Dashboard Kualitas Data dan siapa penggunanya?
 6. Bagaimana alur perbaikan bad data di kantor cabang saat ini, dan berapa backlog-nya?
 7. Apakah ada target freshness atau SLA data untuk dataset di platform?
@@ -248,3 +248,30 @@ Alur: deteksi (gate/profiling/laporan pengguna) → registrasi isu (domain, CDE,
 | KD-8. Freshness & SLA | 1 → 1 | Freshness per jam ada, target/monitoring tidak |
 
 **Rata-rata: Metadata ±1,4; Kualitas Data ±1,6** (tetap).
+
+## Pembaruan 2026-11-02 (D6)
+
+**Sumber baru:** Prosedur Pengelolaan Kualitas Data 4.009/SOP/MDT/082024 v0.1 (D6). Status: **kebijakan/prosedur ada; praktik masih perlu dikonfirmasi.** Prosedur di D2 hlm. 27 kemungkinan merujuk dokumen ini [perlu konfirmasi].
+
+**Temuan pokok:**
+- **Siklus lengkap di tingkat prosedur:** penetapan metrik → profiling → cleansing → penilaian → tindak lanjut (D6 hlm. 4, 10–12). Prinsip yang dinyatakan: berbasis prioritas, sepanjang siklus hidup data (termasuk saat transmisi antarsistem), pencegahan, perbaikan akar penyebab, berbasis standar, pengukuran transparan (D6 hlm. 6–7). Selaras dengan rekomendasi Opsi D.
+- **CDE dan indeks:** daftar CDE untuk building block Kepesertaan (Tenaga Kerja) yang disepakati dengan unit bisnis, aturan per dimensi (completeness, validity, accuracy, uniqueness, consistency), dan bobot per CDE (D6 hlm. 56–61). Hanya domain kepesertaan yang terlihat.
+- **Inkonsistensi internal D6:** batang tubuh memakai tiga tingkat indeks (D6 hlm. 30), sedangkan kertas kerja lampiran memakai lima grade (D6 hlm. 60) [perlu konfirmasi]. Skala tiga tingkat sama dengan D1 hlm. 85.
+- **Dimensi:** kertas kerja metrik mencakup keakuratan, kelengkapan, ketepatan waktu (timeliness), validitas, keunikan, dan konsistensi lintas kanal terhadap SMILE (D6 hlm. 62). Timeliness ada sebagai dimensi, tetapi tanpa target freshness per dataset, sehingga KD-8 tetap.
+- **Peran:** Data Quality, Data Liaison, Business Owner (Unit Bisnis Kantor Pusat), Asisten Deputi Interoperability and Processing sebagai penyetuju; RACI per prosedur (D6 hlm. 5, 14–29).
+- **Tindak lanjut & isu:** laporan kualitas data bulanan ke Business Owner dan Kanwil; perbaikan melalui permohonan layanan TI dan koreksi di aplikasi oleh cabang; platform *data quality summary* (automated data quality) untuk cabang; deteksi inkonsistensi dengan notifikasi; usulan penyesuaian aplikasi atau proses bisnis bila akar masalah di sana (D6 hlm. 24–25, 29, 34–35, 44–55).
+- **Penanganan khusus:** peserta non-aktif yang tidak dapat dikonfirmasi ditandai dan aksesnya dibatasi/ditutup, dengan SLA perubahan flag (D6 hlm. 8–9, 38–39). Kriteria rinci tidak disalin.
+- **Belum ada di D6:** quality gate per lapis platform/ESDP, data contract, target freshness, dan katalog sebagai tempat aturan. Profiling dilakukan pasca-muat oleh Data Quality (pola Opsi A).
+
+| Aspek | Skor lama → baru | Alasan / sumber |
+|---|---|---|
+| KD-1. Dimensi & metrik | 2 → 2 | Kertas kerja metrik dan dimensi ada (D6 hlm. 60–62); penetapan tahunan per domain belum terbukti |
+| KD-2. CDE & skala indeks | 1 [pk] → 2 [pk] | Daftar CDE kepesertaan, bobot, dan indeks ada di prosedur (D6 hlm. 30, 56–61); pemakaian berkala belum terbukti (kebijakan tanpa praktik ≤ 2) |
+| KD-3. Profiling & penilaian | 2 → 2 | Teknik profiling dan alur penilaian rinci (D6 hlm. 11, 20–29); praktik belum terbukti |
+| KD-5. Manajemen isu & remediasi | 2 → 2 | Alur tiket, akar masalah, dan SLA flag ada (D6 hlm. 9, 29, 38–39, 47–55); SLA isu umum belum ada |
+| KD-6. Quality gate per lapis | 1 [pk] → 1 [pk] | D6 tidak mengatur gate di pipeline platform |
+| KD-7. Pelaporan & monitoring | 2 → 2 | Laporan bulanan dan platform DQ summary ada di prosedur (D6 hlm. 29, 34) |
+
+**Rata-rata: Metadata ±1,4 (tetap); Kualitas Data ±1,7** (15/9).
+
+**Implikasi rekomendasi:** Opsi D tetap; titik awalnya adalah CDE, metrik, dan peran dalam D6, bukan definisi baru. Blueprint menambahkan eksekusi di pipeline (gate per lapis) dan penyimpanan aturan di katalog. Poin diskusi "Tetapkan CDE awal pada 5 shared dimension" disesuaikan: mulai dari CDE kepesertaan D6, lalu perluas ke Pemberi Kerja, Kantor, Program, Kanal.
