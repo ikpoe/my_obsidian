@@ -33,7 +33,14 @@ Di dalam lingkup tersebut, Blueprint mencakup sepuluh area arsitektur yang diura
 
 Batas lingkup ditegaskan sebagai berikut. SMILE sebagai sistem inti, aplikasi pendukung, dan *Enterprise Content Management* (ECM) berada di luar platform. Penyimpanan internal dan perubahan pada sistem-sistem tersebut tidak dirancang dalam Blueprint ini. Sistem-sistem tersebut hanya disebut sebagai antarmuka, yaitu sumber atau tujuan data beserta kontrak data yang mengatur pertukarannya. Hubungan dengan sistem di luar platform berlangsung melalui jalur integrasi yang terkelola, yaitu API dan SFTP, dengan replikasi terkelola untuk penyerapan data internal [perlu konfirmasi]. Koneksi langsung ke basis data mitra tidak menjadi bagian dari rancangan target.
 
-Periode perencanaan Blueprint ini adalah tiga tahun, dengan jadwal yang dirinci per kuartal dari Tahun 1 Kuartal 1 hingga Tahun 3 Kuartal 4. Tahun 1 diasumsikan dimulai pada 2027 [perlu konfirmasi] dan diselaraskan dengan siklus RKAT. Beberapa hal berada di luar lingkup dokumen ini, yaitu rincian rancangan teknis implementasi, spesifikasi pengadaan dan anggaran, pemilihan produk atau alat, serta penetapan nilai parameter. Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan (subbab 4.10).
+Periode perencanaan Blueprint ini adalah tiga tahun, dengan jadwal yang dirinci per kuartal dari Tahun 1 Kuartal 1 hingga Tahun 3 Kuartal 4. Tahun 1 diasumsikan dimulai pada 2027 [perlu konfirmasi] dan diselaraskan dengan siklus RKAT. Beberapa hal berada di luar lingkup dokumen ini, yaitu:
+
+- rincian rancangan teknis implementasi;
+- spesifikasi pengadaan dan anggaran;
+- pemilihan produk atau alat; serta
+- penetapan nilai parameter.
+
+Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan (subbab 4.10).
 
 ---
 
