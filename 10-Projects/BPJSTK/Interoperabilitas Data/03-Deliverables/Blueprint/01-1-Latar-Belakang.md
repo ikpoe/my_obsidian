@@ -29,6 +29,8 @@ Atas dasar itu, studi Reviu dan Perancangan Arsitektur Interoperabilitas Data Ke
 
 *(Bagian ini dihapus pada versi final.)*
 
+> **Catatan aset:** sumber gambar yang dapat disunting (SVG, teks asli, font Arial/Helvetica) tersedia di `assets/` (G1-1, G1-2, G1-3 `.svg`). PNG pada dokumen ini diekspor dari SVG tersebut pada 220 dpi. Perubahan gambar dilakukan pada SVG, lalu PNG diekspor ulang.
+
 **Klaim yang perlu diverifikasi klien**
 1. Pertukaran data dengan DJP dan integrasi layanan dengan BPJS Kesehatan (e-PLKK) masih aktif, meskipun tidak tampak pada diagram integrasi eksternal (D2 hlm. 40). Saat ini klaim ini hanya bersumber dari informasi publik.
 2. Kemnaker disebut sebagai mitra pertukaran data dua arah. Sumbernya dokumen teknis API Kemnaker yang berklasifikasi terbatas, sehingga yang dikutip hanya pola umumnya. Perlu dipastikan klien bersedia hal ini disebut di dokumen yang dipresentasikan.

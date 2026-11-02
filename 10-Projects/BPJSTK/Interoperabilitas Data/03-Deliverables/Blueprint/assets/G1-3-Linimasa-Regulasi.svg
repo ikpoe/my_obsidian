@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="316.8pt" viewBox="0 0 792 316.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T07:44:09.260058</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 316.8 
+L 792 316.8 
+L 792 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m857075d248" d="M 0 3.872983 
+C 1.027127 3.872983 2.012324 3.464901 2.738613 2.738613 
+C 3.464901 2.012324 3.872983 1.027127 3.872983 0 
+C 3.872983 -1.027127 3.464901 -2.012324 2.738613 -2.738613 
+C 2.012324 -3.464901 1.027127 -3.872983 0 -3.872983 
+C -1.027127 -3.872983 -2.012324 -3.464901 -2.738613 -2.738613 
+C -3.464901 -2.012324 -3.872983 -1.027127 -3.872983 0 
+C -3.872983 1.027127 -3.464901 2.012324 -2.738613 2.738613 
+C -2.012324 3.464901 -1.027127 3.872983 0 3.872983 
+z
+" style="stroke: #006b3f"/>
+    </defs>
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m857075d248" x="195.454286" y="273.8208" style="fill: #006b3f; stroke: #006b3f"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m22c5a62a3a" d="M 0 3.872983 
+C 1.027127 3.872983 2.012324 3.464901 2.738613 2.738613 
+C 3.464901 2.012324 3.872983 1.027127 3.872983 0 
+C 3.872983 -1.027127 3.464901 -2.012324 2.738613 -2.738613 
+C 2.012324 -3.464901 1.027127 -3.872983 0 -3.872983 
+C -1.027127 -3.872983 -2.012324 -3.464901 -2.738613 -2.738613 
+C -3.464901 -2.012324 -3.872983 -1.027127 -3.872983 0 
+C -3.872983 1.027127 -3.464901 2.012324 -2.738613 2.738613 
+C -2.012324 3.464901 -1.027127 3.872983 0 3.872983 
+z
+" style="stroke: #00a651"/>
+    </defs>
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m22c5a62a3a" x="388.362857" y="273.8208" style="fill: #00a651; stroke: #00a651"/>
+    </g>
+   </g>
+   <g id="line2d_1">
+    <path d="M 116.537143 157.2736 
+L 695.262857 157.2736 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #d9dede; stroke-width: 6; stroke-linecap: round"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 142.842857 157.2736 
+L 142.842857 127.4592 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #006b3f; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 230.528571 157.2736 
+L 230.528571 187.088 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #006b3f; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 318.214286 157.2736 
+L 318.214286 127.4592 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #00a651; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 405.9 157.2736 
+L 405.9 187.088 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #006b3f; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 493.585714 157.2736 
+L 493.585714 127.4592 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #00a651; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 581.271429 157.2736 
+L 581.271429 187.088 
+" clip-path="url(#p73e5d32680)" style="fill: none; stroke: #00a651; stroke-width: 1.2; stroke-linecap: square"/>
+   </g>
+   <g id="PathCollection_3">
+    <defs>
+     <path id="m9a7ff19b90" d="M 0 6.519202 
+C 1.728913 6.519202 3.387246 5.832298 4.609772 4.609772 
+C 5.832298 3.387246 6.519202 1.728913 6.519202 0 
+C 6.519202 -1.728913 5.832298 -3.387246 4.609772 -4.609772 
+C 3.387246 -5.832298 1.728913 -6.519202 0 -6.519202 
+C -1.728913 -6.519202 -3.387246 -5.832298 -4.609772 -4.609772 
+C -5.832298 -3.387246 -6.519202 -1.728913 -6.519202 0 
+C -6.519202 1.728913 -5.832298 3.387246 -4.609772 4.609772 
+C -3.387246 5.832298 -1.728913 6.519202 0 6.519202 
+z
+" style="stroke: #ffffff; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m9a7ff19b90" x="142.842857" y="157.2736" style="fill: #006b3f; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-23-apr-2025-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #006b3f" x="142.842857" y="117.118283" transform="rotate(-0 142.842857 117.118283)">23 Apr 2025</text>
+   </g>
+   <g id="txt-perdir-4-2025-ditetapkan-tata-kelola-dat-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(93.812545 82.570386)">Perdir 4/2025 ditetapkan</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(97.408326 92.365796)">(Tata Kelola Data &amp; TI)</text>
+   </g>
+   <g id="PathCollection_4">
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m9a7ff19b90" x="230.528571" y="157.2736" style="fill: #006b3f; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-okt-2025-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #006b3f" x="230.528571" y="202.863487" transform="rotate(-0 230.528571 202.863487)">±Okt 2025</text>
+   </g>
+   <g id="txt-batas-adendum-pks-pemanfaatan-data-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(188.753806 226.839607)">Batas adendum PKS</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(194.252946 236.635017)">pemanfaatan data</text>
+   </g>
+   <g id="PathCollection_5">
+    <defs>
+     <path id="m2b6bae3275" d="M 0 6.519202 
+C 1.728913 6.519202 3.387246 5.832298 4.609772 4.609772 
+C 5.832298 3.387246 6.519202 1.728913 6.519202 0 
+C 6.519202 -1.728913 5.832298 -3.387246 4.609772 -4.609772 
+C 3.387246 -5.832298 1.728913 -6.519202 0 -6.519202 
+C -1.728913 -6.519202 -3.387246 -5.832298 -4.609772 -4.609772 
+C -5.832298 -3.387246 -6.519202 -1.728913 -6.519202 0 
+C -6.519202 1.728913 -5.832298 3.387246 -4.609772 4.609772 
+C -3.387246 5.832298 -1.728913 6.519202 0 6.519202 
+z
+" style="stroke: #ffffff; stroke-width: 2"/>
+    </defs>
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m2b6bae3275" x="318.214286" y="157.2736" style="fill: #00a651; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-okt-2026-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #00a651" x="318.214286" y="117.118283" transform="rotate(-0 318.214286 117.118283)">Okt 2026</text>
+   </g>
+   <g id="txt-target-uji-konsep-mdm-perlu-konfirmasi-s-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(272.199676 82.570386)">Target uji konsep MDM</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(270.699208 92.365796)">[perlu konfirmasi status]</text>
+   </g>
+   <g id="PathCollection_6">
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m9a7ff19b90" x="405.9" y="157.2736" style="fill: #006b3f; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-16-jan-2027-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #006b3f" x="405.9" y="202.863487" transform="rotate(-0 405.9 202.863487)">16 Jan 2027</text>
+   </g>
+   <g id="txt-pp-33-2026-berlaku-perlu-konfirmasi-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(366.455391 226.839607)">PP 33/2026 berlaku</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(371.640234 236.635017)">[perlu konfirmasi]</text>
+   </g>
+   <g id="PathCollection_7">
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m2b6bae3275" x="493.585714" y="157.2736" style="fill: #00a651; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-2027-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #00a651" x="493.585714" y="117.118283" transform="rotate(-0 493.585714 117.118283)">2027</text>
+   </g>
+   <g id="txt-tahun-1-peta-jalan-perlu-konfirmasi-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(456.808761 82.570386)">Tahun 1 peta jalan</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(459.325949 92.365796)">[perlu konfirmasi]</text>
+   </g>
+   <g id="PathCollection_8">
+    <g clip-path="url(#p73e5d32680)">
+     <use xlink:href="#m2b6bae3275" x="581.271429" y="157.2736" style="fill: #00a651; stroke: #ffffff; stroke-width: 2"/>
+    </g>
+   </g>
+   <g id="txt-2028-tahun-2-k2-1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #00a651" x="581.271429" y="202.863487" transform="rotate(-0 581.271429 202.863487)">2028 (Tahun 2 K2)</text>
+   </g>
+   <g id="txt-data-hub-beroperasi-rencana-peta-jalan-1">
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(539.750491 226.839607)">Data Hub beroperasi</text>
+    <text style="font-size: 9px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; fill: #333333" transform="translate(541.249554 236.635017)">(rencana peta jalan)</text>
+   </g>
+   <g id="txt-regulasi-kebijakan-1">
+    <text style="font-size: 8.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start" x="205.976571" y="276.020507" transform="rotate(-0 205.976571 276.020507)">regulasi/kebijakan</text>
+   </g>
+   <g id="txt-tonggak-program-rencana-1">
+    <text style="font-size: 8.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start" x="398.885143" y="276.020507" transform="rotate(-0 398.885143 276.020507)">tonggak program/rencana</text>
+   </g>
+  </g>
+  <g id="txt-linimasa-regulasi-dan-tonggak-pengelolaa-1">
+   <text style="font-weight: 700; font-size: 15px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="23.76" y="25.344" transform="rotate(-0 23.76 25.344)">Linimasa regulasi dan tonggak pengelolaan data</text>
+  </g>
+  <g id="txt-sumber-d1-hlm-1-61-62-pp-33-2026-ps-225-1">
+   <text style="font-style: italic; font-size: 8.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="23.76" y="307.296" transform="rotate(-0 23.76 307.296)">Sumber: D1 hlm. 1, 61–62; PP 33/2026 Ps. 225; rencana program BPJS TK; Peta Jalan Blueprint (bagian 3.4); diolah.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p73e5d32680">
+   <rect x="99" y="38.016" width="613.8" height="243.936"/>
+  </clipPath>
+ </defs>
+</svg>

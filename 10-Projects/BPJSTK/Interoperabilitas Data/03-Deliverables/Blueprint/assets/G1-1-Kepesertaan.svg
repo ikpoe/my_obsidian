@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="403.2pt" viewBox="0 0 792 403.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-02T07:44:08.835320</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 403.2 
+L 792 403.2 
+L 792 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="shape-wedge-1">
+    <path d="M 363.951139 221.146384 
+C 368.311005 235.127177 376.464384 247.628506 387.50102 257.254704 
+C 398.537656 266.880901 412.030959 273.259895 426.474519 275.679524 
+C 440.918078 278.099153 455.753619 276.465894 469.32488 270.962087 
+C 482.89614 265.458279 494.678562 256.296657 503.35674 244.500036 
+C 512.034917 232.703415 517.273419 218.727762 518.487412 204.133337 
+C 519.701405 189.538912 516.843965 174.889822 510.234102 161.821512 
+C 503.624238 148.753203 493.517436 137.770792 481.042033 130.100371 
+C 468.566631 122.429951 454.204829 118.368 439.56 118.368 
+L 439.56 143.712 
+C 449.518484 143.712 459.284509 146.474127 467.767783 151.690013 
+C 476.251056 156.905898 483.123682 164.373938 487.618389 173.260388 
+C 492.113096 182.146839 494.056155 192.10822 493.23064 202.032429 
+C 492.405125 211.956638 488.842944 221.460082 482.941783 229.481784 
+C 477.040622 237.503486 469.028575 243.73339 459.800118 247.475979 
+C 450.571661 251.218568 440.483493 252.329184 430.661873 250.683836 
+C 420.840252 249.038488 411.664806 244.700773 404.159894 238.154958 
+C 396.654981 231.609144 391.110684 223.108241 388.145975 213.601301 
+z
+" style="fill: #00a651; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="shape-wedge-2">
+    <path d="M 439.56 118.368 
+C 427.141436 118.368 414.895215 121.288847 403.813512 126.893898 
+C 392.731809 132.49895 383.122206 140.632632 375.76326 150.635964 
+C 368.404314 160.639296 363.50028 172.234628 361.448476 184.482519 
+C 359.396672 196.73041 360.254047 209.29091 363.951139 221.146384 
+L 388.145975 213.601301 
+C 385.631952 205.539579 385.048937 196.998439 386.444164 188.669873 
+C 387.83939 180.341307 391.174134 172.456481 396.178217 165.654216 
+C 401.1823 158.85195 407.71683 153.321046 415.252388 149.509611 
+C 422.787946 145.698176 431.115376 143.712 439.56 143.712 
+z
+" style="fill: #d9dede; stroke: #ffffff; stroke-linejoin: miter"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2"/>
+   <g id="txt-70-2-1">
+    <text style="font-weight: 700; font-size: 20px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #006b3f" x="439.56" y="191.232" transform="rotate(-0 439.56 191.232)">70,2%</text>
+   </g>
+   <g id="txt-peserta-aktif-1">
+    <text style="font-size: 10px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #7f8c8d" x="439.56" y="211.824" transform="rotate(-0 439.56 211.824)">peserta aktif</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="shape-rectangle-2">
+    <path d="M 586.08 146.3424 
+L 756.903529 146.3424 
+L 756.903529 130.752 
+L 586.08 130.752 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #d9dede"/>
+   </g>
+   <g id="shape-rectangle-4">
+    <path d="M 586.08 213.1584 
+L 756.903529 213.1584 
+L 756.903529 197.568 
+L 586.08 197.568 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #d9dede"/>
+   </g>
+   <g id="shape-rectangle-6">
+    <path d="M 586.08 279.9744 
+L 756.903529 279.9744 
+L 756.903529 264.384 
+L 586.08 264.384 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #d9dede"/>
+   </g>
+   <g id="shape-rectangle-1">
+    <path d="M 586.08 146.3424 
+L 756.903529 146.3424 
+L 756.903529 130.752 
+L 586.08 130.752 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #006b3f"/>
+   </g>
+   <g id="shape-rectangle-3">
+    <path d="M 586.08 213.1584 
+L 674.55721 213.1584 
+L 674.55721 197.568 
+L 586.08 197.568 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #00a651"/>
+   </g>
+   <g id="shape-rectangle-5">
+    <path d="M 586.08 279.9744 
+L 630.006467 279.9744 
+L 630.006467 264.384 
+L 586.08 264.384 
+z
+" clip-path="url(#pab0f11fec2)" style="fill: #7f8c8d"/>
+   </g>
+   <g id="txt-komposisi-peserta-aktif-1">
+    <text style="font-weight: 700; font-size: 11px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="586.08" y="91.776" transform="rotate(-0 586.08 91.776)">Komposisi peserta aktif</text>
+   </g>
+   <g id="txt-penerima-upah-pu-1">
+    <text style="font-size: 9.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #333333" x="586.08" y="120.7296" transform="rotate(-0 586.08 120.7296)">Penerima Upah (PU)</text>
+   </g>
+   <g id="txt-27-406-731-1">
+    <text style="font-weight: 700; font-size: 10px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="586.08" y="160.8192" transform="rotate(-0 586.08 160.8192)">27.406.731</text>
+   </g>
+   <g id="txt-bukan-penerima-upah-bpu-1">
+    <text style="font-size: 9.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #333333" x="586.08" y="187.5456" transform="rotate(-0 586.08 187.5456)">Bukan Penerima Upah (BPU)</text>
+   </g>
+   <g id="txt-14-195-182-1">
+    <text style="font-weight: 700; font-size: 10px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #00a651" x="586.08" y="227.6352" transform="rotate(-0 586.08 227.6352)">14.195.182</text>
+   </g>
+   <g id="txt-jasa-konstruksi-jakon-1">
+    <text style="font-size: 9.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #333333" x="586.08" y="254.3616" transform="rotate(-0 586.08 254.3616)">Jasa Konstruksi (Jakon)</text>
+   </g>
+   <g id="txt-7-047-512-1">
+    <text style="font-weight: 700; font-size: 10px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="586.08" y="294.4512" transform="rotate(-0 586.08 294.4512)">7.047.512</text>
+   </g>
+  </g>
+  <g id="txt-kepesertaan-bpjs-ketenagakerjaan-per-31-1">
+   <text style="font-weight: 700; font-size: 15px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="23.76" y="28.224" transform="rotate(-0 23.76 28.224)">Kepesertaan BPJS Ketenagakerjaan per 31 Desember 2025</text>
+  </g>
+  <g id="txt-69-312-125-1">
+   <text style="font-weight: 700; font-size: 34px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #00a651" x="23.76" y="80.64" transform="rotate(-0 23.76 80.64)">69.312.125</text>
+  </g>
+  <g id="txt-tenaga-kerja-terdaftar-aktif-dan-nonakti-1">
+   <text style="font-size: 11px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="23.76" y="104.832" transform="rotate(-0 23.76 104.832)">tenaga kerja terdaftar (aktif dan nonaktif)</text>
+  </g>
+  <g id="txt-875-641-1">
+   <text style="font-weight: 700; font-size: 24px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="23.76" y="177.408" transform="rotate(-0 23.76 177.408)">875.641</text>
+  </g>
+  <g id="txt-pemberi-kerja-badan-usaha-terdaftar-1">
+   <text style="font-size: 11px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="23.76" y="201.6" transform="rotate(-0 23.76 201.6)">pemberi kerja/badan usaha terdaftar</text>
+  </g>
+  <g id="txt-rp897-85-t-1">
+   <text style="font-weight: 700; font-size: 24px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #006b3f" x="23.76" y="258.048" transform="rotate(-0 23.76 258.048)">Rp897,85 T</text>
+  </g>
+  <g id="txt-dana-investasi-2024-rp791-66-t-1">
+   <text style="font-size: 11px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="23.76" y="282.24" transform="rotate(-0 23.76 282.24)">dana investasi (2024: Rp791,66 T)</text>
+  </g>
+  <g id="txt-aktif-48-649-425-nonaktif-20-662-700-1">
+   <text style="font-size: 10px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: middle; fill: #333333" x="439.56" y="342.72" transform="rotate(-0 439.56 342.72)">Aktif 48.649.425   ·   Nonaktif 20.662.700</text>
+  </g>
+  <g id="txt-sumber-laporan-terintegrasi-bpjs-ketenag-1">
+   <text style="font-style: italic; font-size: 8.5px; font-family:Arial, Helvetica, 'Liberation Sans', sans-serif; text-anchor: start; fill: #7f8c8d" x="23.76" y="387.072" transform="rotate(-0 23.76 387.072)">Sumber: Laporan Terintegrasi BPJS Ketenagakerjaan 2025, hlm. 14 (dana investasi) dan hlm. 53 (kepesertaan, pemberi kerja, komposisi).</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pab0f11fec2">
+   <rect x="586.08" y="80.64" width="174.24" height="233.856"/>
+  </clipPath>
+ </defs>
+</svg>
