@@ -497,10 +497,20 @@ source /root/replikasi/<SOURCE_ID>.env
 sudo -E -u postgres $PGBIN/psql -d $TARGET_DB
 ```
 
+Variable yang dibutuhkan: `SOURCE_ID`.
+
+```sql
+\getenv source_id SOURCE_ID
+\echo :source_id
+```
+
+Hasil yang diterima: muncul nilai `SOURCE_ID`, misalnya `dokim`.
+
 Berikut adalah command untuk menjalankan file index lalu mengecek index yang INVALID.
 
 ```sql
-\i /var/lib/pgsql/idx_<SOURCE_ID>.sql
+\set idx_file /var/lib/pgsql/idx_ :source_id .sql
+\i :idx_file
 SELECT indexrelid::regclass FROM pg_index WHERE NOT indisvalid;
 ```
 
