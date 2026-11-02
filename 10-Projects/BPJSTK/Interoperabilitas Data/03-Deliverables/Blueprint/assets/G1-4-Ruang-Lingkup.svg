@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800pt" height="522pt" viewBox="0 0 800 522"><defs><marker id="ah00A651" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#00A651"/></marker><marker id="ah7F8C8D" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#7F8C8D"/></marker><marker id="ah006B3F" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#006B3F"/></marker></defs><rect id="background" width="800" height="522" fill="white"/><g id="judul">
+<text x="24" y="34.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="17" fill="#006B3F" text-anchor="start" font-weight="bold">Ruang lingkup Blueprint: ESDP sebagai poros</text>
+</g>
+<g id="hulu-batas">
+<rect id="hulu-kotak" x="24" y="70" width="170" height="330" rx="8" fill="#F4F6F6" stroke="#7F8C8D" stroke-width="1.2" stroke-dasharray="5,4"/>
+<text x="109" y="92.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="11" fill="#7F8C8D" text-anchor="middle" font-weight="bold">HULU (antarmuka)</text>
+<rect id="hulu-1" x="38" y="110" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="109" y="141.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">SMILE (core system)</text>
+<rect id="hulu-2" x="38" y="180" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="109" y="202.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Aplikasi pendukung</text>
+<text x="109" y="215.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">(JMO, SIPP, dll.)</text>
+<rect id="hulu-3" x="38" y="250" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="109" y="272.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">ECM</text>
+<text x="109" y="285.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">(dokumen)</text>
+<rect id="hulu-4" x="38" y="320" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="109" y="342.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Mitra K/L</text>
+<text x="109" y="355.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">(data masuk)</text>
+</g>
+<g id="esdp">
+<rect id="esdp-kotak" x="250" y="70" width="300" height="330" rx="8" fill="white" stroke="#006B3F" stroke-width="2.2"/>
+<text x="400" y="94.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="13" fill="#006B3F" text-anchor="middle" font-weight="bold">ESDP — DALAM LINGKUP</text>
+<rect id="zona-1" x="268" y="110" width="56" height="44" rx="5" fill="#E6F5EC" stroke="#00A651" stroke-width="1"/>
+<text x="296" y="137.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#006B3F" text-anchor="middle" font-weight="bold">Staging</text>
+<rect id="zona-2" x="336" y="110" width="56" height="44" rx="5" fill="#E6F5EC" stroke="#00A651" stroke-width="1"/>
+<text x="364" y="137.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#006B3F" text-anchor="middle" font-weight="bold">Bronze</text>
+<rect id="zona-3" x="404" y="110" width="56" height="44" rx="5" fill="#E6F5EC" stroke="#00A651" stroke-width="1"/>
+<text x="432" y="137.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#006B3F" text-anchor="middle" font-weight="bold">Silver</text>
+<rect id="zona-4" x="472" y="110" width="56" height="44" rx="5" fill="#00A651" stroke="#00A651" stroke-width="1"/>
+<text x="500" y="137.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="white" text-anchor="middle" font-weight="bold">Gold</text>
+<line x1="325" y1="132" x2="334" y2="132" stroke="#006B3F" stroke-width="2" marker-end="url(#ah006B3F)"/>
+<line x1="393" y1="132" x2="402" y2="132" stroke="#006B3F" stroke-width="2" marker-end="url(#ah006B3F)"/>
+<line x1="461" y1="132" x2="470" y2="132" stroke="#006B3F" stroke-width="2" marker-end="url(#ah006B3F)"/>
+<rect id="area-1" x="264" y="170" width="272" height="25" rx="4" fill="#F0F8F3" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="187.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.1 Tata Kelola Data · 4.10 Parameter</text>
+<rect id="area-2" x="264" y="201" width="272" height="25" rx="4" fill="white" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="218.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.2 Platform · 4.3 Pemodelan · 4.4 Penyimpanan &amp; Resiliensi</text>
+<rect id="area-3" x="264" y="232" width="272" height="25" rx="4" fill="#F0F8F3" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="249.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.5 Integrasi &amp; Interoperabilitas</text>
+<rect id="area-4" x="264" y="263" width="272" height="25" rx="4" fill="white" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="280.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.6 Data Induk (golden record)</text>
+<rect id="area-5" x="264" y="294" width="272" height="25" rx="4" fill="#F0F8F3" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="311.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.7 Metadata &amp; Kualitas (freshness)</text>
+<rect id="area-6" x="264" y="325" width="272" height="25" rx="4" fill="white" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="342.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.8 Keamanan &amp; Pelindungan Data</text>
+<rect id="area-7" x="264" y="356" width="272" height="25" rx="4" fill="#F0F8F3" stroke="#D9DEDE" stroke-width="1"/>
+<text x="400" y="373.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9.5" fill="#333333" text-anchor="middle">4.9 DW, BI &amp; Lapisan Metrik</text>
+</g>
+<g id="hilir-batas">
+<rect id="hilir-kotak" x="606" y="70" width="170" height="330" rx="8" fill="#F4F6F6" stroke="#7F8C8D" stroke-width="1.2" stroke-dasharray="5,4"/>
+<text x="691" y="92.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="11" fill="#7F8C8D" text-anchor="middle" font-weight="bold">HILIR (pemanfaatan)</text>
+<rect id="hilir-1" x="620" y="110" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="691" y="132.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Dashboard &amp; BI</text>
+<text x="691" y="145.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">internal</text>
+<rect id="hilir-2" x="620" y="180" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="691" y="202.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Analitik &amp;</text>
+<text x="691" y="215.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">self-service</text>
+<rect id="hilir-3" x="620" y="250" width="142" height="52" rx="8" fill="white" stroke="#00A651" stroke-width="1.4"/>
+<text x="691" y="272.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Data Hub</text>
+<text x="691" y="285.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">(B2B, DMZ)</text>
+<rect id="hilir-4" x="620" y="320" width="142" height="52" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1"/>
+<text x="691" y="342.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">Mitra K/L</text>
+<text x="691" y="355.1" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="middle">(data keluar)</text>
+</g>
+<g id="aliran">
+<line x1="182" y1="136" x2="247" y2="136" stroke="#7F8C8D" stroke-width="2" marker-end="url(#ah7F8C8D)" stroke-dasharray="5,3"/>
+<line x1="182" y1="206" x2="247" y2="206" stroke="#7F8C8D" stroke-width="2" marker-end="url(#ah7F8C8D)" stroke-dasharray="5,3"/>
+<line x1="182" y1="276" x2="247" y2="276" stroke="#7F8C8D" stroke-width="2" marker-end="url(#ah7F8C8D)" stroke-dasharray="5,3"/>
+<line x1="182" y1="346" x2="247" y2="346" stroke="#7F8C8D" stroke-width="2" marker-end="url(#ah7F8C8D)" stroke-dasharray="5,3"/>
+<line x1="552" y1="136" x2="617" y2="136" stroke="#00A651" stroke-width="2" marker-end="url(#ah00A651)"/>
+<line x1="552" y1="206" x2="617" y2="206" stroke="#00A651" stroke-width="2" marker-end="url(#ah00A651)"/>
+<line x1="552" y1="276" x2="617" y2="276" stroke="#00A651" stroke-width="2" marker-end="url(#ah00A651)"/>
+<line x1="691" y1="303" x2="691" y2="318" stroke="#00A651" stroke-width="2" marker-end="url(#ah00A651)"/>
+</g>
+<g id="di-luar-lingkup">
+<rect id="luar-kotak" x="24" y="414" width="752" height="72" rx="8" fill="white" stroke="#7F8C8D" stroke-width="1.2" stroke-dasharray="5,4"/>
+<text x="40" y="438.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="11" fill="#7F8C8D" text-anchor="start" font-weight="bold">DI LUAR LINGKUP:</text>
+<text x="150" y="434.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="start">• penyimpanan internal aplikasi sumber &amp; ECM (hanya disebut sebagai antarmuka) · perubahan aplikasi sumber</text>
+<text x="150" y="452.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="start">• rincian implementasi, pengadaan, dan anggaran</text>
+<text x="150" y="470.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="10.5" fill="#333333" text-anchor="start">• pemilihan produk/alat dan nilai parameter (Blueprint memuat daftar parameter, bukan nilainya)</text>
+</g>
+<g id="sumber">
+<text x="24" y="506.0" font-family="Arial, Helvetica, 'Liberation Sans', sans-serif" font-size="9" fill="#7F8C8D" text-anchor="start" font-style="italic">Catatan: hulu terhubung melalui API, SFTP, atau replikasi terkelola [perlu konfirmasi]. Sumber: diolah dari D1 hlm. 14–17, 53–58; D2 hlm. 20–21, 39–40; Peta Jalan Blueprint (bagian 3.4).</text>
+</g></svg>
