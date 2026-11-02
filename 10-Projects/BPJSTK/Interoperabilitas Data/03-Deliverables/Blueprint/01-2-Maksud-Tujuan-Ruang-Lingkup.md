@@ -2,9 +2,12 @@
 
 ## 1.2.1 Maksud
 
-Subbab 1.1 menunjukkan bahwa BPJS Ketenagakerjaan telah memiliki kebijakan tata kelola data yang lengkap, platform data yang sudah beroperasi, dan sejumlah inisiatif yang sedang berjalan. Namun ketiganya belum terhubung dalam satu rancangan. Tanpa rancangan bersama, setiap inisiatif berisiko menetapkan definisi, kendali, dan jalur pertukaran datanya sendiri. Akibatnya, fragmentasi yang ingin diatasi justru dapat terulang.
+Maksud penyusunan Blueprint ini adalah menjadi **acuan bersama arsitektur data** BPJS Ketenagakerjaan, yang menerjemahkan Peraturan Direksi Nomor 4/PERDIR.06/042025 ke dalam rancangan yang dapat dilaksanakan pada wilayah ESDP. Blueprint ini digunakan sebagai:
 
-Blueprint ini disusun sebagai **acuan arsitektur data bersama** yang menerjemahkan Peraturan Direksi Nomor 4/PERDIR.06/042025 ke dalam rancangan yang dapat dilaksanakan pada wilayah ESDP. Dokumen ini menjadi pegangan Komite Pengarah TI dan forum tata kelola data dalam menetapkan prioritas. Bagi Unit Manajemen Data dan unit teknologi informasi, dokumen ini menjadi rujukan saat merancang dan menilai setiap perubahan. Bagi unit bisnis pemilik data, dokumen ini memperjelas peran yang diharapkan dari mereka (D1 hlm. 7–10). Blueprint juga menjadi dasar komunikasi dengan mitra kementerian/lembaga mengenai cara BPJS Ketenagakerjaan menerima dan menyalurkan data secara aman dan terstandar (D1 hlm. 53–58).
+- pegangan Komite Pengarah TI dan forum tata kelola data dalam menetapkan prioritas;
+- rujukan Unit Manajemen Data dan unit teknologi informasi dalam merancang dan menilai setiap perubahan;
+- penjelas peran unit bisnis pemilik data (D1 hlm. 7–10); serta
+- dasar komunikasi dengan mitra kementerian/lembaga mengenai penerimaan dan penyaluran data secara aman dan terstandar (D1 hlm. 53–58).
 
 ## 1.2.2 Tujuan
 
@@ -24,21 +27,21 @@ Keterkaitan setiap tujuan dengan tema tahunan dan area arsitektur ditunjukkan pa
 
 ## 1.2.3 Ruang Lingkup
 
-Ruang lingkup Blueprint ditetapkan dengan menempatkan ESDP sebagai poros. Pembatasan ini dipilih secara sadar. ESDP adalah titik tempat data dari berbagai sistem sumber bertemu, sehingga di titik inilah standar, kendali, dan kualitas dapat diterapkan secara konsisten tanpa harus mengubah setiap aplikasi sumber. Integrasi dipandang dari dua arah. Arah hulu (*upstream*) mencakup aliran data dari sistem sumber ke ESDP. Arah hilir (*downstream*) mencakup penyaluran data dari ESDP kepada pengguna internal dan mitra eksternal (Gambar 1.4).
+Ruang lingkup Blueprint ditetapkan dengan menempatkan ESDP sebagai titik pusat integrasi data. ESDP adalah titik tempat data dari berbagai sistem sumber bertemu, sehingga di titik inilah standar, kendali, dan kualitas dapat diterapkan secara konsisten tanpa harus mengubah setiap aplikasi sumber. Integrasi dipandang dari dua arah. Arah hulu (*upstream*) mencakup aliran data dari sistem sumber ke ESDP. Arah hilir (*downstream*) mencakup penyaluran data dari ESDP kepada pengguna internal dan mitra eksternal (Gambar 1.4).
 
 ![[G1-4-Ruang-Lingkup.png]]
 *Gambar 1.4 Ruang Lingkup Blueprint dengan ESDP sebagai Poros*
 
 Di dalam lingkup tersebut, Blueprint mencakup sepuluh area arsitektur yang diuraikan pada BAB IV. Kesepuluh area itu adalah tata kelola data; arsitektur platform data ESDP; pemodelan data; penyimpanan, retensi, dan resiliensi; integrasi dan interoperabilitas; manajemen data induk; metadata dan kualitas data; keamanan dan pelindungan data; *data warehouse*, BI, dan lapisan metrik; serta parameter yang perlu ditetapkan. Pembagian ini sejalan dengan struktur pengaturan dalam Perdir 4/2025, yang meliputi arsitektur, pemodelan, metadata, kualitas, *data warehouse* dan big data, master data, penyimpanan, keamanan informasi, serta kolaborasi data (D1 hlm. 14–17, 40–58, 64–92). Ketiga *use case* prioritas dalam kerangka acuan kerja juga terwadahi di dalamnya. Ketiganya adalah kesiapan infrastruktur dan platform ESDP, pertukaran data melalui API, dan tata kelola data. Rinciannya diuraikan pada subbab 3.3.
 
-Batas lingkup ditegaskan sebagai berikut. SMILE sebagai sistem inti, aplikasi pendukung, dan *Enterprise Content Management* (ECM) berada di luar platform. Penyimpanan internal dan perubahan pada sistem-sistem tersebut tidak dirancang dalam Blueprint ini. Sistem-sistem tersebut hanya disebut sebagai antarmuka, yaitu sumber atau tujuan data beserta kontrak data yang mengatur pertukarannya. Hubungan dengan sistem di luar platform berlangsung melalui jalur integrasi yang terkelola, yaitu API dan SFTP, dengan replikasi terkelola untuk penyerapan data internal [perlu konfirmasi]. Koneksi langsung ke basis data mitra tidak menjadi bagian dari rancangan target.
+Sistem yang berada di luar platform, yaitu SMILE sebagai sistem inti, aplikasi pendukung, dan *Enterprise Content Management* (ECM), tidak dirancang ulang dalam Blueprint ini, termasuk penyimpanan internalnya. Blueprint hanya memandang sistem-sistem tersebut sebagai antarmuka, yaitu sumber atau tujuan data, beserta kontrak data yang mengatur pertukarannya. Hubungan dengan sistem tersebut berlangsung melalui jalur integrasi yang terkelola, yaitu API dan SFTP, sedangkan penyerapan data internal dapat menggunakan replikasi terkelola [perlu konfirmasi]. Koneksi langsung ke basis data mitra tidak termasuk dalam rancangan target.
 
 Periode perencanaan Blueprint ini adalah tiga tahun, dengan jadwal yang dirinci per kuartal dari Tahun 1 Kuartal 1 hingga Tahun 3 Kuartal 4. Tahun 1 diasumsikan dimulai pada 2027 [perlu konfirmasi] dan diselaraskan dengan siklus RKAT. Beberapa hal berada di luar lingkup dokumen ini, yaitu:
 
 - rincian rancangan teknis implementasi;
 - spesifikasi pengadaan dan anggaran;
 - pemilihan produk atau alat; serta
-- penetapan nilai parameter.
+- penetapan nilai target operasional, seperti RPO/RTO, waktu retensi, dan batas kualitas.
 
 Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan (subbab 4.10).
 
