@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="330" viewBox="0 0 1100 330" font-family="Arial, Helvetica, Liberation Sans, sans-serif">
+<defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#6B6B6B"/></marker></defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<g id="tahapan">
+<g id="tahap-1"><rect x="20" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#00A651" stroke-width="2"/><rect x="20" y="40" width="160" height="44" rx="8" fill="#00A651"/><rect x="20" y="70" width="160" height="14" fill="#00A651"/><text x="100.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">1. Kajian dokumen</text>
+<text x="100.0" y="118" text-anchor="middle" font-size="14" fill="#333333">D1–D4, publikasi</text>
+</g>
+<line x1="182" y1="115" x2="198" y2="115" stroke="#6B6B6B" stroke-width="2" marker-end="url(#ah)"/>
+<g id="tahap-2"><rect x="200" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#00A651" stroke-width="2"/><rect x="200" y="40" width="160" height="44" rx="8" fill="#00A651"/><rect x="200" y="70" width="160" height="14" fill="#00A651"/><text x="280.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">2. Diskusi</text>
+<text x="280.0" y="118" text-anchor="middle" font-size="14" fill="#333333">dengan tim BPJS (R1)</text>
+</g>
+<line x1="362" y1="115" x2="378" y2="115" stroke="#6B6B6B" stroke-width="2" marker-end="url(#ah)"/>
+<g id="tahap-3"><rect x="380" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#006B3F" stroke-width="2"/><rect x="380" y="40" width="160" height="44" rx="8" fill="#006B3F"/><rect x="380" y="70" width="160" height="14" fill="#006B3F"/><text x="460.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">3. Reviu per area</text>
+<text x="460.0" y="118" text-anchor="middle" font-size="14" fill="#333333">lensa DAMA-DMBOK,</text>
+<text x="460.0" y="140" text-anchor="middle" font-size="14" fill="#333333">pemahaman kondisi</text>
+</g>
+<line x1="542" y1="115" x2="558" y2="115" stroke="#6B6B6B" stroke-width="2" marker-end="url(#ah)"/>
+<g id="tahap-4"><rect x="560" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#006B3F" stroke-width="2"/><rect x="560" y="40" width="160" height="44" rx="8" fill="#006B3F"/><rect x="560" y="70" width="160" height="14" fill="#006B3F"/><text x="640.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">4. Kesenjangan</text>
+<text x="640.0" y="118" text-anchor="middle" font-size="14" fill="#333333">saat ini, regulasi,</text>
+<text x="640.0" y="140" text-anchor="middle" font-size="14" fill="#333333">dan kondisi ideal</text>
+</g>
+<line x1="722" y1="115" x2="738" y2="115" stroke="#6B6B6B" stroke-width="2" marker-end="url(#ah)"/>
+<g id="tahap-5"><rect x="740" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#00A651" stroke-width="2"/><rect x="740" y="40" width="160" height="44" rx="8" fill="#00A651"/><rect x="740" y="70" width="160" height="14" fill="#00A651"/><text x="820.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">5. Arsitektur target</text>
+<text x="820.0" y="118" text-anchor="middle" font-size="14" fill="#333333">prinsip &amp; perbandingan</text>
+<text x="820.0" y="140" text-anchor="middle" font-size="14" fill="#333333">opsi</text>
+</g>
+<line x1="902" y1="115" x2="918" y2="115" stroke="#6B6B6B" stroke-width="2" marker-end="url(#ah)"/>
+<g id="tahap-6"><rect x="920" y="40" width="160" height="150" rx="8" fill="#F2F2F2" stroke="#00A651" stroke-width="2"/><rect x="920" y="40" width="160" height="44" rx="8" fill="#00A651"/><rect x="920" y="70" width="160" height="14" fill="#00A651"/><text x="1000.0" y="68" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">6. Peta jalan</text>
+<text x="1000.0" y="118" text-anchor="middle" font-size="14" fill="#333333">ketergantungan &amp;</text>
+<text x="1000.0" y="140" text-anchor="middle" font-size="14" fill="#333333">kunci waktu eksternal</text>
+</g>
+</g><g id="validasi">
+<rect x="20" y="220" width="1060" height="44" rx="8" fill="#E6F4EC" stroke="#006B3F" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="550.0" y="248" text-anchor="middle" font-size="15" font-weight="bold" fill="#006B3F">7. Validasi dan reviu bersama BPJS Ketenagakerjaan (berulang pada setiap tahap)</text>
+<line x1="100.0" y1="218" x2="100.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="280.0" y1="218" x2="280.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="460.0" y1="218" x2="460.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="640.0" y1="218" x2="640.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="820.0" y1="218" x2="820.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+<line x1="1000.0" y1="218" x2="1000.0" y2="192" stroke="#006B3F" stroke-width="1.5" marker-end="url(#ah)"/>
+</g><g id="sumber"><text x="20" y="300" font-size="12" fill="#6B6B6B">Sumber: diolah dari rencana kerja studi.</text></g></svg>
