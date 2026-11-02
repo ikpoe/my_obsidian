@@ -11,7 +11,7 @@ Maksud penyusunan Blueprint ini adalah menjadi **acuan bersama arsitektur data**
 
 ## 1.2.2 Tujuan
 
-Tujuan Blueprint diturunkan dari tantangan yang ditemukan pada asesmen kondisi saat ini dan diselaraskan dengan tiga tema peta jalan. Tema Tahun 1 adalah Fondasi dan Kendali, Tahun 2 Integrasi dan Pertukaran Terstandar, dan Tahun 3 Pemanfaatan dan Skala. Setiap tujuan dirumuskan sedemikian rupa sehingga kemajuannya dapat diamati. Ukuran keberhasilan rinci diuraikan pada subbab 3.5.
+Tujuan Blueprint diturunkan dari tantangan yang ditemukan pada asesmen kondisi saat ini dan diselaraskan dengan tiga tema peta jalan. Tema Tahun 1 adalah Fondasi dan Kendali, Tahun 2 Integrasi dan Pertukaran Terstandar, dan Tahun 3 Pemanfaatan dan Skala. Setiap tujuan dirumuskan sedemikian rupa sehingga kemajuannya dapat diamati.
 
 1. **T1 – Akuntabilitas data yang jelas.** Setiap domain data prioritas memiliki pemilik dan pengelola (*steward*) yang ditetapkan, bekerja dalam forum dan mekanisme keputusan yang berjalan. Tujuan ini menjawab belum jelasnya kewenangan atas perubahan elemen data (D2 hlm. 26) dan belum didefinisikannya fungsi pengelola master data (D2 hlm. 24).
 2. **T2 – Data terlindungi sesuai klasifikasinya.** Setiap dataset di ESDP memiliki klasifikasi, aturan akses, serta jadwal retensi dan pemusnahan yang selaras dengan UU 27/2022 dan PP 33/2026 [perlu konfirmasi tanggal berlaku].
@@ -32,7 +32,7 @@ Ruang lingkup Blueprint ditetapkan dengan menempatkan ESDP sebagai titik pusat i
 ![[G1-4-Ruang-Lingkup.png]]
 *Gambar 1.4 Ruang Lingkup Blueprint dengan ESDP sebagai Poros*
 
-Di dalam lingkup tersebut, Blueprint mencakup sepuluh area arsitektur yang diuraikan pada BAB IV. Kesepuluh area itu adalah tata kelola data; arsitektur platform data ESDP; pemodelan data; penyimpanan, retensi, dan resiliensi; integrasi dan interoperabilitas; manajemen data induk; metadata dan kualitas data; keamanan dan pelindungan data; *data warehouse*, BI, dan lapisan metrik; serta parameter yang perlu ditetapkan. Pembagian ini sejalan dengan struktur pengaturan dalam Perdir 4/2025, yang meliputi arsitektur, pemodelan, metadata, kualitas, *data warehouse* dan big data, master data, penyimpanan, keamanan informasi, serta kolaborasi data (D1 hlm. 14–17, 40–58, 64–92). Ketiga *use case* prioritas dalam kerangka acuan kerja juga terwadahi di dalamnya. Ketiganya adalah kesiapan infrastruktur dan platform ESDP, pertukaran data melalui API, dan tata kelola data. Rinciannya diuraikan pada subbab 3.3.
+Di dalam lingkup tersebut, Blueprint mencakup sepuluh area arsitektur. Kesepuluh area itu adalah tata kelola data; arsitektur platform data ESDP; pemodelan data; penyimpanan, retensi, dan resiliensi; integrasi dan interoperabilitas; manajemen data induk; metadata dan kualitas data; keamanan dan pelindungan data; *data warehouse*, BI, dan lapisan metrik; serta parameter yang perlu ditetapkan. Pembagian ini sejalan dengan struktur pengaturan dalam Perdir 4/2025, yang meliputi arsitektur, pemodelan, metadata, kualitas, *data warehouse* dan big data, master data, penyimpanan, keamanan informasi, serta kolaborasi data (D1 hlm. 14–17, 40–58, 64–92). Ketiga *use case* prioritas dalam kerangka acuan kerja juga terwadahi di dalamnya. Ketiganya adalah kesiapan infrastruktur dan platform ESDP, pertukaran data melalui API, dan tata kelola data.
 
 Sistem yang berada di luar platform, yaitu SMILE sebagai sistem inti, aplikasi pendukung, dan *Enterprise Content Management* (ECM), tidak dirancang ulang dalam Blueprint ini, termasuk penyimpanan internalnya. Blueprint hanya memandang sistem-sistem tersebut sebagai antarmuka, yaitu sumber atau tujuan data, beserta kontrak data yang mengatur pertukarannya. Hubungan dengan sistem tersebut berlangsung melalui jalur integrasi yang terkelola, yaitu API dan SFTP, sedangkan penyerapan data internal dapat menggunakan replikasi terkelola [perlu konfirmasi]. Koneksi langsung ke basis data mitra tidak termasuk dalam rancangan target.
 
@@ -43,7 +43,7 @@ Periode perencanaan Blueprint ini adalah tiga tahun, dengan jadwal yang dirinci 
 - pemilihan produk atau alat; serta
 - penetapan nilai target operasional, seperti RPO/RTO, waktu retensi, dan batas kualitas.
 
-Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan (subbab 4.10).
+Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemilik keputusannya. Penetapan nilainya, misalnya ambang kualitas, target *freshness*, dan masa retensi, menjadi keputusan forum tata kelola dalam pelaksanaan peta jalan.
 
 ---
 
