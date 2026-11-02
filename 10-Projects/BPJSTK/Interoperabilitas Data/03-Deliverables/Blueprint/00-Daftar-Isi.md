@@ -9,7 +9,7 @@
 | **BAB I** | **Pendahuluan** | | |
 | 1.1 | Latar Belakang | [[01-1-Latar-Belakang]] | Draf |
 | 1.2 | Maksud, Tujuan, dan Ruang Lingkup (lingkup ESDP; batas dengan aplikasi sumber/ECM) | [[01-2-Maksud-Tujuan-Ruang-Lingkup]] | Draf |
-| 1.3 | Dasar Hukum dan Acuan | [[01-3-Dasar-Hukum-dan-Acuan]] | Belum |
+| 1.3 | Dasar Hukum dan Acuan | [[01-3-Dasar-Hukum-dan-Acuan]] | Draf |
 | 1.4 | Metodologi dan Sumber Data | [[01-4-Metodologi-dan-Sumber-Data]] | Belum |
 | 1.5 | Sistematika Dokumen | [[01-5-Sistematika-Dokumen]] | Belum |
 | **BAB II** | **Kondisi Saat Ini dan Tantangan** | | |
