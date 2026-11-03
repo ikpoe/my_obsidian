@@ -17,7 +17,7 @@
 | 2.2          | Gambaran Lanskap Data dan Teknologi Saat Ini                                                                                           | [[02-2-Lanskap-Data-dan-Teknologi]]       | Draf  |
 | 2.3          | Kondisi Saat Ini per Area (Tata Kelola, Arsitektur, Pemodelan, Penyimpanan, Integrasi, Data Induk, Metadata & Kualitas, Keamanan, DW & BI) | [[02-3-Kondisi-Saat-Ini-per-Area]]         | Draf   |
 | 2.4          | Gambaran Kondisi Secara Umum                                                                                                           | [[02-4-Gambaran-Kondisi-Secara-Umum]]      | Draf   |
-| 2.5          | Tantangan Utama (5–7 tantangan bernomor)                                                                                               | [[02-5-Tantangan-Utama]]                  | Belum  |
+| 2.5          | Tantangan Utama (5–7 tantangan bernomor)                                                                                               | [[02-5-Tantangan-Utama]]                  | Draf   |
 | **BAB III**  | **Arah Transformasi Data**                                                                                                             |                                           |        |
 | 3.1          | Visi dan Tujuan                                                                                                                        | [[03-1-Visi-dan-Tujuan]]                  | Draf   |
 | 3.2          | Prinsip-Prinsip Arsitektur Data (bernomor & bernama)                                                                                   | [[03-2-Prinsip-Arsitektur-Data]]          | Belum  |
