@@ -64,17 +64,17 @@ Dokumen studi yang menjadi sumber fakta kondisi saat ini adalah sebagai berikut.
 
 Setiap acuan di atas berpengaruh langsung terhadap rancangan arsitektur data. Tabel berikut merangkum hal pokok yang perlu diakomodasi dari tiap acuan beserta area Blueprint yang menjabarkannya.
 
-| Acuan | Implikasi utama | Area / bagian |
-|---|---|---|
-| UU 24/2011 | BPJS Ketenagakerjaan memegang kewenangan dan akuntabilitas atas data peserta | 4.1, 4.6 |
-| UU 27/2022 + PP 33/2026 | Klasifikasi, dasar pemrosesan, masking, retensi, dan pemusnahan data pribadi; kunci waktu 16 Jan 2027 [perlu konfirmasi] | 4.4, 4.8, 3.4.4 |
-| UU 11/2008 + PP 71/2019 | Keandalan sistem, pemulihan, dan jejak audit | 4.2, 4.4, 4.8 |
-| PP 85/2013 | Pertukaran data antarlembaga melalui perjanjian kerja sama | 4.5 |
-| Perpres 39/2019 + Inpres 4/2025 | Standar data, metadata, kode referensi, dan identitas tunggal | 4.3, 4.6, 4.7 |
-| Perdir 4/2025 | Peran, forum, klasifikasi, standar kolaborasi, dan penyesuaian PKS | 4.1–4.10, BAB V |
-| POJK 4/POJK.05/2021 [perlu konfirmasi] | Manajemen risiko TI | 4.2, 5.2 |
-| Prosedur Pengelolaan Kualitas Data (D6) | Metrik, CDE, indeks kualitas data peserta, dan peran Data Quality, Data Liaison, serta Business Owner menjadi titik awal rancangan kualitas data | 4.1, 4.7, 4.10 |
-| DAMA-DMBOK | Kerangka fungsi manajemen data sebagai acuan pembagian area dan praktik baik | 4.1–4.10 |
+| Acuan                                   | Implikasi utama                                                                                                                                  | Area / bagian   |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| UU 24/2011                              | BPJS Ketenagakerjaan memegang kewenangan dan akuntabilitas atas data peserta                                                                     | 4.1, 4.6        |
+| UU 27/2022 + PP 33/2026                 | Klasifikasi, dasar pemrosesan, masking, retensi, dan pemusnahan data pribadi; kunci waktu 16 Jan 2027 [perlu konfirmasi]                         | 4.4, 4.8, 3.4.4 |
+| UU 11/2008 + PP 71/2019                 | Keandalan sistem, pemulihan, dan jejak audit                                                                                                     | 4.2, 4.4, 4.8   |
+| PP 85/2013                              | Pertukaran data antarlembaga melalui perjanjian kerja sama                                                                                       | 4.5             |
+| Perpres 39/2019 + Inpres 4/2025         | Standar data, metadata, kode referensi, dan identitas tunggal                                                                                    | 4.3, 4.6, 4.7   |
+| Perdir 4/2025                           | Peran, forum, klasifikasi, standar kolaborasi, dan penyesuaian PKS                                                                               | 4.1–4.10, BAB V |
+| POJK 4/POJK.05/2021 [perlu konfirmasi]  | Manajemen risiko TI                                                                                                                              | 4.2, 5.2        |
+| Prosedur Pengelolaan Kualitas Data (D6) | Metrik, CDE, indeks kualitas data peserta, dan peran Data Quality, Data Liaison, serta Business Owner menjadi titik awal rancangan kualitas data | 4.1, 4.7, 4.10  |
+| DAMA-DMBOK                              | Kerangka fungsi manajemen data sebagai acuan pembagian area dan praktik baik                                                                     | 4.1–4.10        |
 
 ---
 

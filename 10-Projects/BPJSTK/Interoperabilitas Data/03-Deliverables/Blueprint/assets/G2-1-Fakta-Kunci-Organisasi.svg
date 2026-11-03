@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="470" viewBox="0 0 680 470" font-family="Arial, Helvetica, sans-serif">
+  <rect id="latar" width="680" height="470" fill="#ffffff"/>
+  <g id="judul">
+    <text x="30" y="42" font-size="22" font-weight="bold" fill="#0b3d2e">Fakta kunci BPJS Ketenagakerjaan 2025</text>
+    <text x="30" y="66" font-size="13" fill="#555">Organisasi dan layanan klaim yang menjadi sumber data ESDP</text>
+  </g>
+  <g id="kolom-organisasi">
+    <rect x="30" y="90" width="300" height="300" rx="10" fill="#e8f4ee" stroke="#1d7a4f"/>
+    <text x="50" y="120" font-size="16" font-weight="bold" fill="#1d7a4f">ORGANISASI</text>
+    <text x="50" y="170" font-size="34" font-weight="bold" fill="#0b3d2e">11</text>
+    <text x="50" y="192" font-size="13" fill="#333">kantor wilayah (hlm. 203)</text>
+    <text x="50" y="245" font-size="34" font-weight="bold" fill="#0b3d2e">325</text>
+    <text x="50" y="267" font-size="13" fill="#333">kantor cabang (hlm. 173)</text>
+    <text x="50" y="320" font-size="34" font-weight="bold" fill="#0b3d2e">5.194</text>
+    <text x="50" y="342" font-size="13" fill="#333">karyawan (hlm. 6)</text>
+  </g>
+  <g id="kolom-layanan">
+    <rect x="350" y="90" width="300" height="300" rx="10" fill="#fdf2e6" stroke="#c46a12"/>
+    <text x="370" y="120" font-size="16" font-weight="bold" fill="#c46a12">LAYANAN KLAIM 2025</text>
+    <text x="370" y="170" font-size="34" font-weight="bold" fill="#6b3a08">5.772.567</text>
+    <text x="370" y="192" font-size="13" fill="#333">kasus klaim dibayar (hlm. 65)</text>
+    <text x="370" y="245" font-size="34" font-weight="bold" fill="#6b3a08">Rp68,25 T</text>
+    <text x="370" y="267" font-size="13" fill="#333">nilai manfaat dibayar (hlm. 65)</text>
+    <text x="370" y="320" font-size="34" font-weight="bold" fill="#6b3a08">67,6%</text>
+    <text x="370" y="342" font-size="13" fill="#333">kasus berasal dari JHT (hlm. 65)</text>
+  </g>
+  <g id="sumber">
+    <text x="30" y="425" font-size="12" fill="#555">Sumber: Laporan Terintegrasi BPJS Ketenagakerjaan 2025</text>
+    <text x="30" y="445" font-size="12" fill="#555">(nomor halaman tercetak).</text>
+  </g>
+</svg>

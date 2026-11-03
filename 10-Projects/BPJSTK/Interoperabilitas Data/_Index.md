@@ -22,7 +22,7 @@ tags: [project, bpjstk, data-platform]
 
 ## Isi
 - [[01-TOR|Ringkasan TOR]]
-- [[01-Blueprint-ESDP|Blueprint ESDP (kerangka)]]
+- [[00-Daftar-Isi|Blueprint ESDP (daftar isi)]]
 - [[00-Analisis-Dokumen-BPJS|Analisis dokumen BPJS]]
 - [[01-Inventori-Tender-BPJSTK.csv|Inventori tender]]
 - [[01-Daftar-Framework|Daftar framework]]

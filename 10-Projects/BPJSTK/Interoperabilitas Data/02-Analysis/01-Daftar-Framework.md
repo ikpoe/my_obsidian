@@ -6,7 +6,7 @@ status: untuk-dibahas
 ---
 # Daftar Framework untuk Kajian
 
-> Belum final. Nanti dibahas satu per satu. Kolom "Bab Blueprint" merujuk ke [[01-Blueprint-ESDP|Blueprint ESDP]].
+> Belum final. Nanti dibahas satu per satu. Kolom "Bab Blueprint" merujuk ke [[00-Daftar-Isi|Blueprint ESDP]].
 
 | # | Framework | Kegunaan | Bab Blueprint | Status |
 |---|---|---|---|---|

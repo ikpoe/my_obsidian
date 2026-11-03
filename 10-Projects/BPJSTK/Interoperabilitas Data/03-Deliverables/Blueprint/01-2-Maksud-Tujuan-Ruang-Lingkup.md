@@ -60,11 +60,11 @@ Untuk parameter, Blueprint menetapkan *apa* yang harus diputuskan beserta pemili
 2. Penetapan enam tujuan (T1–T6) sebagai rumusan resmi. Bila disetujui, kode T1–T6 akan dipakai konsisten di 3.1 dan 3.5.
 3. Penekanan "fokus utama/lanjutan" pada Gambar 1.5 bersifat indikatif. Perlu diputuskan apakah tetap ditampilkan atau cukup memetakan tujuan ke area.
 4. Rumusan batas integrasi. Penyerapan internal saat ini memakai replikasi/CDC dan ETL (D2 hlm. 21). Perlu dipastikan "API/SFTP" berlaku untuk pertukaran dengan pihak di luar platform saja, sementara replikasi terkelola tetap diizinkan untuk hulu internal.
-5. Pernyataan bahwa koneksi langsung ke basis data mitra tidak masuk rancangan target. Sumbernya temuan integrasi Kemnaker, yang dirujuk tanpa rincian teknis. Perlu diputuskan apakah kalimat ini cukup aman untuk dibawa ke klien.
+5. Pernyataan bahwa koneksi langsung ke basis data mitra tidak masuk rancangan target. Sumbernya informasi integrasi Kemnaker, yang dirujuk tanpa rincian teknis. Perlu diputuskan apakah kalimat ini cukup aman untuk dibawa ke klien.
 
 **Konfirmasi ke klien**
 1. Tahun 1 = 2027 dan penyelarasan dengan siklus RKAT.
 2. Rumusan resmi tiga *use case* prioritas sesuai kerangka acuan kerja, untuk dikutip di 3.3.
-3. Status pusat data cadangan (D2 hlm. 50 bertentangan dengan temuan wawancara).
+3. Status pusat data cadangan (D2 hlm. 50 bertentangan dengan informasi dari wawancara).
 4. Posisi ECM: hanya antarmuka, atau ada metadata dokumen yang perlu masuk ke katalog ESDP.
 5. Tanggal berlaku PP 33/2026.
